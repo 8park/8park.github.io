@@ -1,0 +1,513 @@
+2025.07.29 포트폴리오 코드
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junseong Park - AI & Engineering Educator | Tech Innovator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* bg-slate-900 */
+            color: #cbd5e1; /* text-slate-300 */
+        }
+        /* 더 세련된 스크롤바 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-white text-center;
+        }
+        .section-subtitle {
+            @apply text-center mt-4 text-lg text-slate-400 max-w-3xl mx-auto;
+        }
+        /* 언어 선택 버튼 스타일 */
+        .lang-btn {
+            @apply px-3 py-1 text-sm rounded-md transition-colors;
+        }
+        .lang-btn.active {
+            @apply bg-sky-500 text-white;
+        }
+        .lang-btn:not(.active) {
+            @apply bg-slate-700 hover:bg-slate-600 text-slate-300;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더 & 네비게이션 -->
+    <header class="bg-slate-900/80 backdrop-blur-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-white">Junseong Park</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#story" class="hover:text-sky-400 transition-colors" data-lang="nav_story">My Story</a>
+                <a href="#expertise" class="hover:text-sky-400 transition-colors" data-lang="nav_expertise">Expertise</a>
+                <a href="#casestudies" class="hover:text-sky-400 transition-colors" data-lang="nav_casestudies">Case Studies</a>
+                <a href="#philosophy" class="hover:text-sky-400 transition-colors" data-lang="nav_philosophy">Philosophy</a>
+                <a href="#experience" class="hover:text-sky-400 transition-colors" data-lang="nav_experience">Experience</a>
+                <a href="mailto:junesong56@gmail.com" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors" data-lang="nav_contact">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </nav>
+        <!-- 모바일 메뉴 -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#story" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_story_mobile">My Story</a>
+            <a href="#expertise" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_expertise_mobile">Expertise</a>
+            <a href="#casestudies" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_casestudies_mobile">Case Studies</a>
+            <a href="#philosophy" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_philosophy_mobile">Philosophy</a>
+            <a href="#experience" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_experience_mobile">Experience</a>
+            <a href="mailto:junesong56@gmail.com" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_contact_mobile">Contact</a>
+             <div class="px-6 py-2 flex space-x-2">
+                <button class="lang-btn active" data-lang-switch="en">EN</button>
+                <button class="lang-btn" data-lang-switch="es">ES</button>
+                <button class="lang-btn" data-lang-switch="ko">KO</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <!-- 섹션 1: Hero - Who I Am -->
+        <section class="py-20 md:py-32 flex flex-col-reverse md:flex-row items-center">
+            <div class="md:w-2/3 text-center md:text-left">
+                <!-- 언어 선택 버튼 -->
+                <div class="flex justify-center md:justify-start space-x-2 mb-6">
+                    <button class="lang-btn active" data-lang-switch="en">English</button>
+                    <button class="lang-btn" data-lang-switch="es">Español</button>
+                    <button class="lang-btn" data-lang-switch="ko">한국어</button>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight" data-lang="hero_title">Bridging Technology and Business Through Education</h1>
+                <p class="mt-6 text-lg text-slate-400 max-w-2xl" data-lang="hero_subtitle">
+                    Hello! I'm Junseong Park. My goal is to shape the next generation of tech leaders by combining hands-on engineering, advanced AI, and strategic business principles to teach real-world problem-solving skills.
+                </p>
+                <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                    <a href="#casestudies" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors" data-lang="hero_btn_work">View My Work</a>
+                    <a href="mailto:junesong56@gmail.com" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors" data-lang="hero_btn_contact">Get In Touch</a>
+                </div>
+            </div>
+            <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                <!-- 중요: 실제 본인 사진 URL로 교체하세요 -->
+                <img src="https://placehold.co/400x400/0f172a/94a3b8?text=Your+Photo" alt="Junseong Park Profile Picture" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-slate-700 shadow-lg">
+            </div>
+        </section>
+
+        <!-- 섹션 2: 소개 - My Story -->
+        <section id="story" class="py-20">
+            <h2 class="section-title" data-lang="story_title">My Story: From South Korea to South Texas</h2>
+            <p class="section-subtitle" data-lang="story_subtitle">
+                My journey began in South Korea, where I was always drawn to the role of a leader—someone who improves their environment and helps their peers. This passion led me from leading student groups in my youth, to leading a technical team in the military, to mastering engineering in the competitive automotive supply chain. A desire for growth brought me to the U.S. and UTRGV, where I deepened my expertise in Computer Science and AI, and am now honing my business acumen through an MBA. This unique path has forged my mission: to weave these diverse threads of technology, leadership, and education together to create new value.
+            </p>
+            <div class="mt-12 bg-slate-800 p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
+                <h3 class="text-xl font-bold text-white mb-4" data-lang="story_commitment_title">A Lifelong Commitment to Leadership & Community</h3>
+                <ul class="list-disc list-inside text-slate-400 space-y-2">
+                    <li data-lang="story_commitment_1">**High School:** Student Leadership Team (Discipline & Order Committee)</li>
+                    <li data-lang="story_commitment_2">**Middle School:** Student Council Member & Broadcasting Club Leader</li>
+                    <li data-lang="story_commitment_3">**Elementary School:** Student Library Assistant</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 전문성 - My Expertise -->
+        <section id="expertise" class="py-20">
+            <h2 class="section-title" data-lang="expertise_title">My Expertise</h2>
+            <p class="section-subtitle" data-lang="expertise_subtitle">A unique blend of skills to teach technology from concept to creation.</p>
+            <div class="mt-12 grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-xl font-bold text-white mb-2" data-lang="expertise_card1_title">AI & Software Development</h3>
+                    <p class="text-slate-400" data-lang="expertise_card1_desc">Building and refining the models that power our future, and making complex topics like Machine Learning and LLMs accessible to students.</p>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-xl font-bold text-white mb-2" data-lang="expertise_card2_title">Hands-On Engineering</h3>
+                    <p class="text-slate-400" data-lang="expertise_card2_desc">I don't just work with code; I build the machines that use it. Deep experience in turning digital designs into physical realities with 3D printing, CNC, and robotics.</p>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-xl font-bold text-white mb-2" data-lang="expertise_card3_title">Proven Education & Leadership</h3>
+                    <p class="text-slate-400" data-lang="expertise_card3_desc">Passionate about empowering others. I've developed engineering curricula, led technical teams, and mentored hundreds of students in military and academic settings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 새로운 이니셔티브 - UTRGV AI Club -->
+        <section id="initiative" class="py-20">
+            <div class="text-center">
+                <h2 class="text-base font-semibold text-sky-400 tracking-wider uppercase" data-lang="initiative_tag">New Initiative</h2>
+                <p class="section-title mt-2" data-lang="initiative_title">Founding the UTRGV AI Club</p>
+                <p class="section-subtitle" data-lang="initiative_desc">I am currently in the process of establishing the official UTRGV AI Club, a forward-thinking community for students, graduate students, Ph.D. candidates, and alumni. Our mission is to make AI accessible to all, fostering innovation and preparing the next generation of leaders in the Rio Grande Valley.</p>
+                <a href="#philosophy" class="mt-6 inline-block text-sky-400 font-semibold hover:underline" data-lang="initiative_link">Learn about my teaching philosophy &rarr;</a>
+            </div>
+        </section>
+
+        <!-- 섹션 5: 사례 연구 - Case Studies -->
+        <section id="casestudies" class="py-20">
+            <h2 class="section-title" data-lang="casestudies_title">Case Studies</h2>
+            <p class="section-subtitle" data-lang="casestudies_subtitle">Putting theory into practice. Here are some of the projects I've contributed to and programs I've led.</p>
+            <div class="mt-16 space-y-20">
+                <!-- 사례 연구 1: Foundational Engineering Program -->
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                        <!-- 중요: Industrial Inside Factory Center 관련 사진 URL로 교체하세요 (예: 워크숍 사진) -->
+                        <img src="https://placehold.co/600x400/0f172a/fb923c?text=Students+Workshop" alt="Engineering Program" class="rounded-xl shadow-lg w-full object-cover">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-white" data-lang="case1_title">Foundational Engineering Program</h3>
+                        <p class="text-sky-400 mt-1 font-semibold" data-lang="case1_role">My Role: Program Developer & Lead Instructor</p>
+                        <div class="mt-4 text-slate-400" data-lang="case1_desc">
+                            <strong class="text-slate-300">Challenge:</strong> University and high school students lacked access to practical, hands-on training with modern fabrication and robotics technology.<br>
+                            <strong class="text-slate-300">Action:</strong> I developed and led a foundational engineering curriculum for over 300 students. The program included hands-on workshops in robotics, 3D printing, and autonomous systems, supplemented by educational videos I produced.
+                        </div>
+                    </div>
+                </div>
+                <!-- 사례 연구 2: Military Leadership -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+                    <div class="md:w-1/2">
+                        <!-- 중요: 군대 관련 사진 URL로 교체하세요 -->
+                        <img src="https://placehold.co/600x400/0f172a/f87171?text=Military+Leadership" alt="Military Leadership" class="rounded-xl shadow-lg w-full object-cover">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-white" data-lang="case2_title">Artillery Maintenance Team Leader</h3>
+                        <p class="text-sky-400 mt-1 font-semibold" data-lang="case2_role">My Role: Team Leader</p>
+                        <div class="mt-4 text-slate-400" data-lang="case2_desc">
+                            <strong class="text-slate-300">Context:</strong> In the Republic of Korea Army, I was responsible for the operational readiness of advanced, computer-controlled artillery systems.<br>
+                            <strong class="text-slate-300">Action:</strong> I led a team of 4 technicians, coordinating complex maintenance schedules, providing hands-on technical training, and ensuring strict compliance with all safety and military standards.
+                        </div>
+                    </div>
+                </div>
+                <!-- 사례 연구 3: IntelliBeeHive -->
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                        <!-- 사진 갤러리 섹션 -->
+                        <div class="grid grid-cols-2 gap-4">
+                             <!-- 중요: IntelliBeeHive 관련 사진 URL들로 교체하세요 -->
+                            <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+1" alt="IntelliBeeHive System" class="rounded-lg shadow-md w-full h-full object-cover">
+                            <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+2" alt="IntelliBeeHive Enclosure" class="rounded-lg shadow-md w-full h-full object-cover">
+                            <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+3" alt="IntelliBeeHive Data" class="rounded-lg shadow-md w-full h-full object-cover">
+                            <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+4" alt="IntelliBeeHive Camera" class="rounded-lg shadow-md w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-white" data-lang="case3_title">IntelliBeeHive - AI/IoT Research</h3>
+                        <p class="text-sky-400 mt-1 font-semibold" data-lang="case3_role">My Role: Researcher</p>
+                        <div class="mt-4 text-slate-400" data-lang="case3_desc">
+                            <strong class="text-slate-300">Problem:</strong> The USDA needed a way to monitor honeybee populations in real-time to study environmental impacts.<br>
+                            <strong class="text-slate-300">Contribution:</strong> As a researcher, I contributed to the development of a real-time AI/IoT monitoring system using Jetson Nano and TensorFlow. My work involved fabricating custom hardware enclosures, installing the camera network, and assisting with the computer vision models.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 6: 교육 철학 - My "Why" -->
+        <section id="philosophy" class="py-20">
+            <h2 class="section-title" data-lang="philosophy_title">My Teaching Philosophy</h2>
+            <div class="mt-12 max-w-3xl mx-auto text-center bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-bold text-white" data-lang="philosophy_subtitle">Fostering Creative Problem-Solving Through an Interdisciplinary Approach</h3>
+                <p class="mt-4 text-slate-400 text-lg leading-relaxed" data-lang="philosophy_desc">
+                    My educational goal is to lower the barrier to entry for technology, helping students feel comfortable and confident. To achieve this, I connect complex principles to real-world examples by drawing from my interdisciplinary knowledge in Computer Science (M.S.) and Mechanical Engineering (B.Eng.). Furthermore, I lead a hands-on, practical approach using modern tools like AI, CAD design, and 3D printing, enabling students to gain a sense of accomplishment by bringing their ideas to life. Through this process, students will grow into creative talents who can identify problems on their own and integrate diverse technologies to create original solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- 섹션 7: 주요 경력 - The Full Record -->
+        <section id="experience" class="py-20">
+            <h2 class="section-title" data-lang="experience_title">Professional Experience</h2>
+            <p class="section-subtitle" data-lang="experience_subtitle">A detailed record of my diverse roles and responsibilities.</p>
+            <div class="mt-12 relative border-l-2 border-slate-700 max-w-3xl mx-auto">
+                <div class="mb-10 ml-8">
+                    <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
+                    <h3 class="text-lg font-semibold text-white" data-lang="exp1_title">Korean Language Instructor <span class="text-sky-400">@ Language Success School</span></h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">July 2025 – Present</time>
+                </div>
+                <div class="mb-10 ml-8">
+                    <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
+                    <h3 class="text-lg font-semibold text-white" data-lang="exp2_title">AI Trainer (for LLMs) <span class="text-sky-400">@ Outlier (Remote)</span></h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Dec 2023 – Present</time>
+                </div>
+                <div class="mb-10 ml-8">
+                    <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
+                    <h3 class="text-lg font-semibold text-white" data-lang="exp3_title">Teaching Assistant <span class="text-sky-400">@ UTRGV</span></h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Aug 2021 – May 2023</time>
+                </div>
+                <div class="mb-10 ml-8">
+                    <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
+                    <h3 class="text-lg font-semibold text-white" data-lang="exp4_title">University Lab Technician & Instructor <span class="text-sky-400">@ Industrial inside Factory Center</span></h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Sep 2018 – Feb 2021</time>
+                </div>
+                 <div class="mb-10 ml-8">
+                    <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
+                    <h3 class="text-lg font-semibold text-white" data-lang="exp5_title">Artillery Maintenance Team Leader <span class="text-sky-400">@ Republic of Korea Army</span></h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Jun 2016 – Mar 2018</time>
+                </div>
+                <div class="ml-8">
+                    <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
+                    <h3 class="text-lg font-semibold text-white" data-lang="exp6_title">Prototyping Technician & Instructor <span class="text-sky-400">@ Creative Design Center</span></h3>
+                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">May 2015 – May 2016</time>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-slate-800/50">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h2 class="text-3xl font-bold text-white" data-lang="footer_title">Let's Connect</h2>
+            <p class="mt-4 text-slate-400 max-w-xl mx-auto" data-lang="footer_subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to build the future of education and technology in the RGV. Feel free to reach out.</p>
+            <div class="mt-8">
+                <a href="mailto:junesong56@gmail.com" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold text-lg px-8 py-4 rounded-lg inline-block transition-colors">junesong56@gmail.com</a>
+            </div>
+            <div class="mt-10 text-sm text-slate-500" data-lang="footer_copy">
+                &copy; 2025 Junseong Park. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 다국어 콘텐츠 데이터
+        const translations = {
+            en: {
+                nav_story: "My Story",
+                nav_expertise: "Expertise",
+                nav_casestudies: "Case Studies",
+                nav_philosophy: "Philosophy",
+                nav_experience: "Experience",
+                nav_contact: "Contact",
+                hero_title: "Bridging Technology and Business Through Education",
+                hero_subtitle: "Hello! I'm Junseong Park. My goal is to shape the next generation of tech leaders by combining hands-on engineering, advanced AI, and strategic business principles to teach real-world problem-solving skills.",
+                hero_btn_work: "View My Work",
+                hero_btn_contact: "Get In Touch",
+                story_title: "My Story: From South Korea to South Texas",
+                story_subtitle: "My journey began in South Korea, where I was always drawn to the role of a leader—someone who improves their environment and helps their peers. This passion led me from leading student groups in my youth, to leading a technical team in the military, to mastering engineering in the competitive automotive supply chain. A desire for growth brought me to the U.S. and UTRGV, where I deepened my expertise in Computer Science and AI, and am now honing my business acumen through an MBA. This unique path has forged my mission: to weave these diverse threads of technology, leadership, and education together to create new value.",
+                story_commitment_title: "A Lifelong Commitment to Leadership & Community",
+                story_commitment_1: "**High School:** Student Leadership Team (Discipline & Order Committee)",
+                story_commitment_2: "**Middle School:** Student Council Member & Broadcasting Club Leader",
+                story_commitment_3: "**Elementary School:** Student Library Assistant",
+                expertise_title: "My Expertise",
+                expertise_subtitle: "A unique blend of skills to teach technology from concept to creation.",
+                expertise_card1_title: "AI & Software Development",
+                expertise_card1_desc: "Building and refining the models that power our future, and making complex topics like Machine Learning and LLMs accessible to students.",
+                expertise_card2_title: "Hands-On Engineering",
+                expertise_card2_desc: "I don't just work with code; I build the machines that use it. Deep experience in turning digital designs into physical realities with 3D printing, CNC, and robotics.",
+                expertise_card3_title: "Proven Education & Leadership",
+                expertise_card3_desc: "Passionate about empowering others. I've developed engineering curricula, led technical teams, and mentored hundreds of students in military and academic settings.",
+                initiative_tag: "New Initiative",
+                initiative_title: "Founding the UTRGV AI Club",
+                initiative_desc: "I am currently in the process of establishing the official UTRGV AI Club, a forward-thinking community for students, graduate students, Ph.D. candidates, and alumni. Our mission is to make AI accessible to all, fostering innovation and preparing the next generation of leaders in the Rio Grande Valley.",
+                initiative_link: "Learn about my teaching philosophy &rarr;",
+                casestudies_title: "Case Studies",
+                casestudies_subtitle: "Putting theory into practice. Here are some of the projects I've contributed to and programs I've led.",
+                case1_title: "Foundational Engineering Program",
+                case1_role: "My Role: Program Developer & Lead Instructor",
+                case1_desc: `<strong class="text-slate-300">Challenge:</strong> University and high school students lacked access to practical, hands-on training with modern fabrication and robotics technology.<br><strong class="text-slate-300">Action:</strong> I developed and led a foundational engineering curriculum for over 300 students. The program included hands-on workshops in robotics, 3D printing, and autonomous systems, supplemented by educational videos I produced.`,
+                case2_title: "Artillery Maintenance Team Leader",
+                case2_role: "My Role: Team Leader",
+                case2_desc: `<strong class="text-slate-300">Context:</strong> In the Republic of Korea Army, I was responsible for the operational readiness of advanced, computer-controlled artillery systems.<br><strong class="text-slate-300">Action:</strong> I led a team of 4 technicians, coordinating complex maintenance schedules, providing hands-on technical training, and ensuring strict compliance with all safety and military standards.`,
+                case3_title: "IntelliBeeHive - AI/IoT Research",
+                case3_role: "My Role: Researcher",
+                case3_desc: `<strong class="text-slate-300">Problem:</strong> The USDA needed a way to monitor honeybee populations in real-time to study environmental impacts.<br><strong class="text-slate-300">Contribution:</strong> As a researcher, I contributed to the development of a real-time AI/IoT monitoring system using Jetson Nano and TensorFlow. My work involved fabricating custom hardware enclosures, installing the camera network, and assisting with the computer vision models.`,
+                philosophy_title: "My Teaching Philosophy",
+                philosophy_subtitle: "Fostering Creative Problem-Solving Through an Interdisciplinary Approach",
+                philosophy_desc: `My educational goal is to lower the barrier to entry for technology, helping students feel comfortable and confident. To achieve this, I connect complex principles to real-world examples by drawing from my interdisciplinary knowledge in Computer Science (M.S.) and Mechanical Engineering (B.Eng.). Furthermore, I lead a hands-on, practical approach using modern tools like AI, CAD design, and 3D printing, enabling students to gain a sense of accomplishment by bringing their ideas to life. Through this process, students will grow into creative talents who can identify problems on their own and integrate diverse technologies to create original solutions.`,
+                experience_title: "Professional Experience",
+                experience_subtitle: "A detailed record of my diverse roles and responsibilities.",
+                exp1_title: "Korean Language Instructor <span class='text-sky-400'>@ Language Success School</span>",
+                exp2_title: "AI Trainer (for LLMs) <span class='text-sky-400'>@ Outlier (Remote)</span>",
+                exp3_title: "Teaching Assistant <span class='text-sky-400'>@ UTRGV</span>",
+                exp4_title: "University Lab Technician & Instructor <span class='text-sky-400'>@ Industrial inside Factory Center</span>",
+                exp5_title: "Artillery Maintenance Team Leader <span class='text-sky-400'>@ Republic of Korea Army</span>",
+                exp6_title: "Prototyping Technician & Instructor <span class='text-sky-400'>@ Creative Design Center</span>",
+                footer_title: "Let's Connect",
+                footer_subtitle: "I'm always open to discussing new projects, creative ideas, or opportunities to build the future of education and technology in the RGV. Feel free to reach out.",
+                footer_copy: "&copy; 2025 Junseong Park. All Rights Reserved."
+            },
+            ko: {
+                nav_story: "나의 이야기",
+                nav_expertise: "전문성",
+                nav_casestudies: "사례 연구",
+                nav_philosophy: "교육 철학",
+                nav_experience: "주요 경력",
+                nav_contact: "연락하기",
+                hero_title: "교육을 통해 기술과 비즈니스를 연결합니다",
+                hero_subtitle: "안녕하세요! 저는 박준성입니다. 저의 목표는 실무 엔지니어링, 최첨단 AI, 그리고 전략적인 비즈니스 원칙을 결합하여, 다음 세대의 기술 리더들이 실제 세계의 문제를 해결하는 능력을 갖추도록 교육하는 것입니다.",
+                hero_btn_work: "프로젝트 보기",
+                hero_btn_contact: "연락하기",
+                story_title: "나의 이야기: 대한민국에서 사우스 텍사스까지",
+                story_subtitle: "저의 여정은 대한민국에서 시작되었습니다. 저는 항상 주변 환경을 개선하고 동료들을 돕는 리더의 역할에 매력을 느껴왔습니다. 이러한 열정은 어린 시절 학생 그룹을 이끄는 것에서부터, 군대에서 기술팀을 지휘하고, 경쟁이 치열한 자동차 공급망에서 엔지니어링 기술을 마스터하는 것으로 이어졌습니다. 성장에 대한 갈망은 저를 미국과 UTRGV로 이끌었고, 이곳에서 컴퓨터 과학과 AI에 대한 전문성을 심화시켰으며, 현재는 MBA를 통해 비즈니스 통찰력을 연마하고 있습니다. 이 독특한 길은 기술, 리더십, 교육이라는 다양한 실들을 하나로 엮어 새로운 가치를 창출하려는 저의 사명을 만들어 주었습니다.",
+                story_commitment_title: "리더십과 커뮤니티에 대한 오랜 헌신",
+                story_commitment_1: "**고등학교:** 학생 리더십 팀 (선도부)",
+                story_commitment_2: "**중학교:** 학생회 임원 & 방송반 리더",
+                story_commitment_3: "**초등학교:** 도서관 학생 어시스턴트",
+                expertise_title: "나의 전문성",
+                expertise_subtitle: "컨셉 구상부터 실제 제작까지, 기술을 가르치기 위한 독보적인 역량의 조합.",
+                expertise_card1_title: "AI & 소프트웨어 개발",
+                expertise_card1_desc: "우리의 미래를 만드는 모델들을 구축하고 개선하며, 머신러닝이나 LLM 같은 복잡한 주제를 학생들이 쉽게 이해할 수 있도록 만듭니다.",
+                expertise_card2_title: "실무 엔지니어링",
+                expertise_card2_desc: "저는 코드만 다루지 않습니다. 코드를 사용하는 기계를 직접 만듭니다. 3D 프린팅, CNC, 로보틱스를 통해 디지털 디자인을 물리적 현실로 만드는 깊은 경험을 가지고 있습니다.",
+                expertise_card3_title: "검증된 교육 & 리더십",
+                expertise_card3_desc: "다른 사람들의 성장을 돕는 것에 열정을 느낍니다. 300명 이상의 학생들을 가르치고, 공학 커리큘럼을 개발했으며, 군대와 학계에서 기술팀을 이끌었습니다.",
+                initiative_tag: "새로운 이니셔티브",
+                initiative_title: "UTRGV AI 클럽 창립",
+                initiative_desc: "저는 현재 UTRGV 공식 AI 클럽 창립을 추진하고 있습니다. 이 클럽은 학부생, 대학원생, 박사 과정생 및 졸업생까지 아우르는 미래 지향적인 커뮤니티가 될 것입니다. 우리의 미션은 모든 사람에게 AI를 쉽게 접할 수 있게 하고, 혁신을 촉진하며, Rio Grande Valley의 차세대 리더를 준비시키는 것입니다.",
+                initiative_link: "저의 교육 철학 알아보기 &rarr;",
+                casestudies_title: "사례 연구",
+                casestudies_subtitle: "이론을 현실로. 제가 직접 개발하고 이끌었던 프로젝트와 프로그램들입니다.",
+                case1_title: "기초 공학 교육 프로그램",
+                case1_role: "나의 역할: 프로그램 개발자 & 책임 강사",
+                case1_desc: `<strong class="text-slate-300">과제:</strong> 대학생과 고등학생들이 현대 제조 및 로보틱스 기술에 대한 실질적인 실습 훈련을 받을 기회가 부족했습니다.<br><strong class="text-slate-300">실행:</strong> 저는 300명 이상의 학생들을 위한 기초 공학 커리큘럼을 개발하고 이끌었습니다. 이 프로그램에는 제가 직접 제작한 교육용 비디오와 함께 로보틱스, 3D 프린팅, 자율 시스템에 대한 실습 워크숍이 포함되었습니다.`,
+                case2_title: "자주포 정비팀장",
+                case2_role: "나의 역할: 팀 리더",
+                case2_desc: `<strong class="text-slate-300">배경:</strong> 대한민국 육군에서, 저는 최첨단 컴퓨터 제어 자주포 시스템의 작전 준비태세를 책임졌습니다.<br><strong class="text-slate-300">실행:</strong> 저는 4명의 기술자로 구성된 팀을 이끌고, 복잡한 정비 일정을 조율하며, 안전 및 군사 표준을 엄격히 준수하는 실무 기술 훈련을 제공했습니다.`,
+                case3_title: "IntelliBeeHive - AI/IoT 연구",
+                case3_role: "나의 역할: 연구원",
+                case3_desc: `<strong class="text-slate-300">과제:</strong> USDA는 환경 영향을 연구하기 위해 꿀벌 군집을 실시간으로 모니터링할 방법이 필요했습니다.<br><strong class="text-slate-300">기여:</strong> 연구원으로서, 저는 Jetson Nano와 TensorFlow를 사용하는 실시간 AI/IoT 모니터링 시스템 개발에 기여했습니다. 저의 역할은 맞춤형 하드웨어 인클로저 제작, 카메라 네트워크 설치, 그리고 컴퓨터 비전 모델 지원을 포함했습니다.`,
+                philosophy_title: "나의 교육 철학",
+                philosophy_subtitle: "융합적 접근을 통한 창의적 문제 해결 능력 함양",
+                philosophy_desc: `저의 교육 목표는 기술의 진입 장벽을 낮춰 학생들이 친숙함과 자신감을 느끼게 하는 것입니다. 이를 위해 컴퓨터 과학(M.S.)과 기계공학(B.Eng.) 지식을 넘나들며 복잡한 원리를 실제 사례와 연결하여 설명합니다. 또한 AI, CAD 설계, 3D 프린팅 등 현대적 도구를 활용한 실습 중심의 접근으로 학생들이 아이디어를 직접 현실화하며 성취감을 얻도록 이끕니다. 이 과정을 통해 학생들은 스스로 문제를 발견하고 다양한 기술을 통합하여 독창적인 해결책을 만드는 창의적 인재로 성장할 것입니다.`,
+                experience_title: "주요 경력",
+                experience_subtitle: "저의 다양한 역할과 책임에 대한 상세한 기록입니다.",
+                exp1_title: "한국어 강사 <span class='text-sky-400'>@ Language Success School</span>",
+                exp2_title: "AI 트레이너 (LLM) <span class='text-sky-400'>@ Outlier (원격)</span>",
+                exp3_title: "조교 <span class='text-sky-400'>@ UTRGV</span>",
+                exp4_title: "대학 연구실 기술자 & 강사 <span class='text-sky-400'>@ Industrial inside Factory Center</span>",
+                exp5_title: "자주포 정비팀장 <span class='text-sky-400'>@ 대한민국 육군</span>",
+                exp6_title: "프로토타입 기술자 & 강사 <span class='text-sky-400'>@ Creative Design Center</span>",
+                footer_title: "함께 해요",
+                footer_subtitle: "RGV의 교육과 기술의 미래를 만들어나갈 새로운 프로젝트, 창의적인 아이디어, 또는 기회에 대해 언제나 열려있습니다. 편하게 연락주세요.",
+                footer_copy: "&copy; 2025 박준성. All Rights Reserved."
+            },
+            es: {
+                nav_story: "Mi Historia",
+                nav_expertise: "Pericia",
+                nav_casestudies: "Estudios de Caso",
+                nav_philosophy: "Filosofía",
+                nav_experience: "Experiencia",
+                nav_contact: "Contacto",
+                hero_title: "Uniendo Tecnología y Negocios a Través de la Educación",
+                hero_subtitle: "¡Hola! Soy Junseong Park. Mi objetivo es formar a la próxima generación de líderes tecnológicos combinando ingeniería práctica, IA avanzada y principios de negocio estratégicos para enseñar habilidades de resolución de problemas del mundo real.",
+                hero_btn_work: "Ver Mi Trabajo",
+                hero_btn_contact: "Contáctame",
+                story_title: "Mi Historia: De Corea del Sur al Sur de Texas",
+                story_subtitle: "Mi viaje comenzó en Corea del Sur, donde siempre me sentí atraído por el papel de un líder, alguien que mejora su entorno y ayuda a sus compañeros. Esta pasión me llevó desde liderar grupos estudiantiles en mi juventud, a dirigir un equipo técnico en el ejército, hasta dominar la ingeniería en la competitiva cadena de suministro automotriz. El deseo de crecer me trajo a los EE. UU. y a UTRGV, donde profundicé mi experiencia en Ciencias de la Computación e IA, y ahora estoy perfeccionando mi perspicacia para los negocios a través de un MBA. Este camino único ha forjado mi misión: entrelazar estos diversos hilos de tecnología, liderazgo y educación para crear un nuevo valor.",
+                story_commitment_title: "Un Compromiso de por Vida con el Liderazgo y la Comunidad",
+                story_commitment_1: "**Bachillerato:** Equipo de Liderazgo Estudiantil (Comité de Disciplina y Orden)",
+                story_commitment_2: "**Secundaria:** Miembro del Consejo Estudiantil y Líder del Club de Radiodifusión",
+                story_commitment_3: "**Primaria:** Asistente de Biblioteca Estudiantil",
+                expertise_title: "Mi Pericia",
+                expertise_subtitle: "Una mezcla única de habilidades para enseñar tecnología desde el concepto hasta la creación.",
+                expertise_card1_title: "IA y Desarrollo de Software",
+                expertise_card1_desc: "Construyendo y refinando los modelos que impulsan nuestro futuro, y haciendo que temas complejos como el Aprendizaje Automático y los LLMs sean accesibles para los estudiantes.",
+                expertise_card2_title: "Ingeniería Práctica",
+                expertise_card2_desc: "No solo trabajo con código; construyo las máquinas que lo usan. Profunda experiencia en convertir diseños digitales en realidades físicas con impresión 3D, CNC y robótica.",
+                expertise_card3_title: "Educación y Liderazgo Comprobados",
+                expertise_card3_desc: "Apasionado por empoderar a otros. He enseñado a más de 300 estudiantes, desarrollado currículos de ingeniería y liderado equipos técnicos en entornos militares y académicos.",
+                initiative_tag: "Nueva Iniciativa",
+                initiative_title: "Fundando el Club de IA de UTRGV",
+                initiative_desc: "Actualmente estoy en proceso de establecer el Club de IA oficial de UTRGV, una comunidad con visión de futuro para estudiantes, graduados, candidatos a doctorado y exalumnos. Nuestra misión es hacer que la IA sea accesible para todos, fomentando la innovación y preparando a la próxima generación de líderes en el Valle del Río Grande.",
+                initiative_link: "Conoce mi filosofía de enseñanza &rarr;",
+                casestudies_title: "Estudios de Caso",
+                casestudies_subtitle: "Llevando la teoría a la práctica. Aquí hay algunos de los proyectos que he contribuido y programas que he liderado.",
+                case1_title: "Programa de Ingeniería Fundamental",
+                case1_role: "Mi Rol: Desarrollador de Programas e Instructor Principal",
+                case1_desc: `<strong class="text-slate-300">Desafío:</strong> Los estudiantes universitarios y de bachillerato carecían de acceso a formación práctica y manual con tecnología moderna de fabricación y robótica.<br><strong class="text-slate-300">Acción:</strong> Desarrollé y dirigí un currículo de ingeniería fundamental para más de 300 estudiantes. El programa incluyó talleres prácticos en robótica, impresión 3D y sistemas autónomos, complementados con videos educativos que produje.`,
+                case2_title: "Líder del Equipo de Mantenimiento de Artillería",
+                case2_role: "Mi Rol: Líder de Equipo",
+                case2_desc: `<strong class="text-slate-300">Contexto:</strong> En el Ejército de la República de Corea, fui responsable de la preparación operativa de sistemas de artillería avanzados y controlados por computadora.<br><strong class="text-slate-300">Acción:</strong> Lideré un equipo de 4 técnicos, coordinando complejos calendarios de mantenimiento, proporcionando formación técnica práctica y asegurando el estricto cumplimiento de todas las normas de seguridad y militares.`,
+                case3_title: "IntelliBeeHive - Investigación de IA/IoT",
+                case3_role: "Mi Rol: Investigador",
+                case3_desc: `<strong class="text-slate-300">Problema:</strong> El USDA necesitaba una forma de monitorear las poblaciones de abejas en tiempo real para estudiar los impactos ambientales.<br><strong class="text-slate-300">Contribución:</strong> Como investigador, contribuí al desarrollo de un sistema de monitoreo de IA/IoT en tiempo real usando Jetson Nano y TensorFlow. Mi trabajo incluyó la fabricación de carcasas de hardware personalizadas, la instalación de la red de cámaras y la asistencia con los modelos de visión por computadora.`,
+                philosophy_title: "Mi Filosofía de Enseñanza",
+                philosophy_subtitle: "Fomentando la Resolución Creativa de Problemas a Través de un Enfoque Interdisciplinario",
+                philosophy_desc: `Mi objetivo educativo es reducir la barrera de entrada a la tecnología, ayudando a los estudiantes a sentirse cómodos y seguros. Para lograrlo, conecto principios complejos con ejemplos del mundo real, aprovechando mi conocimiento interdisciplinario en Ciencias de la Computación (M.S.) e Ingeniería Mecánica (B.Eng.). Además, lidero un enfoque práctico y práctico utilizando herramientas modernas como IA, diseño CAD e impresión 3D, permitiendo a los estudiantes obtener un sentido de logro al dar vida a sus ideas. A través de este proceso, los estudiantes se convertirán en talentos creativos que pueden identificar problemas por su cuenta e integrar diversas tecnologías para crear soluciones originales.`,
+                experience_title: "Experiencia Profesional",
+                experience_subtitle: "Un registro detallado de mis diversos roles y responsabilidades.",
+                exp1_title: "Instructor de Coreano <span class='text-sky-400'>@ Language Success School</span>",
+                exp2_title: "Entrenador de IA (para LLMs) <span class='text-sky-400'>@ Outlier (Remoto)</span>",
+                exp3_title: "Asistente de Cátedra <span class='text-sky-400'>@ UTRGV</span>",
+                exp4_title: "Técnico de Laboratorio e Instructor <span class='text-sky-400'>@ Industrial inside Factory Center</span>",
+                exp5_title: "Líder del Equipo de Mantenimiento de Artillería <span class='text-sky-400'>@ Ejército de la República de Corea</span>",
+                exp6_title: "Técnico de Prototipos e Instructor <span class='text-sky-400'>@ Creative Design Center</span>",
+                footer_title: "Conectemos",
+                footer_subtitle: "Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades para construir el futuro de la educación y la tecnología en el RGV. No dudes en contactarme.",
+                footer_copy: "&copy; 2025 Junseong Park. Todos los derechos reservados."
+            }
+        };
+
+        // 언어 변경 함수
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+            // 모바일 메뉴 텍스트도 변경
+            document.querySelectorAll('#mobile-menu [data-lang]').forEach(element => {
+                 const key = element.getAttribute('data-lang');
+                 if (translations[lang] && translations[lang][key.replace('_mobile', '')]) {
+                    element.innerHTML = translations[lang][key.replace('_mobile', '')];
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 모바일 메뉴 토글
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            
+            const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+            for (let link of mobileMenuLinks) { 
+                link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); 
+            }
+
+            // 언어 전환 버튼 이벤트 리스너
+            const langButtons = document.querySelectorAll('[data-lang-switch]');
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const lang = button.getAttribute('data-lang-switch');
+                    
+                    // 모든 버튼에서 active 클래스 제거
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // 클릭된 언어와 일치하는 모든 버튼에 active 클래스 추가
+                    document.querySelectorAll(`[data-lang-switch="${lang}"]`).forEach(btn => btn.classList.add('active'));
+
+                    changeLanguage(lang);
+                });
+            });
+
+            // 초기 언어 설정 (브라우저 언어 감지 또는 기본값)
+            const userLang = navigator.language || navigator.userLanguage;
+            let initialLang = 'en';
+            if (userLang.startsWith('ko')) {
+                initialLang = 'ko';
+            } else if (userLang.startsWith('es')) {
+                initialLang = 'es';
+            }
+            
+            // 초기 언어 버튼 활성화 및 텍스트 적용
+            document.querySelectorAll(`[data-lang-switch="${initialLang}"]`).forEach(btn => btn.classList.add('active'));
+            document.querySelectorAll(`[data-lang-switch]:not([data-lang-switch="${initialLang}"])`).forEach(btn => btn.classList.remove('active'));
+            changeLanguage(initialLang);
+        });
+    </script>
+
+</body>
+</html>
