@@ -48,7 +48,6 @@
 </head>
 <body>
 
-    <!-- 헤더 & 네비게이션 -->
     <header class="bg-slate-900/80 backdrop-blur-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-white">Junseong Park</a>
@@ -64,7 +63,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
             </button>
         </nav>
-        <!-- 모바일 메뉴 -->
         <div id="mobile-menu" class="hidden md:hidden">
             <a href="#story" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_story_mobile">My Story</a>
             <a href="#expertise" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_expertise_mobile">Expertise</a>
@@ -82,10 +80,8 @@
 
     <main class="container mx-auto px-6">
 
-        <!-- 섹션 1: Hero - Who I Am -->
         <section class="py-20 md:py-32 flex flex-col-reverse md:flex-row items-center">
             <div class="md:w-2/3 text-center md:text-left">
-                <!-- 언어 선택 버튼 -->
                 <div class="flex justify-center md:justify-start space-x-2 mb-6">
                     <button class="lang-btn active" data-lang-switch="en">English</button>
                     <button class="lang-btn" data-lang-switch="es">Español</button>
@@ -101,12 +97,10 @@
                 </div>
             </div>
             <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
-                <!-- 중요: 실제 본인 사진 URL로 교체하세요 -->
                 <img src="https://placehold.co/400x400/0f172a/94a3b8?text=Your+Photo" alt="Junseong Park Profile Picture" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-slate-700 shadow-lg">
             </div>
         </section>
 
-        <!-- 섹션 2: 소개 - My Story -->
         <section id="story" class="py-20">
             <h2 class="section-title" data-lang="story_title">My Story: From South Korea to South Texas</h2>
             <p class="section-subtitle" data-lang="story_subtitle">
@@ -122,7 +116,6 @@
             </div>
         </section>
 
-        <!-- 섹션 3: 전문성 - My Expertise -->
         <section id="expertise" class="py-20">
             <h2 class="section-title" data-lang="expertise_title">My Expertise</h2>
             <p class="section-subtitle" data-lang="expertise_subtitle">A unique blend of skills to teach technology from concept to creation.</p>
@@ -142,7 +135,6 @@
             </div>
         </section>
 
-        <!-- 섹션 4: 새로운 이니셔티브 - UTRGV AI Club -->
         <section id="initiative" class="py-20">
             <div class="text-center">
                 <h2 class="text-base font-semibold text-sky-400 tracking-wider uppercase" data-lang="initiative_tag">New Initiative</h2>
@@ -152,15 +144,46 @@
             </div>
         </section>
 
-        <!-- 섹션 5: 사례 연구 - Case Studies -->
         <section id="casestudies" class="py-20">
             <h2 class="section-title" data-lang="casestudies_title">Case Studies</h2>
             <p class="section-subtitle" data-lang="casestudies_subtitle">Putting theory into practice. Here are some of the projects I've contributed to and programs I've led.</p>
             <div class="mt-16 space-y-20">
-                <!-- 사례 연구 1: Foundational Engineering Program -->
                 <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
-                        <!-- 중요: Industrial Inside Factory Center 관련 사진 URL로 교체하세요 (예: 워크숍 사진) -->
+                        <img src="https://placehold.co/600x400/0f172a/60a5fa?text=UTRGV+AI+Club" alt="UTRGV AI Club" class="rounded-xl shadow-lg w-full object-cover">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-white" data-lang="case_aiclub_title">UTRGV AI Club</h3>
+                        <p class="text-sky-400 mt-1 font-semibold" data-lang="case_aiclub_role">My Role: Founder & Director</p>
+                        <div class="mt-4 text-slate-400" data-lang="case_aiclub_desc">
+                            <strong class="text-slate-300">Vision:</strong> To establish the official university AI hub, maximizing academic and research productivity for all students, regardless of their coding background.<br>
+                            <strong class="text-slate-300">Action:</strong> I designed and launched the club's entire operational framework, including a dual-track program for general and research-focused members. We focus on practical workshops (e.g., AI for report writing, no-code data analysis) and building a sustainable, knowledge-sharing community.
+                        </div>
+                         <div class="mt-4">
+                            <a href="https://sites.google.com/view/utrgvai" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case_aiclub_link">Visit the AI Club Website &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/0f172a/818cf8?text=FinitUp+Platform" alt="Finitup AI Platform" class="rounded-xl shadow-lg w-full object-cover">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold text-white" data-lang="case_finitup_title">FinitUp - AI Stock Analysis</h3>
+                        <p class="text-sky-400 mt-1 font-semibold" data-lang="case_finitup_role">My Role: Founder & Developer</p>
+                        <div class="mt-4 text-slate-400" data-lang="case_finitup_desc">
+                            <strong class="text-slate-300">Goal:</strong> To explore the practical application of AI in the financial services industry by creating a useful tool for market analysis.<br>
+                            <strong class="text-slate-300">Action:</strong> I am developing a web platform that uses AI models to analyze market data and generate predictive stock reports. My work involves designing the front-end UI and architecting the back-end data processing pipeline.
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://finitup.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case_finitup_link">Visit Finitup.com &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
                         <img src="https://placehold.co/600x400/0f172a/fb923c?text=Students+Workshop" alt="Engineering Program" class="rounded-xl shadow-lg w-full object-cover">
                     </div>
                     <div class="md:w-1/2">
@@ -172,10 +195,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- 사례 연구 2: Military Leadership -->
                 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
                     <div class="md:w-1/2">
-                        <!-- 중요: 군대 관련 사진 URL로 교체하세요 -->
                         <img src="https://placehold.co/600x400/0f172a/f87171?text=Military+Leadership" alt="Military Leadership" class="rounded-xl shadow-lg w-full object-cover">
                     </div>
                     <div class="md:w-1/2">
@@ -187,13 +208,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- 사례 연구 3: IntelliBeeHive -->
                 <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
-                        <!-- 사진 갤러리 섹션 -->
                         <div class="grid grid-cols-2 gap-4">
-                             <!-- 중요: IntelliBeeHive 관련 사진 URL들로 교체하세요 -->
-                            <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+1" alt="IntelliBeeHive System" class="rounded-lg shadow-md w-full h-full object-cover">
+                             <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+1" alt="IntelliBeeHive System" class="rounded-lg shadow-md w-full h-full object-cover">
                             <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+2" alt="IntelliBeeHive Enclosure" class="rounded-lg shadow-md w-full h-full object-cover">
                             <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+3" alt="IntelliBeeHive Data" class="rounded-lg shadow-md w-full h-full object-cover">
                             <img src="https://placehold.co/300x200/0f172a/34d399?text=Beehive+System+4" alt="IntelliBeeHive Camera" class="rounded-lg shadow-md w-full h-full object-cover">
@@ -211,7 +229,6 @@
             </div>
         </section>
 
-        <!-- 섹션 6: 교육 철학 - My "Why" -->
         <section id="philosophy" class="py-20">
             <h2 class="section-title" data-lang="philosophy_title">My Teaching Philosophy</h2>
             <div class="mt-12 max-w-3xl mx-auto text-center bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg">
@@ -222,7 +239,6 @@
             </div>
         </section>
 
-        <!-- 섹션 7: 주요 경력 - The Full Record -->
         <section id="experience" class="py-20">
             <h2 class="section-title" data-lang="experience_title">Professional Experience</h2>
             <p class="section-subtitle" data-lang="experience_subtitle">A detailed record of my diverse roles and responsibilities.</p>
@@ -247,7 +263,7 @@
                     <h3 class="text-lg font-semibold text-white" data-lang="exp4_title">University Lab Technician & Instructor <span class="text-sky-400">@ Industrial inside Factory Center</span></h3>
                     <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Sep 2018 – Feb 2021</time>
                 </div>
-                 <div class="mb-10 ml-8">
+                  <div class="mb-10 ml-8">
                     <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
                     <h3 class="text-lg font-semibold text-white" data-lang="exp5_title">Artillery Maintenance Team Leader <span class="text-sky-400">@ Republic of Korea Army</span></h3>
                     <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Jun 2016 – Mar 2018</time>
@@ -262,7 +278,6 @@
 
     </main>
 
-    <!-- 푸터 -->
     <footer class="bg-slate-800/50">
         <div class="container mx-auto px-6 py-12 text-center">
             <h2 class="text-3xl font-bold text-white" data-lang="footer_title">Let's Connect</h2>
@@ -310,6 +325,14 @@
                 initiative_link: "Learn about my teaching philosophy &rarr;",
                 casestudies_title: "Case Studies",
                 casestudies_subtitle: "Putting theory into practice. Here are some of the projects I've contributed to and programs I've led.",
+                case_aiclub_title: "UTRGV AI Club",
+                case_aiclub_role: "My Role: Founder & Director",
+                case_aiclub_desc: `<strong class="text-slate-300">Vision:</strong> To establish the official university AI hub, maximizing academic and research productivity for all students, regardless of their coding background.<br><strong class="text-slate-300">Action:</strong> I designed and launched the club's entire operational framework, including a dual-track program for general and research-focused members. We focus on practical workshops (e.g., AI for report writing, no-code data analysis) and building a sustainable, knowledge-sharing community.`,
+                case_aiclub_link: "Visit the AI Club Website &rarr;",
+                case_finitup_title: "FinitUp - AI Stock Analysis",
+                case_finitup_role: "My Role: Founder & Developer",
+                case_finitup_desc: `<strong class="text-slate-300">Goal:</strong> To explore the practical application of AI in the financial services industry by creating a useful tool for market analysis.<br><strong class="text-slate-300">Action:</strong> I am developing a web platform that uses AI models to analyze market data and generate predictive stock reports. My work involves designing the front-end UI and architecting the back-end data processing pipeline.`,
+                case_finitup_link: "Visit Finitup.com &rarr;",
                 case1_title: "Foundational Engineering Program",
                 case1_role: "My Role: Program Developer & Lead Instructor",
                 case1_desc: `<strong class="text-slate-300">Challenge:</strong> University and high school students lacked access to practical, hands-on training with modern fabrication and robotics technology.<br><strong class="text-slate-300">Action:</strong> I developed and led a foundational engineering curriculum for over 300 students. The program included hands-on workshops in robotics, 3D printing, and autonomous systems, supplemented by educational videos I produced.`,
@@ -365,6 +388,14 @@
                 initiative_link: "저의 교육 철학 알아보기 &rarr;",
                 casestudies_title: "사례 연구",
                 casestudies_subtitle: "이론을 현실로. 제가 직접 개발하고 이끌었던 프로젝트와 프로그램들입니다.",
+                case_aiclub_title: "UTRGV AI 클럽",
+                case_aiclub_role: "나의 역할: 창립자 & 디렉터",
+                case_aiclub_desc: `<strong class="text-slate-300">비전:</strong> 코딩 경험에 관계없이 모든 학생들의 학업 및 연구 생산성을 극대화하는 공식적인 대학 AI 허브를 구축합니다.<br><strong class="text-slate-300">실행:</strong> 일반 및 연구 중심 회원을 위한 이중 트랙 프로그램을 포함하여 클럽의 전체 운영 프레임워크를 설계하고 시작했습니다. 실용적인 워크숍(예: 보고서 작성을 위한 AI, 노코드 데이터 분석)과 지속 가능한 지식 공유 커뮤니티 구축에 중점을 둡니다.`,
+                case_aiclub_link: "AI 클럽 웹사이트 방문하기 &rarr;",
+                case_finitup_title: "FinitUp - AI 주식 분석",
+                case_finitup_role: "나의 역할: 창립자 & 개발자",
+                case_finitup_desc: `<strong class="text-slate-300">목표:</strong> 시장 분석을 위한 유용한 도구를 만들어 금융 서비스 산업에서 AI의 실제적인 적용을 탐구합니다.<br><strong class="text-slate-300">실행:</strong> AI 모델을 사용하여 시장 데이터를 분석하고 예측 주식 보고서를 생성하는 웹 플랫폼을 개발하고 있습니다. 저의 작업에는 프론트엔드 UI 설계 및 백엔드 데이터 처리 파이프라인 설계가 포함됩니다.`,
+                case_finitup_link: "Finitup.com 방문하기 &rarr;",
                 case1_title: "기초 공학 교육 프로그램",
                 case1_role: "나의 역할: 프로그램 개발자 & 책임 강사",
                 case1_desc: `<strong class="text-slate-300">과제:</strong> 대학생과 고등학생들이 현대 제조 및 로보틱스 기술에 대한 실질적인 실습 훈련을 받을 기회가 부족했습니다.<br><strong class="text-slate-300">실행:</strong> 저는 300명 이상의 학생들을 위한 기초 공학 커리큘럼을 개발하고 이끌었습니다. 이 프로그램에는 제가 직접 제작한 교육용 비디오와 함께 로보틱스, 3D 프린팅, 자율 시스템에 대한 실습 워크숍이 포함되었습니다.`,
@@ -420,6 +451,14 @@
                 initiative_link: "Conoce mi filosofía de enseñanza &rarr;",
                 casestudies_title: "Estudios de Caso",
                 casestudies_subtitle: "Llevando la teoría a la práctica. Aquí hay algunos de los proyectos que he contribuido y programas que he liderado.",
+                case_aiclub_title: "Club de IA de UTRGV",
+                case_aiclub_role: "Mi Rol: Fundador y Director",
+                case_aiclub_desc: `<strong class="text-slate-300">Visión:</strong> Establecer el centro de IA universitario oficial, maximizando la productividad académica y de investigación para todos los estudiantes, independientemente de su experiencia en codificación.<br><strong class="text-slate-300">Acción:</strong> Diseñé y lancé todo el marco operativo del club, incluido un programa de doble vía para miembros generales y centrados en la investigación. Nos enfocamos en talleres prácticos (p. ej., IA para redacción de informes, análisis de datos sin código) y en la construcción de una comunidad sostenible de intercambio de conocimientos.`,
+                case_aiclub_link: "Visita el sitio web del Club de IA &rarr;",
+                case_finitup_title: "FinitUp - Análisis de Acciones con IA",
+                case_finitup_role: "Mi Rol: Fundador y Desarrollador",
+                case_finitup_desc: `<strong class="text-slate-300">Objetivo:</strong> Explorar la aplicación práctica de la IA en la industria de servicios financieros mediante la creación de una herramienta útil para el análisis de mercado.<br><strong class="text-slate-300">Acción:</strong> Estoy desarrollando una plataforma web que utiliza modelos de IA para analizar datos de mercado y generar informes predictivos de acciones. Mi trabajo implica diseñar la interfaz de usuario del front-end y arquitecturar la tubería de procesamiento de datos del back-end.`,
+                case_finitup_link: "Visita Finitup.com &rarr;",
                 case1_title: "Programa de Ingeniería Fundamental",
                 case1_role: "Mi Rol: Desarrollador de Programas e Instructor Principal",
                 case1_desc: `<strong class="text-slate-300">Desafío:</strong> Los estudiantes universitarios y de bachillerato carecían de acceso a formación práctica y manual con tecnología moderna de fabricación y robótica.<br><strong class="text-slate-300">Acción:</strong> Desarrollé y dirigí un currículo de ingeniería fundamental para más de 300 estudiantes. El programa incluyó talleres prácticos en robótica, impresión 3D y sistemas autónomos, complementados con videos educativos que produje.`,
@@ -501,8 +540,12 @@
             }
             
             // 초기 언어 버튼 활성화 및 텍스트 적용
-            document.querySelectorAll(`[data-lang-switch="${initialLang}"]`).forEach(btn => btn.classList.add('active'));
             document.querySelectorAll(`[data-lang-switch]:not([data-lang-switch="${initialLang}"])`).forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll(`[data-lang-switch="${initialLang}"]`).forEach(btn => {
+                if (!btn.classList.contains('active')) {
+                    btn.classList.add('active');
+                }
+            });
             changeLanguage(initialLang);
         });
     </script>
