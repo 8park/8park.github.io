@@ -17,7 +17,7 @@
         .font-poppins {
             font-family: 'Poppins', sans-serif;
         }
-        /* Custom scrollbar */
+        /* Custom scrollbar for a more refined look */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -32,7 +32,7 @@
             background: #64748b;
         }
         .section-title {
-            @apply font-poppins text-6xl sm:text-7xl font-bold text-white text-center;
+            @apply font-poppins text-5xl sm:text-6xl font-bold text-white text-center;
         }
         .section-subtitle {
             @apply text-center mt-4 text-lg text-slate-400 max-w-3xl mx-auto;
@@ -46,52 +46,6 @@
         }
         .lang-btn:not(.active) {
             @apply bg-slate-700 hover:bg-slate-600 text-slate-300;
-        }
-        /* AI Assistant Chat Styles */
-        #chat-log {
-            height: 300px;
-            overflow-y: auto;
-            border: 1px solid #334155; /* border-slate-700 */
-            background-color: #1e293b; /* bg-slate-800 */
-        }
-        .chat-bubble {
-            max-width: 80%;
-            padding: 10px 14px;
-            border-radius: 16px;
-            margin-bottom: 8px;
-            word-wrap: break-word;
-        }
-        .user-bubble {
-            background-color: #0284c7; /* bg-sky-600 */
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-        }
-        .ai-bubble {
-            background-color: #334155; /* bg-slate-700 */
-            color: #cbd5e1; /* text-slate-300 */
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-        }
-        .typing-indicator {
-            display: flex;
-            align-items: center;
-            padding: 10px 14px;
-        }
-        .typing-indicator span {
-            height: 8px;
-            width: 8px;
-            margin: 0 2px;
-            background-color: #64748b; /* text-slate-500 */
-            border-radius: 50%;
-            display: inline-block;
-            animation: bounce 1.4s infinite ease-in-out both;
-        }
-        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1.0); }
         }
     </style>
 </head>
@@ -129,7 +83,7 @@
             <button class="lang-btn" data-lang-switch="ko">KO</button>
         </div>
 
-        <!-- Sections 1-6 remain the same -->
+        <!-- 1. Hero Section -->
         <section class="py-20 md:py-32 flex flex-col-reverse md:flex-row items-center">
             <div class="md:w-2/3 text-center md:text-left">
                 <h1 class="text-4xl md:text-6xl font-poppins font-bold text-white leading-tight" data-lang="hero_title">Connecting Ideas to Reality Through Technology</h1>
@@ -154,6 +108,8 @@
                 <img src="images/JunPhoto.jpg" alt="Junseong Park Profile Picture" class="rounded-full w-80 h-80 md:w-96 md:h-96 object-cover border-4 border-slate-700 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/384x384/0f172a/cbd5e1?text=Junseong+Park';">
             </div>
         </section>
+
+        <!-- 2. Tech Stack & Skills -->
         <section id="skills" class="py-20">
             <h2 class="section-title" data-lang="skills_title">My Core Competencies</h2>
             <p class="section-subtitle" data-lang="skills_subtitle">These are the tools and technologies I've mastered through hands-on application.</p>
@@ -181,6 +137,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- 3. Professional Experience -->
         <section id="experience" class="py-20">
             <h2 class="section-title" data-lang="experience_title">Professional Experience</h2>
             <p class="section-subtitle" data-lang="experience_subtitle">A timeline of my key roles and responsibilities.</p>
@@ -217,6 +175,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- 4. Education -->
         <section id="education" class="py-20">
             <h2 class="section-title" data-lang="education_title">Education</h2>
             <div class="mt-12 max-w-3xl mx-auto space-y-8">
@@ -235,11 +195,13 @@
                 </div>
             </div>
         </section>
+        
+        <!-- 5. My Path (Case Studies) -->
         <section id="casestudies" class="py-20">
             <h2 class="section-title" data-lang="casestudies_title">My Path: From Engineer to Educator</h2>
             <p class="section-subtitle" data-lang="casestudies_subtitle">My interest in education grew naturally from my experiences as an engineer and leader. Each step of my journey revealed a new piece of the puzzle.</p>
             <div class="mt-16 space-y-20">
-                 <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/creativecenter.jpg" alt="Automotive Prototyping" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=Prototyping';">
                     </div>
@@ -251,6 +213,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/military.jpg" alt="Military Leadership" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=Military';">
@@ -263,6 +226,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/industry.jpg" alt="Engineering Lab" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=University+Lab';">
@@ -275,6 +239,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/beehive.jpg" alt="IntelliBeeHive System" class="rounded-xl shadow-lg w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=AI+Research';">
@@ -290,6 +255,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/finitup.jpg" alt="FinitUp Platform" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=FinitUp';">
@@ -305,6 +271,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/aiclub.jpg" alt="UTRGV AI Club" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=UTRGV+AI+Club';">
@@ -320,8 +287,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
+        
+        <!-- 6. My Guiding Philosophy -->
         <section id="philosophy" class="py-20">
             <h2 class="section-title" data-lang="philosophy_title">My Guiding Philosophy</h2>
             <div class="mt-12 max-w-3xl mx-auto text-center bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg">
@@ -329,31 +299,6 @@
                 <p class="mt-4 text-slate-400 text-lg leading-relaxed" data-lang="philosophy_desc">
                     My philosophy isn't a theory; it's the result of my journey. I believe in learning by doing, making complex ideas simple through real-world application, and empowering others with the confidence to build their own solutions. This practical, hands-on approach guides everything I do.
                 </p>
-            </div>
-        </section>
-
-        <!-- 7. AI Assistant -->
-        <section id="ai-assistant" class="py-20">
-            <div class="max-w-3xl mx-auto text-center bg-slate-900/80 p-8 md:p-12 rounded-xl shadow-lg border border-slate-800">
-                <h2 class="text-3xl font-poppins font-bold text-white" data-lang="ai_assistant_title">✨ AI Assistant</h2>
-                <p class="mt-4 text-slate-400" data-lang="ai_assistant_subtitle">
-                    Ask anything about me. My AI will answer based on my profile.
-                </p>
-                <div class="mt-8 text-left">
-                    <div id="chat-log" class="w-full p-4 rounded-lg mb-4 flex flex-col">
-                        <!-- Chat messages will be appended here -->
-                    </div>
-                    <div class="flex gap-2">
-                        <input type="text" id="user-question" class="flex-grow p-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-2 focus:ring-sky-500 focus:outline-none text-slate-300" data-lang-placeholder="ai_assistant_placeholder">
-                        <button id="ask-btn" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center">
-                            <span data-lang="ai_assistant_button">Ask</span>
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.428A1 1 0 009.894 15V4A1 1 0 008.894 3l-3 1.5z" />
-                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.428A1 1 0 009.894 15V4A1 1 0 008.894 3l-3 1.5z" />
-                             </svg>
-                        </button>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -381,7 +326,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- Language Switcher and Translations ---
+        // --- Language Switcher Logic ---
         const translations = {
             en: {
                 nav_skills: "Skills",
@@ -440,11 +385,7 @@
                 philosophy_desc: "My philosophy isn't a theory; it's the result of my journey. I believe in learning by doing, making complex ideas simple through real-world application, and empowering others with the confidence to build their own solutions. This practical, hands-on approach guides everything I do.",
                 footer_title: "Let's Connect",
                 footer_subtitle: "I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.",
-                footer_copy: "&copy; 2025 Junseong Park. All Rights Reserved.",
-                ai_assistant_title: "✨ AI Assistant",
-                ai_assistant_subtitle: "Ask anything about me. My AI will answer based on my profile.",
-                ai_assistant_placeholder: "Ask a question, e.g., 'What is his most important project?'",
-                ai_assistant_button: "Ask"
+                footer_copy: "&copy; 2025 Junseong Park. All Rights Reserved."
             },
             es: {
                 nav_skills: "Habilidades",
@@ -503,11 +444,7 @@
                 philosophy_desc: "Mi filosofía no es una teoría; es el resultado de mi viaje. Creo en aprender haciendo, en simplificar ideas complejas a través de la aplicación en el mundo real y en empoderar a otros con la confianza para construir sus propias soluciones. Este enfoque práctico y directo guía todo lo que hago.",
                 footer_title: "Conectemos",
                 footer_subtitle: "Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades. No dudes en contactarme.",
-                footer_copy: "&copy; 2025 Junseong Park. Todos los derechos reservados.",
-                ai_assistant_title: "✨ Asistente de IA",
-                ai_assistant_subtitle: "Pregunta lo que sea sobre mí. Mi IA responderá basándose en mi perfil.",
-                ai_assistant_placeholder: "Haz una pregunta, ej., '¿Cuál es su proyecto más importante?'",
-                ai_assistant_button: "Preguntar"
+                footer_copy: "&copy; 2025 Junseong Park. Todos los derechos reservados."
             },
             ko: {
                 nav_skills: "기술",
@@ -566,11 +503,7 @@
                 philosophy_desc: "저의 철학은 이론이 아니라 제 여정의 결과물입니다. 저는 직접 해보면서 배우고, 실제 적용을 통해 복잡한 아이디어를 단순하게 만들며, 다른 사람들이 자신만의 솔루션을 구축할 수 있는 자신감을 갖도록 힘을 실어주는 것을 믿습니다. 이 실용적이고 직접적인 접근 방식이 제가 하는 모든 일을 이끌어갑니다.",
                 footer_title: "연락주세요",
                 footer_subtitle: "새로운 프로젝트, 창의적인 아이디어, 또는 기회에 대해 언제나 논의할 준비가 되어 있습니다. 편하게 연락주세요.",
-                footer_copy: "&copy; 2025 Junseong Park. 모든 권리 보유.",
-                ai_assistant_title: "✨ AI 어시스턴트",
-                ai_assistant_subtitle: "저에 대해 궁금한 점을 질문해보세요. 제 프로필을 기반으로 AI가 답변해 드립니다.",
-                ai_assistant_placeholder: "질문을 입력하세요 (예: 가장 중요하게 생각하는 프로젝트는 무엇인가요?)",
-                ai_assistant_button: "질문하기"
+                footer_copy: "&copy; 2025 Junseong Park. 모든 권리 보유."
             }
         };
 
@@ -581,30 +514,30 @@
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const key = el.getAttribute('data-lang');
                 if (langData[key]) {
+                    // Use innerHTML for elements that might contain other HTML tags (like <strong> or &copy;)
                     if (key.includes('_desc') || key.includes('_subtitle') || key.includes('_copy')) {
                          el.innerHTML = langData[key];
-                    } else if (key === 'resume_download_btn') {
-                        const svg = el.querySelector('svg');
-                        el.textContent = langData[key];
-                        if(svg) el.prepend(svg);
                     } else {
-                        el.textContent = langData[key];
+                        // For simple text content
+                        // Special case for the download button to preserve the SVG icon
+                        if (key === 'resume_download_btn') {
+                            const svg = el.querySelector('svg');
+                            el.textContent = langData[key];
+                            if(svg) el.prepend(svg);
+                        } else {
+                            el.textContent = langData[key];
+                        }
                     }
                 }
             });
-            const placeholderEl = document.querySelector('[data-lang-placeholder]');
-            if (placeholderEl) {
-                const placeholderKey = placeholderEl.getAttribute('data-lang-placeholder');
-                if(langData[placeholderKey]) {
-                    placeholderEl.placeholder = langData[placeholderKey];
-                }
-            }
+            // Update active button state
             langButtons.forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.getAttribute('data-lang-switch') === lang) {
                     btn.classList.add('active');
                 }
             });
+             // Set html lang attribute
             document.documentElement.lang = lang;
         };
 
@@ -615,122 +548,38 @@
             });
         });
 
-        // --- Gemini AI Assistant Logic ---
-        const askBtn = document.getElementById('ask-btn');
-        const userQuestionInput = document.getElementById('user-question');
-        const chatLog = document.getElementById('chat-log');
+        // Set default language on load
+        setLanguage('en');
 
-        const appendMessage = (message, sender) => {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'ai-bubble');
-            messageDiv.textContent = message;
-            
-            const wrapperDiv = document.createElement('div');
-            wrapperDiv.classList.add('w-full', 'flex', sender === 'user' ? 'justify-end' : 'justify-start');
-            wrapperDiv.appendChild(messageDiv);
-            
-            chatLog.appendChild(wrapperDiv);
-            chatLog.scrollTop = chatLog.scrollHeight;
-        };
+    </script>
+</body>
+</html>
 
-        const showTypingIndicator = () => {
-            const indicatorDiv = document.createElement('div');
-            indicatorDiv.id = 'typing-indicator';
-            indicatorDiv.classList.add('chat-bubble', 'ai-bubble', 'typing-indicator');
-            indicatorDiv.innerHTML = '<span></span><span></span><span></span>';
-
-            const wrapperDiv = document.createElement('div');
-            wrapperDiv.classList.add('w-full', 'flex', 'justify-start');
-            wrapperDiv.appendChild(indicatorDiv);
-
-            chatLog.appendChild(wrapperDiv);
-            chatLog.scrollTop = chatLog.scrollHeight;
-        };
-
-        const removeTypingIndicator = () => {
-            const indicator = document.getElementById('typing-indicator');
-            if (indicator) {
-                indicator.parentElement.remove();
-            }
-        };
-
-        const handleAsk = async () => {
-            const question = userQuestionInput.value.trim();
-            if (!question) return;
-
-            appendMessage(question, 'user');
-            userQuestionInput.value = '';
-            askBtn.disabled = true;
-            showTypingIndicator();
-
-            const userProfile = `
-- Name: Junseong Park
-- Core Competencies: Python, C++, TensorFlow, PyTorch, Machine Learning, Deep Learning, Generative AI, LLMs, Computer Vision, SolidWorks, 3D Printing, CNC, Robotics.
-- Experience Summary: 
-    - AI Trainer at Outlier, fine-tuning LLMs.
-    - Teaching Assistant at UTRGV, mentoring 300+ students in Python and ML.
-    - Lab Technician at Industrial inside Factory Center, managing 50+ machines and developing engineering curriculum.
-    - Artillery Maintenance Team Leader in the ROK Army, leading a technical team.
-    - Prototyping Technician, mastering precision engineering.
-- Education: MS in Computer Science and currently pursuing an MBA from The University of Texas Rio Grande Valley. Bachelor of Engineering in Mechanical Engineering from Soonchunhyang University.
-- Philosophy: 'Learning by Building' - believes in making complex ideas simple through real-world application and empowering others.
-- Key Projects: Founder of FinitUp (an AI-powered stock analysis platform) and the UTRGV AI Club (a community to make technology accessible).
-            `;
-            
-            const prompt = `You are a professional and helpful AI assistant for Junseong Park. Your knowledge is strictly limited to the information provided in his profile below. Do not invent information or answer questions outside of this context. If the answer is not in the profile, politely state that you don't have that information. Answer the user's question concisely from the perspective of an assistant.
-
-            **Junseong Park's Profile:**
-            ${userProfile}
-
-            **User's Question:**
-            "${question}"
-
-            Answer in the same language as the user's question.`;
-
-            try {
-                const apiKey = ""; // API key will be injected
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: prompt }] }]
-                };
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) throw new Error(`API Error: ${response.status}`);
-
-                const result = await response.json();
-                const generatedText = result.candidates?.[0]?.content?.parts?.[0]?.text;
-
-                removeTypingIndicator();
-                if (generatedText) {
-                    appendMessage(generatedText, 'ai');
-                } else {
-                    appendMessage("Sorry, I couldn't generate a response. Please try again.", 'ai');
+          el.textContent = langData[key];
+                        }
+                    }
                 }
-
-            } catch (error) {
-                console.error('Error calling Gemini API:', error);
-                removeTypingIndicator();
-                appendMessage("An error occurred. Please check the console for details.", 'ai');
-            } finally {
-                askBtn.disabled = false;
-            }
+            });
+            // Update active button state
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang-switch') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+             // Set html lang attribute
+            document.documentElement.lang = lang;
         };
 
-        askBtn.addEventListener('click', handleAsk);
-        userQuestionInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                handleAsk();
-            }
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const lang = e.target.getAttribute('data-lang-switch');
+                setLanguage(lang);
+            });
         });
 
         // Set default language on load
-        setLanguage('ko'); // Default to Korean
+        setLanguage('en');
 
     </script>
 </body>
