@@ -7,14 +7,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0f172a; /* bg-slate-900 */
             color: #cbd5e1; /* text-slate-300 */
         }
-        /* Custom scrollbar for a more refined look */
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -29,7 +32,7 @@
             background: #64748b;
         }
         .section-title {
-            @apply text-3xl md:text-4xl font-bold text-white text-center;
+            @apply font-poppins text-6xl sm:text-7xl font-bold text-white text-center;
         }
         .section-subtitle {
             @apply text-center mt-4 text-lg text-slate-400 max-w-3xl mx-auto;
@@ -44,57 +47,102 @@
         .lang-btn:not(.active) {
             @apply bg-slate-700 hover:bg-slate-600 text-slate-300;
         }
+        /* AI Assistant Chat Styles */
+        #chat-log {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #334155; /* border-slate-700 */
+            background-color: #1e293b; /* bg-slate-800 */
+        }
+        .chat-bubble {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 16px;
+            margin-bottom: 8px;
+            word-wrap: break-word;
+        }
+        .user-bubble {
+            background-color: #0284c7; /* bg-sky-600 */
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .ai-bubble {
+            background-color: #334155; /* bg-slate-700 */
+            color: #cbd5e1; /* text-slate-300 */
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+        }
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            margin: 0 2px;
+            background-color: #64748b; /* text-slate-500 */
+            border-radius: 50%;
+            display: inline-block;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
     </style>
 </head>
 <body>
 
     <!-- Header and Navigation -->
-    <header class="bg-slate-900/80 backdrop-blur-lg sticky top-0 z-50">
+    <header class="bg-slate-900/95 backdrop-blur-lg sticky top-0 z-50 shadow-lg border-b border-slate-800">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-white">Junseong Park</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#skills" class="hover:text-sky-400 transition-colors" data-lang="nav_skills">Skills</a>
-                <a href="#experience" class="hover:text-sky-400 transition-colors" data-lang="nav_experience">Experience</a>
-                <a href="#casestudies" class="hover:text-sky-400 transition-colors" data-lang="nav_casestudies">My Path</a>
-                <a href="#philosophy" class="hover:text-sky-400 transition-colors" data-lang="nav_philosophy">Philosophy</a>
-                <a href="mailto:junesong56@gmail.com" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors" data-lang="nav_contact">Contact</a>
+            <a href="#" class="text-xl font-poppins font-bold text-white">Junseong Park</a>
+            <div class="hidden md:flex items-center space-x-6 font-poppins">
+                <a href="#skills" class="hover:text-sky-400 transition-colors text-sm" data-lang="nav_skills">Skills</a>
+                <a href="#experience" class="hover:text-sky-400 transition-colors text-sm" data-lang="nav_experience">Experience</a>
+                <a href="#casestudies" class="hover:text-sky-400 transition-colors text-sm" data-lang="nav_casestudies">My Path</a>
+                <a href="#philosophy" class="hover:text-sky-400 transition-colors text-sm" data-lang="nav_philosophy">Philosophy</a>
+                <a href="mailto:junesong56@gmail.com" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors text-sm" data-lang="nav_contact">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
             </button>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#skills" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_skills_mobile">Skills</a>
-            <a href="#experience" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_experience_mobile">Experience</a>
-            <a href="#casestudies" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_casestudies_mobile">My Path</a>
-            <a href="#philosophy" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_philosophy_mobile">Philosophy</a>
-            <a href="mailto:junesong56@gmail.com" class="block py-2 px-6 text-sm hover:bg-slate-800" data-lang="nav_contact_mobile">Contact</a>
-             <div class="px-6 py-2 flex space-x-2">
-                <button class="lang-btn active" data-lang-switch="en">EN</button>
-                <button class="lang-btn" data-lang-switch="es">ES</button>
-                <button class="lang-btn" data-lang-switch="ko">KO</button>
-            </div>
+        <div id="mobile-menu" class="hidden md:hidden font-poppins bg-slate-900/95">
+            <a href="#skills" class="block py-2 px-6 text-sm hover:bg-slate-700" data-lang="nav_skills_mobile">Skills</a>
+            <a href="#experience" class="block py-2 px-6 text-sm hover:bg-slate-700" data-lang="nav_experience_mobile">Experience</a>
+            <a href="#casestudies" class="block py-2 px-6 text-sm hover:bg-slate-700" data-lang="nav_casestudies_mobile">My Path</a>
+            <a href="#philosophy" class="block py-2 px-6 text-sm hover:bg-slate-700" data-lang="nav_philosophy_mobile">Philosophy</a>
+            <a href="mailto:junesong56@gmail.com" class="block py-2 px-6 text-sm hover:bg-slate-700" data-lang="nav_contact_mobile">Contact</a>
         </div>
     </header>
 
-    <main class="container mx-auto px-6">
+    <main class="container mx-auto px-6 relative">
+        <!-- Language Switcher -->
+        <div class="absolute top-6 right-6 z-10 flex items-center space-x-2">
+            <button class="lang-btn active" data-lang-switch="en">EN</button>
+            <button class="lang-btn" data-lang-switch="es">ES</button>
+            <button class="lang-btn" data-lang-switch="ko">KO</button>
+        </div>
 
-        <!-- 1. Hero Section -->
+        <!-- Sections 1-6 remain the same -->
         <section class="py-20 md:py-32 flex flex-col-reverse md:flex-row items-center">
             <div class="md:w-2/3 text-center md:text-left">
-                <div class="flex justify-center md:justify-start space-x-2 mb-6">
-                    <button class="lang-btn active" data-lang-switch="en">English</button>
-                    <button class="lang-btn" data-lang-switch="es">Español</button>
-                    <button class="lang-btn" data-lang-switch="ko">한국어</button>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight" data-lang="hero_title">Connecting Ideas to Reality Through Technology</h1>
+                <h1 class="text-4xl md:text-6xl font-poppins font-bold text-white leading-tight" data-lang="hero_title">Connecting Ideas to Reality Through Technology</h1>
                 <p class="mt-6 text-lg text-slate-400 max-w-2xl" data-lang="hero_subtitle">
-                    Hello, I'm Junseong Park. I am an engineer and developer who thrives on turning complex challenges into tangible solutions. My experience has taught me that the most powerful results come from a practical, hands-on approach, whether I'm building a system, leading a team, or sharing knowledge with others.
+                    From leading a technical team in the military to fabricating automotive prototypes and applying AI in academic research, my path has taught me one thing: the most powerful solutions are born at the intersection of hands-on engineering, data-driven insights, and a deep understanding of people.
                 </p>
-                <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                <div class="mt-8 mb-8">
+                    <p class="font-poppins text-sky-400 text-center md:text-left" data-lang="quick_contact">Quick Contact</p>
+                    <a href="mailto:junesong56@gmail.com" class="text-lg text-white text-center md:text-left block hover:underline">junesong56@gmail.com</a>
+                </div>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
                     <a href="#casestudies" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors" data-lang="hero_btn_work">See My Path</a>
-                    <a href="mailto:junesong56@gmail.com" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors" data-lang="hero_btn_contact">Get In Touch</a>
-                    <a href="https://drive.google.com/file/d/1nuhILDUz9JbYDJshQJlHhUzIJkEs8WDc/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center" data-lang="resume_download_btn">
+                    <a href="https://drive.google.com/file/d/1nuhILDUz9JbYDJshQJlHhUzIJkEs8WDc/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center" data-lang="resume_download_btn">
                         <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
@@ -103,75 +151,72 @@
                 </div>
             </div>
             <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
-                <img src="images/JunPhoto.jpg" alt="Junseong Park Profile Picture" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-slate-700 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/320x320/0f172a/cbd5e1?text=Junseong+Park';">
+                <img src="images/JunPhoto.jpg" alt="Junseong Park Profile Picture" class="rounded-full w-80 h-80 md:w-96 md:h-96 object-cover border-4 border-slate-700 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/384x384/0f172a/cbd5e1?text=Junseong+Park';">
             </div>
         </section>
-
-        <!-- 2. Tech Stack & Skills -->
         <section id="skills" class="py-20">
             <h2 class="section-title" data-lang="skills_title">My Core Competencies</h2>
             <p class="section-subtitle" data-lang="skills_subtitle">These are the tools and technologies I've mastered through hands-on application.</p>
-            <div class="mt-12 max-w-4xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="mt-12 max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
                 <div class="bg-slate-800 p-6 rounded-xl">
-                    <h3 class="text-lg font-bold text-white mb-3" data-lang="skills_cat1_title">Programming & Software</h3>
+                    <h3 class="text-xl font-poppins font-bold text-white mb-3" data-lang="skills_cat1_title">Programming & Software</h3>
                     <ul class="text-slate-400 space-y-2">
                         <li><strong class="text-slate-300">Languages:</strong> Python, C++</li>
                         <li><strong class="text-slate-300">AI Frameworks:</strong> TensorFlow, PyTorch</li>
                     </ul>
                 </div>
                 <div class="bg-slate-800 p-6 rounded-xl">
-                    <h3 class="text-lg font-bold text-white mb-3" data-lang="skills_cat2_title">AI & Data Science</h3>
+                    <h3 class="text-xl font-poppins font-bold text-white mb-3" data-lang="skills_cat2_title">AI & Data Science</h3>
                     <ul class="text-slate-400 space-y-2">
-                        <li>Machine Learning, Deep Learning</li>
-                        <li>Generative AI, LLMs, Computer Vision</li>
-                        <li>Data Collection, Annotation & Analysis</li>
+                        <li>Machine Learning & Deep Learning</li>
+                        <li>Generative AI, LLMs & Computer Vision</li>
                     </ul>
                 </div>
                 <div class="bg-slate-800 p-6 rounded-xl">
-                    <h3 class="text-lg font-bold text-white mb-3" data-lang="skills_cat3_title">Engineering & Prototyping</h3>
+                    <h3 class="text-xl font-poppins font-bold text-white mb-3" data-lang="skills_cat3_title">Engineering & Prototyping</h3>
                     <ul class="text-slate-400 space-y-2">
-                        <li><strong class="text-slate-300">CAD:</strong> SolidWorks, AutoCAD, Fusion360</li>
-                        <li><strong class="text-slate-300">Fabrication:</strong> 3D Printing, CNC, Laser Cut, 3D Scanner</li>
+                        <li><strong class="text-slate-300">CAD & Fabrication:</strong> SolidWorks, 3D Printing, CNC</li>
                         <li><strong class="text-slate-300">Systems:</strong> Robotics, Drones, Motion Capture</li>
                     </ul>
                 </div>
             </div>
         </section>
-
-        <!-- 3. Professional Experience -->
         <section id="experience" class="py-20">
             <h2 class="section-title" data-lang="experience_title">Professional Experience</h2>
             <p class="section-subtitle" data-lang="experience_subtitle">A timeline of my key roles and responsibilities.</p>
             <div class="mt-12 relative border-l-2 border-slate-700 max-w-3xl mx-auto">
                 <div class="mb-10 ml-8">
                     <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
-                    <h3 class="text-lg font-semibold text-white">AI Trainer (for LLMs) <span class="text-sky-400">@ Outlier (Remote)</span></h3>
+                    <h3 class="text-lg font-semibold text-white">AI Trainer (for LLMs) <span class="text-sky-400">@ Outlier</span></h3>
                     <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Dec 2024 – Present</time>
+                    <p class="text-slate-400 text-sm" data-lang="exp_outlier">Currently fine-tuning large language models, focusing on creating clear and effective training data.</p>
                 </div>
                 <div class="mb-10 ml-8">
                     <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
                     <h3 class="text-lg font-semibold text-white">Teaching Assistant <span class="text-sky-400">@ UTRGV</span></h3>
                     <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Aug 2021 – May 2023</time>
+                    <p class="text-slate-400 text-sm" data-lang="exp_utrgv">Mentored 300+ students in Python and ML, refining methods to make complex topics accessible.</p>
                 </div>
                 <div class="mb-10 ml-8">
                     <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
                     <h3 class="text-lg font-semibold text-white">University Lab Technician & Instructor <span class="text-sky-400">@ Industrial inside Factory Center</span></h3>
                     <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Sep 2018 – Feb 2021</time>
+                    <p class="text-slate-400 text-sm" data-lang="exp_lab">Managed 50+ machines and first developed my passion for teaching by creating an engineering curriculum for over 300 students.</p>
                 </div>
                 <div class="mb-10 ml-8">
                     <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
                     <h3 class="text-lg font-semibold text-white">Artillery Maintenance Team Leader <span class="text-sky-400">@ Republic of Korea Army</span></h3>
                     <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Jun 2016 – Mar 2018</time>
+                    <p class="text-slate-400 text-sm" data-lang="exp_army">Led a 4-technician team, honing skills in process management and hands-on technical training.</p>
                 </div>
                 <div class="ml-8">
                     <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
                     <h3 class="text-lg font-semibold text-white">Prototyping Technician <span class="text-sky-400">@ Creative Design Center</span></h3>
                     <time class="block mb-2 text-sm font-normal leading-none text-slate-500">May 2015 – May 2016</time>
+                    <p class="text-slate-400 text-sm" data-lang="exp_proto">Mastered precision engineering while collaborating with and learning from senior designers.</p>
                 </div>
             </div>
         </section>
-
-        <!-- 4. Education -->
         <section id="education" class="py-20">
             <h2 class="section-title" data-lang="education_title">Education</h2>
             <div class="mt-12 max-w-3xl mx-auto space-y-8">
@@ -190,13 +235,11 @@
                 </div>
             </div>
         </section>
-        
-        <!-- 5. My Path (Case Studies) -->
         <section id="casestudies" class="py-20">
             <h2 class="section-title" data-lang="casestudies_title">My Path: From Engineer to Educator</h2>
-            <p class="section-subtitle" data-lang="casestudies_subtitle">My interest in education was not planned; it grew organically from my experiences as an engineer and leader. Each step of my journey revealed a new piece of the puzzle.</p>
+            <p class="section-subtitle" data-lang="casestudies_subtitle">My interest in education grew naturally from my experiences as an engineer and leader. Each step of my journey revealed a new piece of the puzzle.</p>
             <div class="mt-16 space-y-20">
-                <div class="flex flex-col md:flex-row items-center gap-10">
+                 <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/creativecenter.jpg" alt="Automotive Prototyping" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=Prototyping';">
                     </div>
@@ -208,7 +251,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/military.jpg" alt="Military Leadership" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=Military';">
@@ -217,11 +259,10 @@
                         <h3 class="text-2xl font-bold text-white" data-lang="case2_title">Chapter 2: The Addition of Leadership</h3>
                         <p class="text-sky-400 mt-1 font-semibold" data-lang="case2_role">Artillery Maintenance Team Leader</p>
                         <div class="mt-4 text-slate-400 space-y-2" data-lang="case2_desc">
-                           <p>Leading a maintenance team taught me that technical skill alone isn't enough. I had to not only solve problems but also train my team to do the same. This was my first real taste of teaching – the challenge of transferring complex knowledge clearly and effectively under pressure.</p>
+                            <p>Leading a 4-technician maintenance team taught me that technical skill alone isn't enough. I had to not only solve problems but also train my team to do the same. This was my first real taste of teaching – the challenge of transferring complex knowledge clearly and effectively under pressure.</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/industry.jpg" alt="Engineering Lab" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=University+Lab';">
@@ -230,28 +271,26 @@
                         <h3 class="text-2xl font-bold text-white" data-lang="case3_title">Chapter 3: The Spark of Education</h3>
                         <p class="text-sky-400 mt-1 font-semibold" data-lang="case3_role">University Lab Technician & Instructor</p>
                         <div class="mt-4 text-slate-400 space-y-2" data-lang="case3_desc">
-                            <p>This role was a turning point. While helping students with their projects, I noticed that everyone learned differently. The challenge wasn't just knowing the material, but finding unique ways to explain it. I began to realize that I enjoyed the process of demystifying technology for others, and my interest in education was born.</p>
+                            <p><strong class="text-lg text-sky-400">This role was a turning point.</strong> While managing a lab with over 50 machines and 99% uptime, <strong class="text-lg text-sky-400">I also had the opportunity to teach.</strong> I noticed that everyone learned differently, and I began developing unique ways to explain it. This is where my passion for empowering others through education was born.</p>
                         </div>
                     </div>
                 </div>
-
-                 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+                <div class="flex flex-col md:flex-row-reverse items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/beehive.jpg" alt="IntelliBeeHive System" class="rounded-xl shadow-lg w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=AI+Research';">
                     </div>
                     <div class="md:w-1/2">
                         <h3 class="text-2xl font-bold text-white" data-lang="case4_title">Chapter 4: The Confirmation</h3>
                         <p class="text-sky-400 mt-1 font-semibold" data-lang="case4_role">AI Researcher & Teaching Assistant at UTRGV</p>
-                         <div class="mt-4 text-slate-400 space-y-2" data-lang="case4_desc">
-                            <p>At UTRGV, I finally put my budding educational philosophy to the test. I applied my advanced AI knowledge to solve a real-world research problem for the USDA, while simultaneously using my new teaching methods to help undergraduate students succeed. Seeing them grasp complex ideas confirmed that my practical, hands-on approach worked. This is where my dream for education truly took shape.</p>
+                          <div class="mt-4 text-slate-400 space-y-2" data-lang="case4_desc">
+                            <p>At UTRGV, I put my budding educational philosophy to the test. I applied my AI knowledge to a real-world USDA research project while teaching programming concepts to over 300 undergraduate students. <strong class="text-lg text-sky-400">Seeing them grasp complex ideas confirmed that my practical, hands-on approach worked.</strong> This is where my dream for education truly took shape.</p>
                         </div>
                         <div class="mt-4">
                             <a href="https://miutrgv.github.io/research/bee-monitoring.html" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case4_link">View the Research Project &rarr;</a>
                         </div>
                     </div>
                 </div>
-                
-                 <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/finitup.jpg" alt="FinitUp Platform" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=FinitUp';">
                     </div>
@@ -259,15 +298,14 @@
                         <h3 class="text-2xl font-bold text-white" data-lang="case5_title">Chapter 5: The Synthesis</h3>
                         <p class="text-sky-400 mt-1 font-semibold" data-lang="case5_role">Founder & Developer of FinitUp</p>
                         <div class="mt-4 text-slate-400 space-y-2" data-lang="case5_desc">
-                           <p>My journey led me to a question: how to synthesize my skills in engineering, AI, and business? My answer is FinitUp, an AI stock analysis platform I am currently building. This project is my personal "Learning by Building" exercise, where I apply my entire philosophy to create tangible value at the intersection of technology and finance.</p>
+                            <p>To truly understand how technology creates business value, I decided to build a solution myself. FinitUp is my ongoing project to build an AI-powered stock analysis platform, directly applying the principles from my A-grade MBA courses in Finance and Economics. <strong class="text-lg text-sky-400">This is my 'Learning by Building' philosophy in action, merging my entire skillset to create tangible value.</strong></p>
                         </div>
                         <div class="mt-4">
                             <a href="https://finitup.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case5_link">Visit Finitup.com &rarr;</a>
                         </div>
                     </div>
                 </div>
-
-                 <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+                <div class="flex flex-col md:flex-row-reverse items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/aiclub.jpg" alt="UTRGV AI Club" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=UTRGV+AI+Club';">
                     </div>
@@ -275,32 +313,54 @@
                         <h3 class="text-2xl font-bold text-white" data-lang="case6_title">Chapter 6: The Current Mission</h3>
                         <p class="text-sky-400 mt-1 font-semibold" data-lang="case6_role">Founder of the UTRGV AI Club</p>
                         <div class="mt-4 text-slate-400 space-y-2" data-lang="case6_desc">
-                           <p>Now, I'm channeling all these experiences into a single mission: making technology accessible. The AI Club is the culmination of my journey. It's a community built on the belief that anyone can learn and innovate with the right guidance and a hands-on approach, a principle I discovered through my own path from engineer to educator.</p>
+                            <p>Now, I'm channeling all these experiences into a single mission: making technology accessible. The AI Club is the culmination of my journey. It's a community built on the belief that anyone can learn and innovate with the right guidance and a hands-on approach, <strong class="text-lg text-sky-400">a principle I discovered through my own path from engineer to educator.</strong></p>
                         </div>
                         <div class="mt-4">
                             <a href="https://sites.google.com/view/utrgvai" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case6_link">Visit the AI Club Website &rarr;</a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
-        
-        <!-- 6. My Guiding Philosophy -->
         <section id="philosophy" class="py-20">
             <h2 class="section-title" data-lang="philosophy_title">My Guiding Philosophy</h2>
             <div class="mt-12 max-w-3xl mx-auto text-center bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold text-white" data-lang="philosophy_subtitle">Learning by Building</h3>
+                <h3 class="text-2xl font-poppins font-bold text-white" data-lang="philosophy_subtitle">Learning by Building</h3>
                 <p class="mt-4 text-slate-400 text-lg leading-relaxed" data-lang="philosophy_desc">
                     My philosophy isn't a theory; it's the result of my journey. I believe in learning by doing, making complex ideas simple through real-world application, and empowering others with the confidence to build their own solutions. This practical, hands-on approach guides everything I do.
                 </p>
             </div>
         </section>
 
+        <!-- 7. AI Assistant -->
+        <section id="ai-assistant" class="py-20">
+            <div class="max-w-3xl mx-auto text-center bg-slate-900/80 p-8 md:p-12 rounded-xl shadow-lg border border-slate-800">
+                <h2 class="text-3xl font-poppins font-bold text-white" data-lang="ai_assistant_title">✨ AI Assistant</h2>
+                <p class="mt-4 text-slate-400" data-lang="ai_assistant_subtitle">
+                    Ask anything about me. My AI will answer based on my profile.
+                </p>
+                <div class="mt-8 text-left">
+                    <div id="chat-log" class="w-full p-4 rounded-lg mb-4 flex flex-col">
+                        <!-- Chat messages will be appended here -->
+                    </div>
+                    <div class="flex gap-2">
+                        <input type="text" id="user-question" class="flex-grow p-3 rounded-lg bg-slate-800 border border-slate-700 focus:ring-2 focus:ring-sky-500 focus:outline-none text-slate-300" data-lang-placeholder="ai_assistant_placeholder">
+                        <button id="ask-btn" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center">
+                            <span data-lang="ai_assistant_button">Ask</span>
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.428A1 1 0 009.894 15V4A1 1 0 008.894 3l-3 1.5z" />
+                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.428A1 1 0 009.894 15V4A1 1 0 008.894 3l-3 1.5z" />
+                             </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800/50">
+    <footer class="bg-slate-800/50 border-t border-slate-800">
         <div class="container mx-auto px-6 py-12 text-center">
             <h2 class="text-3xl font-bold text-white" data-lang="footer_title">Let's Connect</h2>
             <p class="mt-4 text-slate-400 max-w-xl mx-auto" data-lang="footer_subtitle">I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.</p>
@@ -314,208 +374,364 @@
     </footer>
 
     <script>
-        // --- MULTILINGUAL CONTENT ---
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Language Switcher and Translations ---
         const translations = {
             en: {
                 nav_skills: "Skills",
                 nav_experience: "Experience",
                 nav_casestudies: "My Path",
-                nav_story: "My Story",
                 nav_philosophy: "Philosophy",
                 nav_contact: "Contact",
+                nav_skills_mobile: "Skills",
+                nav_experience_mobile: "Experience",
+                nav_casestudies_mobile: "My Path",
+                nav_philosophy_mobile: "Philosophy",
+                nav_contact_mobile: "Contact",
                 hero_title: "Connecting Ideas to Reality Through Technology",
-                hero_subtitle: "Hello, I'm Junseong Park. I am an engineer and developer who thrives on turning complex challenges into tangible solutions. My experience has taught me that the most powerful results come from a practical, hands-on approach, whether I'm building a system, leading a team, or sharing knowledge with others.",
+                hero_subtitle: "From leading a technical team in the military to fabricating automotive prototypes and applying AI in academic research, my path has taught me one thing: the most powerful solutions are born at the intersection of hands-on engineering, data-driven insights, and a deep understanding of people.",
+                quick_contact: "Quick Contact",
                 hero_btn_work: "See My Path",
-                hero_btn_contact: "Get In Touch",
                 resume_download_btn: "Download Resume",
                 skills_title: "My Core Competencies",
                 skills_subtitle: "These are the tools and technologies I've mastered through hands-on application.",
+                skills_cat1_title: "Programming & Software",
+                skills_cat2_title: "AI & Data Science",
+                skills_cat3_title: "Engineering & Prototyping",
                 experience_title: "Professional Experience",
                 experience_subtitle: "A timeline of my key roles and responsibilities.",
+                exp_outlier: "Currently fine-tuning large language models, focusing on creating clear and effective training data.",
+                exp_utrgv: "Mentored 300+ students in Python and ML, refining methods to make complex topics accessible.",
+                exp_lab: "Managed 50+ machines and first developed my passion for teaching by creating an engineering curriculum for over 300 students.",
+                exp_army: "Led a 4-technician team, honing skills in process management and hands-on technical training.",
+                exp_proto: "Mastered precision engineering while collaborating with and learning from senior designers.",
                 education_title: "Education",
                 casestudies_title: "My Path: From Engineer to Educator",
-                casestudies_subtitle: "My interest in education was not planned; it grew organically from my experiences as an engineer and leader. Each step of my journey revealed a new piece of the puzzle.",
+                casestudies_subtitle: "My interest in education grew naturally from my experiences as an engineer and leader. Each step of my journey revealed a new piece of the puzzle.",
                 case1_title: "Chapter 1: The Foundation in Precision",
                 case1_role: "Prototyping Technician",
                 case1_desc: "<p>My journey started with a fascination for turning ideas into reality. In the demanding automotive R&D world, I learned the non-negotiable value of precision. This purely technical role taught me that getting the details right is the foundation of any successful project.</p>",
                 case2_title: "Chapter 2: The Addition of Leadership",
                 case2_role: "Artillery Maintenance Team Leader",
-                case2_desc: "<p>Leading a maintenance team taught me that technical skill alone isn't enough. I had to not only solve problems but also train my team to do the same. This was my first real taste of teaching – the challenge of transferring complex knowledge clearly and effectively under pressure.</p>",
+                case2_desc: "<p>Leading a 4-technician maintenance team taught me that technical skill alone isn't enough. I had to not only solve problems but also train my team to do the same. This was my first real taste of teaching – the challenge of transferring complex knowledge clearly and effectively under pressure.</p>",
                 case3_title: "Chapter 3: The Spark of Education",
                 case3_role: "University Lab Technician & Instructor",
-                case3_desc: "<p>This role was a turning point. While managing a lab with over 50 machines and 99% uptime, I also had the opportunity to teach. I noticed that everyone learned differently, and I began developing unique ways to explain it. This is where my passion for empowering others through education was born.</p>",
+                case3_desc: `<p><strong class="text-lg text-sky-400">This role was a turning point.</strong> While managing a lab with over 50 machines and 99% uptime, <strong class="text-lg text-sky-400">I also had the opportunity to teach.</strong> I noticed that everyone learned differently, and I began developing unique ways to explain it. This is where my passion for empowering others through education was born.</p>`,
                 case4_title: "Chapter 4: The Confirmation",
                 case4_role: "AI Researcher & Teaching Assistant at UTRGV",
-                case4_desc: "<p>At UTRGV, I put my budding educational philosophy to the test. I applied my AI knowledge to a real-world USDA research project while teaching programming concepts to over 300 undergraduate students. Seeing them grasp complex ideas confirmed that my practical, hands-on approach worked. This is where my dream for education truly took shape.</p>",
+                case4_desc: `<p>At UTRGV, I put my budding educational philosophy to the test. I applied my AI knowledge to a real-world USDA research project while teaching programming concepts to over 300 undergraduate students. <strong class="text-lg text-sky-400">Seeing them grasp complex ideas confirmed that my practical, hands-on approach worked.</strong> This is where my dream for education truly took shape.</p>`,
                 case4_link: "View the Research Project &rarr;",
                 case5_title: "Chapter 5: The Synthesis",
                 case5_role: "Founder & Developer of FinitUp",
-                case5_desc: "<p>To truly understand how technology creates business value, I decided to build a solution myself. FinitUp is my ongoing project to build an AI-powered stock analysis platform, directly applying the principles from my A-grade MBA courses in Finance and Economics. This is my 'Learning by Building' philosophy in action, merging my entire skillset to create tangible value.</p>",
+                case5_desc: `<p>To truly understand how technology creates business value, I decided to build a solution myself. FinitUp is my ongoing project to build an AI-powered stock analysis platform, directly applying the principles from my A-grade MBA courses in Finance and Economics. <strong class="text-lg text-sky-400">This is my 'Learning by Building' philosophy in action, merging my entire skillset to create tangible value.</strong></p>`,
                 case5_link: "Visit Finitup.com &rarr;",
                 case6_title: "Chapter 6: The Current Mission",
                 case6_role: "Founder of the UTRGV AI Club",
-                case6_desc: "<p>Now, I'm channeling all these experiences into a single mission: making technology accessible. The AI Club is the culmination of my journey. It's a community built on the belief that anyone can learn and innovate with the right guidance and a hands-on approach, a principle I discovered through my own path from engineer to educator.</p>",
+                case6_desc: `<p>Now, I'm channeling all these experiences into a single mission: making technology accessible. The AI Club is the culmination of my journey. It's a community built on the belief that anyone can learn and innovate with the right guidance and a hands-on approach, <strong class="text-lg text-sky-400">a principle I discovered through my own path from engineer to educator.</strong></p>`,
                 case6_link: "Visit the AI Club Website &rarr;",
                 philosophy_title: "My Guiding Philosophy",
                 philosophy_subtitle: "Learning by Building",
                 philosophy_desc: "My philosophy isn't a theory; it's the result of my journey. I believe in learning by doing, making complex ideas simple through real-world application, and empowering others with the confidence to build their own solutions. This practical, hands-on approach guides everything I do.",
                 footer_title: "Let's Connect",
                 footer_subtitle: "I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.",
-                footer_copy: "&copy; 2025 Junseong Park. All Rights Reserved."
-            },
-            ko: {
-                nav_skills: "핵심 역량",
-                nav_experience: "주요 경력",
-                nav_casestudies: "나의 길",
-                nav_story: "나의 이야기",
-                nav_philosophy: "나의 철학",
-                nav_contact: "연락하기",
-                hero_title: "기술을 통해 아이디어를 현실로 연결합니다",
-                hero_subtitle: "안녕하세요, 박준성입니다. 저는 복잡한 과제를 실질적인 해결책으로 전환하는 과정에서 성장하는 엔지니어이자 개발자입니다. 시스템을 구축하든, 팀을 이끌든, 지식을 공유하든, 실용적이고 직접적인 접근 방식이 가장 강력한 결과를 낳는다는 것을 경험을 통해 배웠습니다.",
-                hero_btn_work: "나의 여정 보기",
-                hero_btn_contact: "연락하기",
-                resume_download_btn: "이력서 다운로드",
-                skills_title: "핵심 역량",
-                skills_subtitle: "제가 직접 부딪히며 체득한 도구와 기술입니다.",
-                experience_title: "주요 경력",
-                experience_subtitle: "저의 주요 역할과 책임에 대한 기록입니다.",
-                education_title: "학력",
-                casestudies_title: "나의 길: 엔지니어에서 교육자로",
-                casestudies_subtitle: "교육에 대한 저의 관심은 계획된 것이 아니었습니다. 엔지니어이자 리더로서의 경험을 통해 자연스럽게 성장했습니다. 제 여정의 각 단계는 새로운 퍼즐 조각을 맞춰주었습니다.",
-                case1_title: "1장: 정밀함의 기초",
-                case1_role: "프로토타입 기술자",
-                case1_desc: "<p>저의 여정은 아이디어를 현실로 만드는 것에 대한 매력에서 시작되었습니다. 까다로운 자동차 R&D 환경에서 저는 정밀함이라는 타협할 수 없는 가치를 배웠습니다. 이 순수한 기술적 역할은 세부 사항을 올바르게 파악하는 것이 모든 성공적인 프로젝트의 기초라는 것을 가르쳐 주었습니다.</p>",
-                case2_title: "2장: 리더십의 추가",
-                case2_role: "자주포 정비팀장",
-                case2_desc: "<p>정비팀을 이끌면서 기술력만으로는 충분하지 않다는 것을 배웠습니다. 문제를 해결할 뿐만 아니라 팀원들도 똑같이 할 수 있도록 훈련시켜야 했습니다. 이것이 저의 첫 번째 진정한 교육 경험이었습니다 – 압박감 속에서 복잡한 지식을 명확하고 효과적으로 전달하는 도전 과제였습니다.</p>",
-                case3_title: "3장: 교육의 불꽃",
-                case3_role: "대학 연구실 기술자 & 강사",
-                case3_desc: "<p>이 역할은 전환점이었습니다. 50대가 넘는 장비를 99%의 가동률로 관리하면서 동시에 가르칠 기회도 있었습니다. 저는 모두가 다르게 배운다는 것을 알아차렸고, 그것을 설명할 독특한 방법을 개발하기 시작했습니다. 이곳에서 교육을 통해 다른 사람들에게 힘을 실어주는 것에 대한 저의 열정이 태어났습니다.</p>",
-                case4_title: "4장: 확신",
-                case4_role: "UTRGV AI 연구원 & 조교",
-                case4_desc: "<p>UTRGV에서 저는 마침내 싹트기 시작한 저의 교육 철학을 시험해 볼 수 있었습니다. 저는 USDA를 위한 실제 연구 문제를 해결하기 위해 저의 고급 AI 지식을 적용했고, 동시에 300명 이상의 학부생들에게 프로그래밍 개념을 가르쳤습니다. 그들이 복잡한 아이디어를 파악하는 것을 보면서 저의 실용적이고 직접적인 접근 방식이 효과가 있다는 것을 확인했습니다. 이곳에서 교육에 대한 저의 꿈이 진정으로 구체화되었습니다.</p>",
-                case4_link: "연구 프로젝트 보기 &rarr;",
-                case5_title: "5장: 종합",
-                case5_role: "FinitUp 창립자 & 개발자",
-                case5_desc: "<p>기술이 어떻게 비즈니스 가치를 창출하는지 진정으로 이해하기 위해, 저는 직접 솔루션을 만들기로 결심했습니다. FinitUp은 제가 현재 구축 중인 AI 기반 주식 분석 플랫폼으로, 금융 및 경제학 MBA 과정에서 A 등급을 받은 원칙들을 직접 적용하고 있습니다. 이것이 바로 저의 '만들면서 배운다'는 철학의 실천이며, 저의 모든 기술을 융합하여 실질적인 가치를 창출하는 과정입니다.</p>",
-                case5_link: "Finitup.com 방문하기 &rarr;",
-                case6_title: "6장: 현재의 임무",
-                case6_role: "UTRGV AI 클럽 창립자",
-                case6_desc: "<p>이제 저는 이 모든 경험을 하나의 임무, 즉 기술을 쉽게 접근할 수 있도록 만드는 데 쏟아붓고 있습니다. AI 클럽은 제 여정의 정점입니다. 이는 올바른 지도와 직접적인 접근 방식만 있다면 누구나 배우고 혁신할 수 있다는 믿음 위에 세워진 커뮤니티이며, 엔지니어에서 교육자로 가는 저만의 길을 통해 발견한 원칙입니다.</p>",
-                case6_link: "AI 클럽 웹사이트 방문하기 &rarr;",
-                philosophy_title: "나의 교육 철학",
-                philosophy_subtitle: "만들면서 배운다",
-                philosophy_desc: "저의 철학은 이론이 아니라 제 여정의 결과입니다. 저는 직접 해보면서 배우는 것, 실제 적용을 통해 복잡한 아이디어를 단순하게 만드는 것, 그리고 다른 사람들이 자신만의 해결책을 만들 수 있는 자신감을 갖도록 힘을 실어주는 것을 믿습니다. 이 실용적인 접근 방식이 제가 하는 모든 일의 핵심입니다.",
-                footer_title: "함께 해요",
-                footer_subtitle: "새로운 프로젝트, 창의적인 아이디어, 또는 기회에 대해 언제나 열려있습니다. 편하게 연락주세요.",
-                footer_copy: "&copy; 2025 박준성. All Rights Reserved."
+                footer_copy: "&copy; 2025 Junseong Park. All Rights Reserved.",
+                ai_assistant_title: "✨ AI Assistant",
+                ai_assistant_subtitle: "Ask anything about me. My AI will answer based on my profile.",
+                ai_assistant_placeholder: "Ask a question, e.g., 'What is his most important project?'",
+                ai_assistant_button: "Ask"
             },
             es: {
                 nav_skills: "Habilidades",
                 nav_experience: "Experiencia",
                 nav_casestudies: "Mi Camino",
-                nav_story: "Mi Historia",
                 nav_philosophy: "Filosofía",
                 nav_contact: "Contacto",
+                nav_skills_mobile: "Habilidades",
+                nav_experience_mobile: "Experiencia",
+                nav_casestudies_mobile: "Mi Camino",
+                nav_philosophy_mobile: "Filosofía",
+                nav_contact_mobile: "Contacto",
                 hero_title: "Conectando Ideas con la Realidad a Través de la Tecnología",
-                hero_subtitle: "Hola, soy Junseong Park. Soy un ingeniero y desarrollador que prospera convirtiendo desafíos complejos en soluciones tangibles. Mi experiencia me ha enseñado que los resultados más poderosos provienen de un enfoque práctico y directo, ya sea construyendo un sistema, liderando un equipo o compartiendo conocimientos con otros.",
+                hero_subtitle: "Desde liderar un equipo técnico en el ejército hasta fabricar prototipos automotrices y aplicar IA en investigación académica, mi camino me ha enseñado una cosa: las soluciones más poderosas nacen en la intersección de la ingeniería práctica, los conocimientos basados en datos y una profunda comprensión de las personas.",
+                quick_contact: "Contacto Rápido",
                 hero_btn_work: "Ver Mi Camino",
-                hero_btn_contact: "Contáctame",
                 resume_download_btn: "Descargar CV",
                 skills_title: "Mis Competencias Clave",
                 skills_subtitle: "Estas son las herramientas y tecnologías que he dominado a través de la aplicación práctica.",
+                skills_cat1_title: "Programación y Software",
+                skills_cat2_title: "IA y Ciencia de Datos",
+                skills_cat3_title: "Ingeniería y Prototipos",
                 experience_title: "Experiencia Profesional",
                 experience_subtitle: "Una cronología de mis roles y responsabilidades clave.",
+                exp_outlier: "Actualmente afinando grandes modelos de lenguaje, centrándome en crear datos de entrenamiento claros y efectivos.",
+                exp_utrgv: "Guié a más de 300 estudiantes en Python y ML, refinando métodos para hacer accesibles temas complejos.",
+                exp_lab: "Gestioné más de 50 máquinas y desarrollé por primera vez mi pasión por la enseñanza creando un plan de estudios de ingeniería para más de 300 estudiantes.",
+                exp_army: "Lideré un equipo de 4 técnicos, perfeccionando habilidades en gestión de procesos y capacitación técnica práctica.",
+                exp_proto: "Dominé la ingeniería de precisión mientras colaboraba y aprendía de diseñadores senior.",
                 education_title: "Educación",
                 casestudies_title: "Mi Camino: De Ingeniero a Educador",
-                casestudies_subtitle: "Mi interés por la educación no fue planeado; creció orgánicamente a partir de mis experiencias como ingeniero y líder. Cada paso de mi viaje reveló una nueva pieza del rompecabezas.",
+                casestudies_subtitle: "Mi interés por la educación creció de forma natural a partir de mis experiencias como ingeniero y líder. Cada paso de mi viaje reveló una nueva pieza del rompecabezas.",
                 case1_title: "Capítulo 1: La Base en la Precisión",
                 case1_role: "Técnico de Prototipos",
                 case1_desc: "<p>Mi viaje comenzó con una fascinación por convertir ideas en realidad. En el exigente mundo de I+D automotriz, aprendí el valor innegociable de la precisión. Este rol puramente técnico me enseñó que cuidar los detalles es la base de cualquier proyecto exitoso.</p>",
                 case2_title: "Capítulo 2: La Adición del Liderazgo",
                 case2_role: "Líder del Equipo de Mantenimiento de Artillería",
-                case2_desc: "<p>Liderar un equipo de mantenimiento me enseñó que la habilidad técnica por sí sola no es suficiente. No solo tenía que resolver problemas, sino también capacitar a mi equipo para hacer lo mismo. Esta fue mi primera experiencia real con la enseñanza: el desafío de transferir conocimientos complejos de manera clara y efectiva bajo presión.</p>",
+                case2_desc: "<p>Liderar un equipo de mantenimiento de 4 técnicos me enseñó que la habilidad técnica por sí sola no es suficiente. No solo tenía que resolver problemas, sino también entrenar a mi equipo para hacer lo mismo. Esta fue mi primera experiencia real con la enseñanza: el desafío de transferir conocimientos complejos de manera clara y efectiva bajo presión.</p>",
                 case3_title: "Capítulo 3: La Chispa de la Educación",
                 case3_role: "Técnico de Laboratorio e Instructor Universitario",
-                case3_desc: "<p>Este rol fue un punto de inflexión. Mientras gestionaba un laboratorio con más de 50 máquinas y un 99% de tiempo de actividad, también tuve la oportunidad de enseñar. Noté que todos aprendían de manera diferente y comencé a desarrollar formas únicas de explicarlo. Aquí nació mi pasión por empoderar a otros a través de la educación.</p>",
+                case3_desc: `<p><strong class="text-lg text-sky-400">Este rol fue un punto de inflexión.</strong> Mientras gestionaba un laboratorio con más de 50 máquinas y un 99% de tiempo de actividad, <strong class="text-lg text-sky-400">también tuve la oportunidad de enseñar.</strong> Noté que todos aprendían de manera diferente y comencé a desarrollar formas únicas de explicarlo. Aquí es donde nació mi pasión por empoderar a otros a través de la educación.</p>`,
                 case4_title: "Capítulo 4: La Confirmación",
                 case4_role: "Investigador de IA y Asistente de Cátedra en UTRGV",
-                case4_desc: "<p>En UTRGV, puse a prueba mi incipiente filosofía educativa. Apliqué mis conocimientos de IA a un problema de investigación del USDA del mundo real mientras enseñaba conceptos de programación a más de 300 estudiantes de pregrado. Verlos comprender ideas complejas confirmó que mi enfoque práctico funcionaba. Aquí es donde mi sueño por la educación realmente tomó forma.</p>",
+                case4_desc: `<p>En UTRGV, puse a prueba mi incipiente filosofía educativa. Apliqué mis conocimientos de IA a un proyecto de investigación real del USDA mientras enseñaba conceptos de programación a más de 300 estudiantes de pregrado. <strong class="text-lg text-sky-400">Verlos comprender ideas complejas confirmó que mi enfoque práctico y directo funcionaba.</strong> Aquí es donde mi sueño por la educación realmente tomó forma.</p>`,
                 case4_link: "Ver el Proyecto de Investigación &rarr;",
                 case5_title: "Capítulo 5: La Síntesis",
                 case5_role: "Fundador y Desarrollador de FinitUp",
-                case5_desc: "<p>Para entender verdaderamente cómo la tecnología crea valor empresarial, decidí construir una solución yo mismo. FinitUp es mi proyecto en curso para construir una plataforma de análisis de acciones impulsada por IA, aplicando directamente los principios de mis cursos de MBA con calificación A en Finanzas y Economía. Este es mi 'Aprender Construyendo' en acción, fusionando todo mi conjunto de habilidades para crear valor tangible.</p>",
-                case5_link: "Visita Finitup.com &rarr;",
+                case5_desc: `<p>Para entender verdaderamente cómo la tecnología crea valor empresarial, decidí construir una solución yo mismo. FinitUp es mi proyecto en curso para construir una plataforma de análisis de acciones impulsada por IA, aplicando directamente los principios de mis cursos de MBA con calificación A en Finanzas y Economía. <strong class="text-lg text-sky-400">Esta es mi filosofía de 'Aprender Construyendo' en acción, fusionando todo mi conjunto de habilidades para crear valor tangible.</strong></p>`,
+                case5_link: "Visitar Finitup.com &rarr;",
                 case6_title: "Capítulo 6: La Misión Actual",
                 case6_role: "Fundador del Club de IA de UTRGV",
-                case6_desc: "<p>Ahora, estoy canalizando todas estas experiencias en una única misión: hacer que la tecnología sea accesible. El Club de IA es la culminación de mi viaje. Es una comunidad construida sobre la creencia de que cualquiera puede aprender e innovar con la guía adecuada y un enfoque práctico, un principio que descubrí a través de mi propio camino de ingeniero a educador.</p>",
-                case6_link: "Visita el Sitio Web del Club de IA &rarr;",
+                case6_desc: `<p>Ahora, estoy canalizando todas estas experiencias en una única misión: hacer la tecnología accesible. El Club de IA es la culminación de mi viaje. Es una comunidad construida sobre la creencia de que cualquiera puede aprender e innovar con la guía adecuada y un enfoque práctico, <strong class="text-lg text-sky-400">un principio que descubrí a través de mi propio camino de ingeniero a educador.</strong></p>`,
+                case6_link: "Visitar el Sitio Web del Club de IA &rarr;",
                 philosophy_title: "Mi Filosofía Rectora",
                 philosophy_subtitle: "Aprender Construyendo",
                 philosophy_desc: "Mi filosofía no es una teoría; es el resultado de mi viaje. Creo en aprender haciendo, en simplificar ideas complejas a través de la aplicación en el mundo real y en empoderar a otros con la confianza para construir sus propias soluciones. Este enfoque práctico y directo guía todo lo que hago.",
                 footer_title: "Conectemos",
                 footer_subtitle: "Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades. No dudes en contactarme.",
-                footer_copy: "&copy; 2025 Junseong Park. Todos los derechos reservados."
+                footer_copy: "&copy; 2025 Junseong Park. Todos los derechos reservados.",
+                ai_assistant_title: "✨ Asistente de IA",
+                ai_assistant_subtitle: "Pregunta lo que sea sobre mí. Mi IA responderá basándose en mi perfil.",
+                ai_assistant_placeholder: "Haz una pregunta, ej., '¿Cuál es su proyecto más importante?'",
+                ai_assistant_button: "Preguntar"
+            },
+            ko: {
+                nav_skills: "기술",
+                nav_experience: "경력",
+                nav_casestudies: "나의 길",
+                nav_philosophy: "철학",
+                nav_contact: "연락처",
+                nav_skills_mobile: "기술",
+                nav_experience_mobile: "경력",
+                nav_casestudies_mobile: "나의 길",
+                nav_philosophy_mobile: "철학",
+                nav_contact_mobile: "연락처",
+                hero_title: "기술을 통해 아이디어를 현실로",
+                hero_subtitle: "군대에서 기술팀을 이끌었던 경험부터 자동차 프로토타입 제작, 학술 연구에 AI를 적용하기까지, 저의 여정은 한 가지를 가르쳐주었습니다. 가장 강력한 솔루션은 직접 부딪히는 엔지니어링, 데이터 기반의 통찰력, 그리고 사람에 대한 깊은 이해가 만나는 지점에서 탄생한다는 것을요.",
+                quick_contact: "빠른 연락",
+                hero_btn_work: "나의 길 보기",
+                resume_download_btn: "이력서 다운로드",
+                skills_title: "핵심 역량",
+                skills_subtitle: "제가 직접 부딪히며 익힌 도구와 기술들입니다.",
+                skills_cat1_title: "프로그래밍 및 소프트웨어",
+                skills_cat2_title: "AI 및 데이터 과학",
+                skills_cat3_title: "엔지니어링 및 프로토타이핑",
+                experience_title: "주요 경력",
+                experience_subtitle: "저의 주요 역할과 책임에 대한 타임라인입니다.",
+                exp_outlier: "현재 대규모 언어 모델을 미세 조정하며, 명확하고 효과적인 학습 데이터를 만드는 데 집중하고 있습니다.",
+                exp_utrgv: "300명 이상의 학생들에게 파이썬과 머신러닝을 가르치며 복잡한 주제를 쉽게 전달하는 방법을 다듬었습니다.",
+                exp_lab: "50대 이상의 장비를 관리하고, 300명 이상의 학생들을 위한 엔지니어링 커리큘럼을 만들며 교육에 대한 열정을 처음 발견했습니다.",
+                exp_army: "4명의 기술자로 구성된 팀을 이끌며 프로세스 관리와 실무 기술 훈련 역량을 연마했습니다.",
+                exp_proto: "선임 디자이너들과 협력하고 배우면서 정밀 엔지니어링 기술을 마스터했습니다.",
+                education_title: "학력",
+                casestudies_title: "나의 길: 엔지니어에서 교육자로",
+                casestudies_subtitle: "교육에 대한 저의 관심은 엔지니어이자 리더로서의 경험에서 자연스럽게 생겨났습니다. 제 여정의 각 단계는 퍼즐의 새로운 조각을 보여주었습니다.",
+                case1_title: "1장: 정밀함의 기초",
+                case1_role: "프로토타이핑 기술자",
+                case1_desc: "<p>저의 여정은 아이디어를 현실로 만드는 것에 대한 매력에서 시작되었습니다. 까다로운 자동차 R&D 세계에서 저는 정밀함이라는 타협할 수 없는 가치를 배웠습니다. 이 순수 기술직은 세부 사항을 올바르게 처리하는 것이 모든 성공적인 프로젝트의 기초라는 것을 가르쳐주었습니다.</p>",
+                case2_title: "2장: 리더십의 추가",
+                case2_role: "포병 정비팀장",
+                case2_desc: "<p>4명의 기술자로 구성된 정비팀을 이끌면서 기술만으로는 충분하지 않다는 것을 배웠습니다. 문제를 해결할 뿐만 아니라 팀원들이 같은 일을 할 수 있도록 훈련시켜야 했습니다. 이것이 저의 첫 번째 진정한 교육 경험이었습니다. 압박감 속에서 복잡한 지식을 명확하고 효과적으로 전달하는 도전이었죠.</p>",
+                case3_title: "3장: 교육의 불꽃",
+                case3_role: "대학 실험실 기술자 및 강사",
+                case3_desc: `<p><strong class="text-lg text-sky-400">이 역할은 전환점이었습니다.</strong> 50대 이상의 기계와 99%의 가동률을 자랑하는 실험실을 관리하면서, <strong class="text-lg text-sky-400">가르칠 기회도 있었습니다.</strong> 저는 모든 사람이 다르게 배운다는 것을 깨닫고, 그것을 설명하는 독특한 방법을 개발하기 시작했습니다. 이것이 바로 교육을 통해 다른 사람들에게 힘을 실어주고자 하는 저의 열정이 태어난 곳입니다.</p>`,
+                case4_title: "4장: 확신",
+                case4_role: "UTRGV AI 연구원 및 조교",
+                case4_desc: `<p>UTRGV에서 저는 막 싹트기 시작한 교육 철학을 시험대에 올렸습니다. 300명 이상의 학부생들에게 프로그래밍 개념을 가르치면서 제 AI 지식을 실제 USDA 연구 프로젝트에 적용했습니다. <strong class="text-lg text-sky-400">그들이 복잡한 아이디어를 이해하는 것을 보면서 저의 실용적이고 직접적인 접근 방식이 효과가 있다는 것을 확인했습니다.</strong> 이곳에서 교육에 대한 저의 꿈이 진정으로 구체화되었습니다.</p>`,
+                case4_link: "연구 프로젝트 보기 &rarr;",
+                case5_title: "5장: 종합",
+                case5_role: "FinitUp 설립자 및 개발자",
+                case5_desc: `<p>기술이 어떻게 비즈니스 가치를 창출하는지 진정으로 이해하기 위해, 저는 직접 솔루션을 만들어보기로 결심했습니다. FinitUp은 금융 및 경제학 MBA 과정에서 A학점을 받은 원칙을 직접 적용하여 AI 기반 주식 분석 플랫폼을 구축하는 저의 진행 중인 프로젝트입니다. <strong class="text-lg text-sky-400">이것이 바로 저의 '만들면서 배우기' 철학이 실제로 구현된 것이며, 저의 모든 기술을 통합하여 실질적인 가치를 창출하는 과정입니다.</strong></p>`,
+                case5_link: "Finitup.com 방문하기 &rarr;",
+                case6_title: "6장: 현재의 미션",
+                case6_role: "UTRGV AI 클럽 설립자",
+                case6_desc: `<p>이제 저는 이 모든 경험을 하나의 미션, 즉 기술을 누구나 접근 가능하게 만드는 데 쏟아붓고 있습니다. AI 클럽은 제 여정의 정점입니다. 올바른 지도와 실습 접근 방식만 있다면 누구나 배우고 혁신할 수 있다는 믿음 위에 세워진 커뮤니티이며, <strong class="text-lg text-sky-400">이 원칙은 엔지니어에서 교육자로 이어진 저 자신의 길을 통해 발견한 것입니다.</strong></p>`,
+                case6_link: "AI 클럽 웹사이트 방문하기 &rarr;",
+                philosophy_title: "나의 지침 철학",
+                philosophy_subtitle: "만들면서 배우기",
+                philosophy_desc: "저의 철학은 이론이 아니라 제 여정의 결과물입니다. 저는 직접 해보면서 배우고, 실제 적용을 통해 복잡한 아이디어를 단순하게 만들며, 다른 사람들이 자신만의 솔루션을 구축할 수 있는 자신감을 갖도록 힘을 실어주는 것을 믿습니다. 이 실용적이고 직접적인 접근 방식이 제가 하는 모든 일을 이끌어갑니다.",
+                footer_title: "연락주세요",
+                footer_subtitle: "새로운 프로젝트, 창의적인 아이디어, 또는 기회에 대해 언제나 논의할 준비가 되어 있습니다. 편하게 연락주세요.",
+                footer_copy: "&copy; 2025 Junseong Park. 모든 권리 보유.",
+                ai_assistant_title: "✨ AI 어시스턴트",
+                ai_assistant_subtitle: "저에 대해 궁금한 점을 질문해보세요. 제 프로필을 기반으로 AI가 답변해 드립니다.",
+                ai_assistant_placeholder: "질문을 입력하세요 (예: 가장 중요하게 생각하는 프로젝트는 무엇인가요?)",
+                ai_assistant_button: "질문하기"
             }
         };
 
-        // --- SCRIPT FOR LANGUAGE SWITCHING ---
-        function changeLanguage(lang) {
-            const mobileNavKeys = {
-                nav_skills_mobile: 'nav_skills',
-                nav_experience_mobile: 'nav_experience',
-                nav_casestudies_mobile: 'nav_casestudies',
-                nav_story_mobile: 'nav_story',
-                nav_philosophy_mobile: 'nav_philosophy',
-                nav_contact_mobile: 'nav_contact',
-            };
-            document.documentElement.lang = lang;
-            document.querySelectorAll('[data-lang]').forEach(element => {
-                const key = element.getAttribute('data-lang');
-                let translationKey = key;
-                if (mobileNavKeys[key]) {
-                    translationKey = mobileNavKeys[key];
-                }
-                if (translations[lang] && translations[lang][translationKey]) {
-                    element.innerHTML = translations[lang][translationKey];
-                } else if (translations['en'][translationKey]) { // Fallback to English
-                    element.innerHTML = translations['en'][translationKey];
+        const langButtons = document.querySelectorAll('[data-lang-switch]');
+        
+        const setLanguage = (lang) => {
+            const langData = translations[lang];
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (langData[key]) {
+                    if (key.includes('_desc') || key.includes('_subtitle') || key.includes('_copy')) {
+                         el.innerHTML = langData[key];
+                    } else if (key === 'resume_download_btn') {
+                        const svg = el.querySelector('svg');
+                        el.textContent = langData[key];
+                        if(svg) el.prepend(svg);
+                    } else {
+                        el.textContent = langData[key];
+                    }
                 }
             });
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-            const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-            for (let link of mobileMenuLinks) {
-                link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
+            const placeholderEl = document.querySelector('[data-lang-placeholder]');
+            if (placeholderEl) {
+                const placeholderKey = placeholderEl.getAttribute('data-lang-placeholder');
+                if(langData[placeholderKey]) {
+                    placeholderEl.placeholder = langData[placeholderKey];
+                }
             }
-            const langButtons = document.querySelectorAll('[data-lang-switch]');
-            langButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const lang = button.getAttribute('data-lang-switch');
-                    langButtons.forEach(btn => btn.classList.remove('active'));
-                    document.querySelectorAll(`[data-lang-switch="${lang}"]`).forEach(btn => btn.classList.add('active'));
-                    changeLanguage(lang);
-                });
-            });
-            const userLang = navigator.language || navigator.userLanguage;
-            let initialLang = 'en';
-            if (userLang.startsWith('ko')) {
-                initialLang = 'ko';
-            } else if (userLang.startsWith('es')) {
-                initialLang = 'es';
-            }
-            document.querySelectorAll(`[data-lang-switch]:not([data-lang-switch="${initialLang}"])`).forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll(`[data-lang-switch="${initialLang}"]`).forEach(btn => {
-                if (!btn.classList.contains('active')) {
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang-switch') === lang) {
                     btn.classList.add('active');
                 }
             });
-            changeLanguage(initialLang);
-        });
-    </script>
+            document.documentElement.lang = lang;
+        };
 
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const lang = e.target.getAttribute('data-lang-switch');
+                setLanguage(lang);
+            });
+        });
+
+        // --- Gemini AI Assistant Logic ---
+        const askBtn = document.getElementById('ask-btn');
+        const userQuestionInput = document.getElementById('user-question');
+        const chatLog = document.getElementById('chat-log');
+
+        const appendMessage = (message, sender) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-bubble', sender === 'user' ? 'user-bubble' : 'ai-bubble');
+            messageDiv.textContent = message;
+            
+            const wrapperDiv = document.createElement('div');
+            wrapperDiv.classList.add('w-full', 'flex', sender === 'user' ? 'justify-end' : 'justify-start');
+            wrapperDiv.appendChild(messageDiv);
+            
+            chatLog.appendChild(wrapperDiv);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        };
+
+        const showTypingIndicator = () => {
+            const indicatorDiv = document.createElement('div');
+            indicatorDiv.id = 'typing-indicator';
+            indicatorDiv.classList.add('chat-bubble', 'ai-bubble', 'typing-indicator');
+            indicatorDiv.innerHTML = '<span></span><span></span><span></span>';
+
+            const wrapperDiv = document.createElement('div');
+            wrapperDiv.classList.add('w-full', 'flex', 'justify-start');
+            wrapperDiv.appendChild(indicatorDiv);
+
+            chatLog.appendChild(wrapperDiv);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        };
+
+        const removeTypingIndicator = () => {
+            const indicator = document.getElementById('typing-indicator');
+            if (indicator) {
+                indicator.parentElement.remove();
+            }
+        };
+
+        const handleAsk = async () => {
+            const question = userQuestionInput.value.trim();
+            if (!question) return;
+
+            appendMessage(question, 'user');
+            userQuestionInput.value = '';
+            askBtn.disabled = true;
+            showTypingIndicator();
+
+            const userProfile = `
+- Name: Junseong Park
+- Core Competencies: Python, C++, TensorFlow, PyTorch, Machine Learning, Deep Learning, Generative AI, LLMs, Computer Vision, SolidWorks, 3D Printing, CNC, Robotics.
+- Experience Summary: 
+    - AI Trainer at Outlier, fine-tuning LLMs.
+    - Teaching Assistant at UTRGV, mentoring 300+ students in Python and ML.
+    - Lab Technician at Industrial inside Factory Center, managing 50+ machines and developing engineering curriculum.
+    - Artillery Maintenance Team Leader in the ROK Army, leading a technical team.
+    - Prototyping Technician, mastering precision engineering.
+- Education: MS in Computer Science and currently pursuing an MBA from The University of Texas Rio Grande Valley. Bachelor of Engineering in Mechanical Engineering from Soonchunhyang University.
+- Philosophy: 'Learning by Building' - believes in making complex ideas simple through real-world application and empowering others.
+- Key Projects: Founder of FinitUp (an AI-powered stock analysis platform) and the UTRGV AI Club (a community to make technology accessible).
+            `;
+            
+            const prompt = `You are a professional and helpful AI assistant for Junseong Park. Your knowledge is strictly limited to the information provided in his profile below. Do not invent information or answer questions outside of this context. If the answer is not in the profile, politely state that you don't have that information. Answer the user's question concisely from the perspective of an assistant.
+
+            **Junseong Park's Profile:**
+            ${userProfile}
+
+            **User's Question:**
+            "${question}"
+
+            Answer in the same language as the user's question.`;
+
+            try {
+                const apiKey = ""; // API key will be injected
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }]
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`API Error: ${response.status}`);
+
+                const result = await response.json();
+                const generatedText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                removeTypingIndicator();
+                if (generatedText) {
+                    appendMessage(generatedText, 'ai');
+                } else {
+                    appendMessage("Sorry, I couldn't generate a response. Please try again.", 'ai');
+                }
+
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                removeTypingIndicator();
+                appendMessage("An error occurred. Please check the console for details.", 'ai');
+            } finally {
+                askBtn.disabled = false;
+            }
+        };
+
+        askBtn.addEventListener('click', handleAsk);
+        userQuestionInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                handleAsk();
+            }
+        });
+
+        // Set default language on load
+        setLanguage('ko'); // Default to Korean
+
+    </script>
 </body>
 </html>
