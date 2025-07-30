@@ -548,9 +548,16 @@
             });
         });
 
-        // Set default language on load
-        setLanguage('en');
+        // --- Auto Language Detection Logic ---
+        const userLang = navigator.language || navigator.userLanguage; 
 
+        if (userLang.startsWith('ko')) {
+            setLanguage('ko');
+        } else if (userLang.startsWith('es')) {
+            setLanguage('es');
+        } else {
+            setLanguage('en');
+        }
     </script>
 </body>
 </html>
