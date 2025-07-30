@@ -554,33 +554,3 @@
     </script>
 </body>
 </html>
-
-          el.textContent = langData[key];
-                        }
-                    }
-                }
-            });
-            // Update active button state
-            langButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-lang-switch') === lang) {
-                    btn.classList.add('active');
-                }
-            });
-             // Set html lang attribute
-            document.documentElement.lang = lang;
-        };
-
-        langButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const lang = e.target.getAttribute('data-lang-switch');
-                setLanguage(lang);
-            });
-        });
-
-        // Set default language on load
-        setLanguage('en');
-
-    </script>
-</body>
-</html>
