@@ -47,6 +47,10 @@
         .lang-btn:not(.active) {
             @apply bg-slate-700 hover:bg-slate-600 text-slate-300;
         }
+        /* Tech stack tag style */
+        .tech-tag {
+            @apply inline-block bg-slate-700 text-sky-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full;
+        }
     </style>
 </head>
 <body>
@@ -141,13 +145,13 @@
                 <div class="mb-10 ml-8">
                     <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
                     <h3 class="text-lg font-semibold text-white">Korean Language Instructor <span class="text-sky-400">@ Language Success School</span></h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">July 2025 – Present</time>
+                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Aug 2025 – Present</time>
                     <p class="text-slate-400 text-sm" data-lang="exp_language">Conduct Korean language classes, designing lesson plans and creating engaging materials to foster language acquisition and cultural understanding.</p>
                 </div>
                 <div class="mb-10 ml-8">
                     <span class="absolute flex items-center justify-center w-4 h-4 bg-sky-500 rounded-full -left-2 ring-4 ring-slate-800"></span>
                     <h3 class="text-lg font-semibold text-white">AI Trainer (for LLMs) <span class="text-sky-400">@ Outlier</span></h3>
-                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Dec 2024 – Aug 2025</time>
+                    <time class="block mb-2 text-sm font-normal leading-none text-slate-500">Dec 2024 – Present</time>
                     <p class="text-slate-400 text-sm" data-lang="exp_outlier">Currently fine-tuning large language models, focusing on creating clear and effective training data.</p>
                 </div>
                 <div class="mb-10 ml-8">
@@ -257,12 +261,11 @@
                     </div>
                     <div class="md:w-1/2">
                         <h3 class="text-2xl font-bold text-white" data-lang="case4_title">Chapter 4: The Confirmation</h3>
-                        <p class="text-sky-400 mt-1 font-semibold" data-lang="case4_role">AI Researcher & Teaching Assistant at UTRGV</p>
+                        <p class="text-sky-400 mt-1 font-semibold" data-lang="case4_role">AI Researcher at UTRGV</p>
                             <div class="mt-4 text-slate-400 space-y-2" data-lang="case4_desc">
-                            <p>At UTRGV, I put my budding educational philosophy to the test. I applied my AI knowledge to a real-world USDA research project while teaching programming concepts to over 300 undergraduate students. <strong class="text-lg text-sky-400">Seeing them grasp complex ideas confirmed that my practical, hands-on approach worked.</strong> This is where my dream for education truly took shape.</p>
+                            <p>As part of a USDA research project, I played a key role in the early stages of developing a honey bee monitoring system. My contributions included <strong class="text-sky-400">hardware redesign, creating a remote video recording script for data collection, labeling the collected data, and writing the initial code to train a bee detection model</strong> using TensorFlow on a Jetson Nano. This experience confirmed my ability to apply AI to solve real-world problems from the ground up.</p>
                         </div>
                         <div class="mt-4 space-x-4">
-                            <a href="https://miutrgv.github.io/research/bee-monitoring.html" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case4_link">View the Research Project </a>
                             <a href="https://ieeexplore.ieee.org/document/10903284" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case4_paper_link">View the Paper</a>
                         </div>
                     </div>
@@ -289,10 +292,16 @@
                         <h3 class="text-2xl font-bold text-white" data-lang="case6_title">Chapter 6: The Synthesis</h3>
                         <p class="text-sky-400 mt-1 font-semibold" data-lang="case6_role">Founder & Developer of FinitUp</p>
                         <div class="mt-4 text-slate-400 space-y-2" data-lang="case6_desc">
-                            <p>To truly understand how technology creates business value, I decided to build a solution myself. FinitUp is my ongoing project to build an AI-powered stock analysis platform, directly applying the principles from my A-grade MBA courses in Finance and Economics. <strong class="text-lg text-sky-400">This is my 'Learning by Building' philosophy in action, merging my entire skillset to create tangible value.</strong></p>
+                             <p>FinitUp is my ongoing project to translate business theory into a tangible product. The goal is to <strong class="text-sky-400">automate the valuation models I learned in my MBA finance classes using AI, aiming to reduce analysis time by 90% compared to manual methods.</strong> This is my 'Learning by Building' philosophy in action, merging my entire skillset to create value.</p>
+                             <p class="mt-2">I'm building upon the open-source work of the AI4Finance Foundation (FinRL, FinRobot) to implement automated analysis, recommendations, and virtual trading.</p>
                         </div>
                         <div class="mt-4">
-                            <a href="https://finitup.com" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case6_link">Visit Finitup.com </a>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FinRL</span>
+                            <span class="tech-tag">Generative AI</span>
+                        </div>
+                        <div class="mt-4 space-x-4">
+                            <a href="https://github.com/8park/fin-dss" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case6_link_github">View on GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -305,7 +314,7 @@
                         <h3 class="text-2xl font-bold text-white" data-lang="case7_title">Chapter 7: The Current Mission</h3>
                         <p class="text-sky-400 mt-1 font-semibold" data-lang="case7_role">Founder of the UTRGV AI Club</p>
                         <div class="mt-4 text-slate-400 space-y-2" data-lang="case7_desc">
-                            <p>Now, I'm channeling all these experiences into a single mission: making technology accessible. The AI Club is the culmination of my journey. It's a community built on the belief that anyone can learn and innovate with the right guidance and a hands-on approach, <strong class="text-lg text-sky-400">a principle I discovered through my own path from engineer to educator.</strong></p>
+                            <p>I founded the AI Club not just to make technology accessible, but also to <strong class="text-sky-400">bridge the information gap between academic theory and industry practice that I experienced as an undergraduate.</strong> It's a community built on the belief that anyone can innovate with the right guidance and a hands-on approach—a principle I discovered through my own path from engineer to educator.</p>
                         </div>
                         <div class="mt-4">
                             <a href="https://sites.google.com/view/utrgvai" target="_blank" rel="noopener noreferrer" class="text-sky-400 font-semibold hover:underline" data-lang="case7_link">Visit the AI Club Website </a>
@@ -395,20 +404,19 @@
                 case3_role: "University Lab Technician & Instructor",
                 case3_desc: `<p>This role was a turning point. While managing a lab of over 50 machines, I <strong class="text-lg text-sky-400">developed and taught more than 10 new engineering workshops to over 100 students</strong>, covering everything from 3D printing to robotics. I also led a student team to build a 3D-printed robot arm and mentored university startups on prototyping. It was here I discovered my true passion: <strong class="text-lg text-sky-400">making complex technology accessible and empowering people through hands-on education.</strong></p>`,
                 case4_title: "Chapter 4: The Confirmation",
-                case4_role: "AI Researcher & Teaching Assistant at UTRGV",
-                case4_desc: `<p>At UTRGV, I put my budding educational philosophy to the test. I applied my AI knowledge to a real-world USDA research project while teaching programming concepts to over 300 undergraduate students. <strong class="text-lg text-sky-400">Seeing them grasp complex ideas confirmed that my practical, hands-on approach worked.</strong> This is where my dream for education truly took shape.</p>`,
-                case4_link: "View the Research Project ",
+                case4_role: "AI Researcher at UTRGV",
+                case4_desc: `<p>As part of a USDA research project, I played a key role in the early stages of developing a honey bee monitoring system. My contributions included <strong class="text-sky-400">hardware redesign, creating a remote video recording script for data collection, labeling the collected data, and writing the initial code to train a bee detection model</strong> using TensorFlow on a Jetson Nano. This experience confirmed my ability to apply AI to solve real-world problems from the ground up.</p>`,
                 case4_paper_link: "View the Paper",
                 case5_title: "Chapter 5: The Lesson in Grassroots Operations",
                 case5_role: "Retail Store Launch Team",
                 case5_desc: `<p>Beyond engineering and code, I wanted to understand how a large-scale business operates from the ground up. Participating in the launch of a new Burlington store was a real-world MBA lesson. From organizing the warehouse to setting up the sales floor and finally serving the first customers, I saw firsthand how every detail, from logistics to teamwork under pressure, directly impacts the bottom line and customer satisfaction. <strong class="text-lg text-sky-400">It was a powerful reminder that successful systems, whether in technology or retail, are built on well-executed fundamentals.</strong></p>`,
                 case6_title: "Chapter 6: The Synthesis",
                 case6_role: "Founder & Developer of FinitUp",
-                case6_desc: `<p>To truly understand how technology creates business value, I decided to build a solution myself. FinitUp is my ongoing project to build an AI-powered stock analysis platform, directly applying the principles from my A-grade MBA courses in Finance and Economics. <strong class="text-lg text-sky-400">This is my 'Learning by Building' philosophy in action, merging my entire skillset to create tangible value.</strong></p>`,
-                case6_link: "Visit Finitup.com ",
+                case6_desc: `<p>FinitUp is my ongoing project to translate business theory into a tangible product. The goal is to <strong class="text-sky-400">automate the valuation models I learned in my MBA finance classes using AI, aiming to reduce analysis time by 90% compared to manual methods.</strong> This is my 'Learning by Building' philosophy in action, merging my entire skillset to create value.</p><p class="mt-2">I'm building upon the open-source work of the AI4Finance Foundation (FinRL, FinRobot) to implement automated analysis, recommendations, and virtual trading.</p>`,
+                case6_link_github: "View on GitHub",
                 case7_title: "Chapter 7: The Current Mission",
                 case7_role: "Founder of the UTRGV AI Club",
-                case7_desc: `<p>Now, I'm channeling all these experiences into a single mission: making technology accessible. The AI Club is the culmination of my journey. It's a community built on the belief that anyone can learn and innovate with the right guidance and a hands-on approach, <strong class="text-lg text-sky-400">a principle I discovered through my own path from engineer to educator.</strong></p>`,
+                case7_desc: `<p>I founded the AI Club not just to make technology accessible, but also to <strong class="text-sky-400">bridge the information gap between academic theory and industry practice that I experienced as an undergraduate.</strong> It's a community built on the belief that anyone can innovate with the right guidance and a hands-on approach—a principle I discovered through my own path from engineer to educator.</p>`,
                 case7_link: "Visit the AI Club Website ",
                 philosophy_title: "My Guiding Philosophy",
                 philosophy_subtitle: "Learning by Building",
@@ -461,20 +469,19 @@
                 case3_role: "Técnico de Laboratorio e Instructor Universitario",
                 case3_desc: `<p>Este rol fue un punto de inflexión. Mientras gestionaba un laboratorio de más de 50 máquinas, <strong class="text-lg text-sky-400">desarrollé e impartí más de 10 nuevos talleres de ingeniería práctica a más de 100 estudiantes</strong>, cubriendo desde impresión 3D hasta robótica. También lideré un equipo estudiantil para construir un brazo robótico impreso en 3D y asesoré a startups universitarias en prototipado. Fue aquí donde descubrí mi verdadera pasión: <strong class="text-lg text-sky-400">hacer la tecnología compleja accesible y empoderar a las personas mediante la educación práctica.</strong></p>`,
                 case4_title: "Capítulo 4: La Confirmación",
-                case4_role: "Investigador de IA y Asistente de Cátedra en UTRGV",
-                case4_desc: `<p>En UTRGV, puse a prueba mi incipiente filosofía educativa. Apliqué mis conocimientos de IA a un proyecto de investigación real del USDA mientras enseñaba conceptos de programación a más de 300 estudiantes de pregrado. <strong class="text-lg text-sky-400">Verlos comprender ideas complejas confirmó que mi enfoque práctico y directo funcionaba.</strong> Aquí es donde mi sueño por la educación realmente tomó forma.</p>`,
-                case4_link: "Ver el Proyecto de Investigación ",
+                case4_role: "Investigador de IA en UTRGV",
+                case4_desc: `<p>Como parte de un proyecto de investigación del USDA, desempeñé un papel clave en las etapas iniciales del desarrollo de un sistema de monitoreo de abejas. Mis contribuciones incluyeron el <strong class="text-sky-400">rediseño de hardware, la creación de un script de grabación de video remota para la recolección de datos, el etiquetado de los datos recopilados y la escritura del código inicial para entrenar un modelo de detección de abejas</strong> usando TensorFlow en un Jetson Nano. Esta experiencia confirmó mi capacidad para aplicar la IA para resolver problemas del mundo real desde cero.</p>`,
                 case4_paper_link: "Ver el Artículo",
                 case5_title: "Capítulo 5: La Lección en Operaciones de Base",
                 case5_role: "Equipo de Lanzamiento de Tienda Minorista",
                 case5_desc: `<p>Más allá de la ingeniería y el código, quería entender cómo opera un negocio a gran escala desde cero. Participar en el lanzamiento de una nueva tienda Burlington fue una lección de MBA en el mundo real. Desde organizar el almacén hasta preparar el piso de ventas y finalmente atender a los primeros clientes, vi de primera mano cómo cada detalle, desde la logística hasta el trabajo en equipo bajo presión, impacta directamente en el resultado final y la satisfacción del cliente. <strong class="text-lg text-sky-400">Fue un poderoso recordatorio de que los sistemas exitosos, ya sea en tecnología o en retail, se construyen sobre fundamentos bien ejecutados.</strong></p>`,
                 case6_title: "Capítulo 6: La Síntesis",
                 case6_role: "Fundador y Desarrollador de FinitUp",
-                case6_desc: `<p>Para entender verdaderamente cómo la tecnología crea valor empresarial, decidí construir una solución yo mismo. FinitUp es mi proyecto en curso para construir una plataforma de análisis de acciones impulsada por IA, aplicando directamente los principios de mis cursos de MBA con calificación A en Finanzas y Economía. <strong class="text-lg text-sky-400">Esta es mi filosofía de 'Aprender Construyendo' en acción, fusionando todo mi conjunto de habilidades para crear valor tangible.</strong></p>`,
-                case6_link: "Visitar Finitup.com ",
+                case6_desc: `<p>FinitUp es mi proyecto en curso para traducir la teoría empresarial en un producto tangible. El objetivo es <strong class="text-sky-400">automatizar los modelos de valoración que aprendí en mis clases de finanzas de MBA usando IA, con el fin de reducir el tiempo de análisis en un 90% en comparación con los métodos manuales.</strong> Esta es mi filosofía de 'Aprender Construyendo' en acción, fusionando todo mi conjunto de habilidades para crear valor.</p><p class="mt-2">Estoy construyendo sobre el trabajo de código abierto de la AI4Finance Foundation (FinRL, FinRobot) para implementar análisis automatizado, recomendaciones y trading virtual.</p>`,
+                case6_link_github: "Ver en GitHub",
                 case7_title: "Capítulo 7: La Misión Actual",
                 case7_role: "Fundador del Club de IA de UTRGV",
-                case7_desc: `<p>Ahora, estoy canalizando todas estas experiencias en una única misión: hacer la tecnología accesible. El Club de IA es la culminación de mi viaje. Es una comunidad construida sobre la creencia de que cualquiera puede aprender e innovar con la guía adecuada y un enfoque práctico, <strong class="text-lg text-sky-400">un principio que descubrí a través de mi propio camino de ingeniero a educador.</strong></p>`,
+                case7_desc: `<p>Fundé el Club de IA no solo para hacer la tecnología accesible, sino también para <strong class="text-sky-400">cerrar la brecha de información entre la teoría académica y la práctica de la industria que experimenté como estudiante de pregrado.</strong> Es una comunidad construida sobre la creencia de que cualquiera puede innovar con la guía adecuada y un enfoque práctico, un principio que descubrí a través de mi propio camino de ingeniero a educador.</p>`,
                 case7_link: "Visitar el Sitio Web del Club de IA ",
                 philosophy_title: "Mi Filosofía Rectora",
                 philosophy_subtitle: "Aprender Construyendo",
@@ -527,20 +534,19 @@
                 case3_role: "대학 실험실 기술자 및 강사",
                 case3_desc: `<p>이 역할은 전환점이었습니다. 50대 이상의 기계를 관리하면서, <strong class="text-lg text-sky-400">100명 이상의 대학생들에게 10개 이상의 새로운 실습 중심 엔지니어링 워크숍을 개발하고 가르쳤습니다</strong>. 3D 프린팅부터 로보틱스까지 모든 것을 다루었습니다. 또한 학생 팀을 이끌어 3D 프린팅 로봇 팔을 제작하고 대학 스타트업들의 프로토타입 제작을 멘토링했습니다. 바로 이곳에서 저는 제 진정한 열정을 발견했습니다: <strong class="text-lg text-sky-400">복잡한 기술을 쉽게 접할 수 있게 만들고, 직접 해보는 교육을 통해 사람들에게 힘을 실어주는 것.</strong></p>`,
                 case4_title: "4장: 확신",
-                case4_role: "UTRGV AI 연구원 및 조교",
-                case4_desc: `<p>UTRGV에서 저는 막 싹트기 시작한 교육 철학을 시험대에 올렸습니다. 300명 이상의 학부생들에게 프로그래밍 개념을 가르치면서 제 AI 지식을 실제 USDA 연구 프로젝트에 적용했습니다. <strong class="text-lg text-sky-400">그들이 복잡한 아이디어를 이해하는 것을 보면서 저의 실용적이고 직접적인 접근 방식이 효과가 있다는 것을 확인했습니다.</strong> 이곳에서 교육에 대한 저의 꿈이 진정으로 구체화되었습니다.</p>`,
-                case4_link: "연구 프로젝트 보기 ",
+                case4_role: "UTRGV AI 연구원",
+                case4_desc: `<p>UTRGV에서 USDA 연구에 참여하며, 제 기술을 실제 문제 해결에 적용했습니다. 저는 <strong class="text-sky-400">Jetson Nano 기반의 꿀벌 모니터링 시스템 개발 초기 단계에 핵심적으로 기여</strong>했습니다. 하드웨어 재설계에 참여하고, 데이터 수집을 위한 원격 영상 녹화 코드를 작성했으며, 수집된 영상 데이터에 레이블을 달고, TensorFlow를 이용해 꿀벌 탐지 모델의 초기 코드를 작성했습니다. 이 경험은 AI 기술을 이용해 현실의 문제를 해결할 수 있다는 확신을 주었습니다.</p>`,
                 case4_paper_link: "논문 보기",
                 case5_title: "5장: 현장 운영의 교훈",
                 case5_role: "리테일 스토어 런칭팀",
                 case5_desc: `<p>엔지니어링과 코드를 넘어, 저는 대규모 비즈니스가 어떻게 가장 기본적인 단계부터 운영되는지 이해하고 싶었습니다. 벌링턴 신규 매장 오픈에 참여한 것은 실제 MBA 수업과도 같았습니다. 창고 정리부터 매장 진열, 그리고 마침내 첫 고객을 응대하기까지, 물류와 팀워크 같은 모든 세부사항이 어떻게 수익 및 고객 만족에 직접적인 영향을 미치는지 직접 목격했습니다. <strong class="text-lg text-sky-400">기술이든 유통이든, 성공적인 시스템은 잘 실행된 기본기 위에 세워진다는 강력한 교훈을 얻었습니다.</strong></p>`,
                 case6_title: "6장: 종합",
                 case6_role: "FinitUp 설립자 및 개발자",
-                case6_desc: `<p>기술이 어떻게 비즈니스 가치를 창출하는지 진정으로 이해하기 위해, 저는 직접 솔루션을 만들어보기로 결심했습니다. FinitUp은 금융 및 경제학 MBA 과정에서 A학점을 받은 원칙을 직접 적용하여 AI 기반 주식 분석 플랫폼을 구축하는 저의 진행 중인 프로젝트입니다. <strong class="text-lg text-sky-400">이것이 바로 저의 '만들면서 배우기' 철학이 실제로 구현된 것이며, 저의 모든 기술을 통합하여 실질적인 가치를 창출하는 과정입니다.</strong></p>`,
-                case6_link: "Finitup.com 방문하기 ",
+                case6_desc: `<p>FinitUp은 비즈니스 이론을 실제 제품으로 구현하는 저의 현재 진행형 프로젝트입니다. 목표는 <strong class="text-sky-400">MBA 재무관리 수업에서 배운 가치평가모델을 AI로 자동화하여, 분석에 걸리는 시간을 수작업 대비 90% 단축하는 것</strong>입니다. 이것이야말로 저의 모든 기술을 통합하여 가치를 만드는 '만들면서 배우기' 철학의 실천입니다.</p><p class="mt-2">AI4Finance Foundation의 오픈소스(FinRL, FinRobot)를 기반으로 자동화 분석, 주식 추천 및 가상 매매 기능을 구현하고 있습니다.</p>`,
+                case6_link_github: "GitHub에서 보기",
                 case7_title: "7장: 현재의 미션",
                 case7_role: "UTRGV AI 클럽 설립자",
-                case7_desc: `<p>이제 저는 이 모든 경험을 하나의 미션, 즉 기술을 누구나 접근 가능하게 만드는 데 쏟아붓고 있습니다. AI 클럽은 제 여정의 정점입니다. 올바른 지도와 실습 접근 방식만 있다면 누구나 배우고 혁신할 수 있다는 믿음 위에 세워진 커뮤니티이며, <strong class="text-lg text-sky-400">이 원칙은 엔지니어에서 교육자로 이어진 저 자신의 길을 통해 발견한 것입니다.</strong></p>`,
+                case7_desc: `<p>AI 클럽을 설립한 이유는 단순히 기술을 전파하기 위함만이 아닙니다. 제가 학부 시절 겪었던 <strong class="text-sky-400">이론과 산업 현장 간의 정보 격차를 해소하고, 후배들이 더 많은 기회를 잡을 수 있도록 돕고 싶었습니다.</strong> 올바른 지도와 실습 접근만 있다면 누구나 혁신할 수 있다는 믿음, 엔지니어에서 교육자로 이어진 저의 길을 통해 발견한 원칙으로 커뮤니티를 만들고 있습니다.</p>`,
                 case7_link: "AI 클럽 웹사이트 방문하기 ",
                 philosophy_title: "나의 지침 철학",
                 philosophy_subtitle: "만들면서 배우기",
