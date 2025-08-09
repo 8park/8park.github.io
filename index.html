@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junseong Park - Engineer, Developer, Leader</title>
+    <title>Junseong Park - Engineer, AI Innovator, Educator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
         .font-poppins {
             font-family: 'Poppins', sans-serif;
         }
-        /* Custom scrollbar for a more refined look */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -47,13 +47,17 @@
         .lang-btn:not(.active) {
             @apply bg-slate-700 hover:bg-slate-600 text-slate-300;
         }
-        /* Tech stack tag style */
+        /* General purpose tag style */
         .tech-tag {
             @apply inline-block bg-slate-700 text-sky-300 text-xs font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full;
         }
+        /* Skill tag style for the new competencies section */
+        .skill-tag {
+             @apply inline-block bg-slate-700 text-sky-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-lg;
+        }
     </style>
 </head>
-<body>
+<body class="bg-slate-900 text-slate-300">
 
     <header class="bg-slate-900/95 backdrop-blur-lg sticky top-0 z-50 shadow-lg border-b border-slate-800">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -87,9 +91,9 @@
 
         <section class="py-20 md:py-32 flex flex-col-reverse md:flex-row items-center">
             <div class="md:w-2/3 text-center md:text-left">
-                <h1 class="text-4xl md:text-6xl font-poppins font-bold text-white leading-tight" data-lang="hero_title">Connecting Ideas to Reality Through Technology</h1>
+                <h1 class="text-4xl md:text-6xl font-poppins font-bold text-white leading-tight" data-lang="hero_title">Engineer. AI Innovator. Educator.</h1>
                 <p class="mt-6 text-lg text-slate-400 max-w-2xl" data-lang="hero_subtitle">
-                    From leading a technical team in the military to fabricating automotive prototypes and applying AI in academic research, my path has taught me one thing: the most powerful solutions are born at the intersection of hands-on engineering, data-driven insights, and a deep understanding of people.
+                    Bridging AI, Engineering, and Education to Build Practical Solutions.
                 </p>
                 <div class="mt-8 mb-8">
                     <p class="font-poppins text-sky-400 text-center md:text-left" data-lang="quick_contact">Quick Contact</p>
@@ -112,28 +116,72 @@
 
         <section id="skills" class="py-20">
             <h2 class="section-title" data-lang="skills_title">My Core Competencies</h2>
-            <p class="section-subtitle" data-lang="skills_subtitle">These are the tools and technologies I've mastered through hands-on application.</p>
-            <div class="mt-12 max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-800 p-6 rounded-xl">
-                    <h3 class="text-xl font-poppins font-bold text-white mb-3" data-lang="skills_cat1_title">Programming & Software</h3>
-                    <ul class="text-slate-400 space-y-2">
-                        <li><strong class="text-slate-300">Languages:</strong> Python, C++</li>
-                        <li><strong class="text-slate-300">AI Frameworks:</strong> TensorFlow, PyTorch</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 p-6 rounded-xl">
-                    <h3 class="text-xl font-poppins font-bold text-white mb-3" data-lang="skills_cat2_title">AI & Data Science</h3>
-                    <ul class="text-slate-400 space-y-2">
-                        <li>Machine Learning & Deep Learning</li>
-                        <li>Generative AI, LLMs & Computer Vision</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 p-6 rounded-xl">
-                    <h3 class="text-xl font-poppins font-bold text-white mb-3" data-lang="skills_cat3_title">Engineering & Prototyping</h3>
-                    <ul class="text-slate-400 space-y-2">
-                        <li><strong class="text-slate-300">CAD & Fabrication:</strong> SolidWorks, 3D Printing, 3D Scanner, CNC</li>
-                        <li><strong class="text-slate-300">Systems:</strong> Robotics, Drones, VR, Motion Capture</li>
-                    </ul>
+            <p class="section-subtitle" data-lang="skills_subtitle">A practical toolkit for building real-world solutions.</p>
+            <div class="mt-12 max-w-5xl mx-auto bg-slate-800 rounded-2xl shadow-lg p-6 md:p-10">
+                <div class="space-y-8">
+                    <div class="flex flex-col md:flex-row md:items-start border-b border-slate-700 pb-8">
+                        <div class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0">
+                            <h3 class="text-xl font-poppins font-bold text-white flex items-center">
+                                <span class="text-2xl mr-3">🖥️</span>
+                                <span data-lang="skills_cat_dev">Software & Development</span>
+                            </h3>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <code class="skill-tag">Python</code>
+                            <code class="skill-tag">C++</code>
+                            <code class="skill-tag">Software Architecture</code>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-start border-b border-slate-700 pb-8">
+                        <div class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0">
+                            <h3 class="text-xl font-poppins font-bold text-white flex items-center">
+                                <span class="text-2xl mr-3">🧠</span>
+                                <span data-lang="skills_cat_ai">AI & Data Science</span>
+                            </h3>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <code class="skill-tag">Machine Learning</code>
+                            <code class="skill-tag">Deep Learning</code>
+                            <code class="skill-tag">Generative AI</code>
+                            <code class="skill-tag">LLMs</code>
+                            <code class="skill-tag">Computer Vision</code>
+                            <code class="skill-tag">TensorFlow</code>
+                            <code class="skill-tag">PyTorch</code>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-start border-b border-slate-700 pb-8">
+                        <div class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0">
+                            <h3 class="text-xl font-poppins font-bold text-white flex items-center">
+                                <span class="text-2xl mr-3">🛠️</span>
+                                <span data-lang="skills_cat_eng">Engineering & Prototyping</span>
+                            </h3>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <code class="skill-tag">CAD (SolidWorks)</code>
+                            <code class="skill-tag">3D Printing & Scanning</code>
+                            <code class="skill-tag">CNC</code>
+                            <code class="skill-tag">Robotics</code>
+                            <code class="skill-tag">Drones</code>
+                            <code class="skill-tag">Embedded Systems</code>
+                            <code class="skill-tag">VR/MoCap</code>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-start">
+                        <div class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0">
+                            <h3 class="text-xl font-poppins font-bold text-white flex items-center">
+                                <span class="text-2xl mr-3">📈</span>
+                                <span data-lang="skills_cat_mgmt">Strategy & Management</span>
+                            </h3>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <code class="skill-tag">Project Management</code>
+                            <code class="skill-tag">Team Leadership</code>
+                            <code class="skill-tag">Process Improvement</code>
+                            <code class="skill-tag">Financial Modeling</code>
+                            <a href="#path-finitup"><code class="skill-tag hover:bg-sky-500 hover:text-white transition-colors cursor-pointer">AI-based Valuation (FinitUp)</code></a>
+                            <a href="#path-aiclub"><code class="skill-tag hover:bg-sky-500 hover:text-white transition-colors cursor-pointer">Community Building (UTRGV AI Club)</code></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -211,7 +259,7 @@
                 </div>
             </div>
         </section>
-        
+      
         <section id="casestudies" class="py-20">
             <h2 class="section-title" data-lang="casestudies_title">My Path: From Engineer to Educator</h2>
             <p class="section-subtitle" data-lang="casestudies_subtitle">My interest in education grew naturally from my experiences as an engineer and leader. Each step of my journey revealed a new piece of the puzzle.</p>
@@ -316,8 +364,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+              
+                <div id="path-finitup" class="flex flex-col md:flex-row-reverse items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/finitup.jpg" alt="FinitUp Platform" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=FinitUp';">
                     </div>
@@ -325,8 +373,8 @@
                         <h3 class="text-2xl font-bold text-white" data-lang="case6_title">Chapter 6: The Synthesis</h3>
                         <p class="text-sky-400 mt-1 font-semibold" data-lang="case6_role">Founder & Developer of FinitUp</p>
                         <div class="mt-4 text-slate-400 space-y-2" data-lang="case6_desc">
-                                 <p>FinitUp is my ongoing project to translate business theory into a tangible product. The goal is to <strong class="text-sky-400">automate the valuation models I learned in my MBA finance classes using AI, aiming to reduce analysis time by 90% compared to manual methods.</strong> This is my 'Learning by Building' philosophy in action, merging my entire skillset to create value.</p>
-                                 <p class="mt-2">I'm building upon the open-source work of the AI4Finance Foundation (FinRL, FinRobot) to implement automated analysis, recommendations, and virtual trading.</p>
+                                <p>FinitUp is my ongoing project to translate business theory into a tangible product. The goal is to <strong class="text-sky-400">automate the valuation models I learned in my MBA finance classes using AI, aiming to reduce analysis time by 90% compared to manual methods.</strong> This is my 'Learning by Building' philosophy in action, merging my entire skillset to create value.</p>
+                                <p class="mt-2">I'm building upon the open-source work of the AI4Finance Foundation (FinRL, FinRobot) to implement automated analysis, recommendations, and virtual trading.</p>
                         </div>
                         <div class="mt-4">
                             <span class="tech-tag">Python</span>
@@ -340,7 +388,7 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row items-center gap-10">
+                <div id="path-aiclub" class="flex flex-col md:flex-row items-center gap-10">
                     <div class="md:w-1/2">
                         <img src="images/aiclub.jpg" alt="UTRGV AI Club" class="rounded-xl shadow-lg w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=UTRGV+AI+Club';">
                     </div>
@@ -364,7 +412,7 @@
 
             </div>
         </section>
-        
+      
         <section id="philosophy" class="py-20">
             <h2 class="section-title" data-lang="philosophy_title">My Guiding Philosophy</h2>
             <div class="mt-12 max-w-3xl mx-auto text-center bg-slate-800 p-8 md:p-12 rounded-xl shadow-lg">
@@ -411,16 +459,17 @@
                 nav_casestudies_mobile: "My Path",
                 nav_philosophy_mobile: "Philosophy",
                 nav_contact_mobile: "Contact",
-                hero_title: "Connecting Ideas to Reality Through Technology",
-                hero_subtitle: "From leading a technical team in the military to fabricating automotive prototypes and applying AI in academic research, my path has taught me one thing: the most powerful solutions are born at the intersection of hands-on engineering, data-driven insights, and a deep understanding of people.",
+                hero_title: "Engineer. AI Innovator. Educator.",
+                hero_subtitle: "Bridging AI, Engineering, and Education to Build Practical Solutions.",
                 quick_contact: "Quick Contact",
                 hero_btn_work: "See My Path",
                 resume_download_btn: "Download Resume",
                 skills_title: "My Core Competencies",
-                skills_subtitle: "These are the tools and technologies I've mastered through hands-on application.",
-                skills_cat1_title: "Programming & Software",
-                skills_cat2_title: "AI & Data Science",
-                skills_cat3_title: "Engineering & Prototyping",
+                skills_subtitle: "A practical toolkit for building real-world solutions.",
+                skills_cat_dev: "Software & Development",
+                skills_cat_ai: "AI & Data Science",
+                skills_cat_eng: "Engineering & Prototyping",
+                skills_cat_mgmt: "Strategy & Management",
                 experience_title: "Professional Experience",
                 experience_subtitle: "A timeline of my key roles and responsibilities.",
                 exp_language: "Conduct Korean language classes, designing lesson plans and creating engaging materials to foster language acquisition and cultural understanding.",
@@ -480,16 +529,17 @@
                 nav_casestudies_mobile: "Mi Camino",
                 nav_philosophy_mobile: "Filosofía",
                 nav_contact_mobile: "Contacto",
-                hero_title: "Conectando Ideas con la Realidad a Través de la Tecnología",
-                hero_subtitle: "Desde liderar un equipo técnico en el ejército hasta fabricar prototipos automotrices y aplicar IA en investigación académica, mi camino me ha enseñado una cosa: las soluciones más poderosas nacen en la intersección de la ingeniería práctica, los conocimientos basados en datos y una profunda comprensión de las personas.",
+                hero_title: "Ingeniero. Innovador de IA. Educador.",
+                hero_subtitle: "Uniendo IA, Ingeniería y Educación para Construir Soluciones Prácticas.",
                 quick_contact: "Contacto Rápido",
                 hero_btn_work: "Ver Mi Camino",
                 resume_download_btn: "Descargar CV",
                 skills_title: "Mis Competencias Clave",
-                skills_subtitle: "Estas son las herramientas y tecnologías que he dominado a través de la aplicación práctica.",
-                skills_cat1_title: "Programación y Software",
-                skills_cat2_title: "IA y Ciencia de Datos",
-                skills_cat3_title: "Ingeniería y Prototipos",
+                skills_subtitle: "Un conjunto de herramientas prácticas para construir soluciones del mundo real.",
+                skills_cat_dev: "Software y Desarrollo",
+                skills_cat_ai: "IA y Ciencia de Datos",
+                skills_cat_eng: "Ingeniería y Prototipos",
+                skills_cat_mgmt: "Estrategia y Gestión",
                 experience_title: "Experiencia Profesional",
                 experience_subtitle: "Una cronología de mis roles y responsabilidades clave.",
                 exp_language: "Imparto clases de coreano, diseñando planes de lecciones y creando materiales atractivos para fomentar la adquisición del idioma y la comprensión cultural.",
@@ -539,26 +589,27 @@
                 footer_copy: "&copy; 2025 Junseong Park. Todos los derechos reservados."
             },
             ko: {
-                nav_skills: "기술",
-                nav_experience: "경력",
+                nav_skills: "핵심 역량",
+                nav_experience: "주요 경력",
                 nav_casestudies: "나의 길",
-                nav_philosophy: "철학",
+                nav_philosophy: "나의 철학",
                 nav_contact: "연락처",
-                nav_skills_mobile: "기술",
-                nav_experience_mobile: "경력",
+                nav_skills_mobile: "핵심 역량",
+                nav_experience_mobile: "주요 경력",
                 nav_casestudies_mobile: "나의 길",
-                nav_philosophy_mobile: "철학",
+                nav_philosophy_mobile: "나의 철학",
                 nav_contact_mobile: "연락처",
-                hero_title: "기술을 통해 아이디어를 현실로",
-                hero_subtitle: "군대에서 기술팀을 이끌었던 경험부터 자동차 프로토타입 제작, 학술 연구에 AI를 적용하기까지, 저의 여정은 한 가지를 가르쳐주었습니다. 가장 강력한 솔루션은 직접 부딪히는 엔지니어링, 데이터 기반의 통찰력, 그리고 사람에 대한 깊은 이해가 만나는 지점에서 탄생한다는 것을요.",
+                hero_title: "엔지니어. AI 혁신가. 교육자.",
+                hero_subtitle: "AI, 엔지니어링, 교육을 연결하여 실용적인 솔루션을 만듭니다.",
                 quick_contact: "빠른 연락",
                 hero_btn_work: "나의 길 보기",
                 resume_download_btn: "이력서 다운로드",
                 skills_title: "핵심 역량",
-                skills_subtitle: "제가 직접 부딪히며 익힌 도구와 기술들입니다.",
-                skills_cat1_title: "프로그래밍 및 소프트웨어",
-                skills_cat2_title: "AI 및 데이터 과학",
-                skills_cat3_title: "엔지니어링 및 프로토타이핑",
+                skills_subtitle: "실질적인 솔루션을 만들기 위한 저의 실용적인 툴킷입니다.",
+                skills_cat_dev: "소프트웨어 & 개발",
+                skills_cat_ai: "AI & 데이터 과학",
+                skills_cat_eng: "엔지니어링 & 프로토타이핑",
+                skills_cat_mgmt: "전략 & 매니지먼트",
                 experience_title: "주요 경력",
                 experience_subtitle: "저의 주요 역할과 책임에 대한 타임라인입니다.",
                 exp_language: "다양한 수준의 학생들을 위해 수업 계획을 설계하고, 언어 습득과 문화 이해를 돕는 매력적인 교육 자료를 개발하며 한국어 수업을 진행합니다.",
@@ -610,15 +661,17 @@
         };
 
         const langButtons = document.querySelectorAll('[data-lang-switch]');
-        
+      
         const setLanguage = (lang) => {
             const langData = translations[lang];
+            if (!langData) return;
+
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const key = el.getAttribute('data-lang');
                 if (langData[key]) {
-                    // Use innerHTML for elements that might contain other HTML tags (like <strong> or &copy;)
+                    // Use innerHTML for elements that might contain other HTML tags
                     if (key.includes('_desc') || key.includes('_subtitle') || key.includes('_copy')) {
-                         el.innerHTML = langData[key];
+                        el.innerHTML = langData[key];
                     } else {
                         // For simple text content
                         // Special case for the download button to preserve the SVG icon
