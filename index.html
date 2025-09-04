@@ -56,60 +56,12 @@
 </head>
 <body class="bg-white text-slate-700">
 
-    <section class="text-center py-16">
-        <div class="container mx-auto px-6">
-            <img src="images/parkxlab_logo.jpeg" alt="Park x Lab Logo" class="mx-auto h-40 w-auto">
-            <h2 class="mt-4 text-2xl font-semibold text-slate-800">Park's Lab for Learning by building</h2>
-        </div>
-    </section>
-
-    <section class="bg-slate-50 py-20">
-        <div class="container mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="section-title mb-12">Projects in progress</h2>
-                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                    <a href="https://www.finitup.com/" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-lg shadow-md p-6 hover:scale-105 transition-transform">
-                        <img src="images/finitup.jpg" alt="Finitup Project" class="rounded-md w-full h-48 object-cover mb-4">
-                        <h3 class="text-xl font-bold text-slate-900">Finitup</h3>
-                        <p class="text-slate-600 mt-2">An AI-powered system to automate financial analysis and valuation.</p>
-                    </a>
-                    <a href="https://sites.google.com/view/utrgvai" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-lg shadow-md p-6 hover:scale-105 transition-transform">
-                        <img src="images/aiclub.jpg" alt="AI Club Project" class="rounded-md w-full h-48 object-cover mb-4">
-                        <h3 class="text-xl font-bold text-slate-900">AI Club at UTRGV</h3>
-                        <p class="text-slate-600 mt-2">A community to make AI accessible for all students through hands-on projects.</p>
-                    </a>
-                </div>
-            </div>
-
-            <div>
-                <h2 class="section-title mb-12">Completed projects</h2>
-                <div class="max-w-2xl mx-auto">
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:scale-105 transition-transform">
-                        <img src="images/intellibeehive.gif" alt="IntelliBeeHive System in action" class="rounded-md w-full h-56 object-cover mb-4">
-                        <h3 class="text-xl font-bold text-slate-900">AI Vision (IntelliBeeHive)</h3>
-                        <p class="text-slate-600 mt-2">An AI/IoT monitoring system for honey bees, funded by the USDA.</p>
-                        <div class="mt-6 flex flex-wrap gap-4">
-                            <a href="https://bee.utrgv.edu" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-100 hover:bg-sky-200 text-sky-800 font-semibold text-sm px-4 py-2 rounded-full transition-colors">
-                                View Project Website
-                            </a>
-                            <a href="https://doi.org/10.1109/ICMLA61862.2024.00122" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold text-sm px-4 py-2 rounded-full transition-colors">
-                                Read the Paper (DOI)
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-    </section>
-
-    <section class="py-16">
-        <h2 class="section-title">About Me</h2>
-    </section>
-
     <header class="bg-white/95 backdrop-blur-lg sticky top-0 z-50 shadow-md border-b border-slate-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-poppins font-bold text-slate-900"><strong>Junseong Park</strong></a>
             <div class="hidden md:flex items-center space-x-6 font-poppins">
+                <a href="#projects" class="hover:text-sky-600 transition-colors text-sm" data-lang="nav_projects"></a>
+                <a href="#about" class="hover:text-sky-600 transition-colors text-sm" data-lang="nav_about"></a>
                 <a href="#technical-skills" class="hover:text-sky-600 transition-colors text-sm" data-lang="nav_skills"></a>
                 <a href="#experience" class="hover:text-sky-600 transition-colors text-sm" data-lang="nav_experience"></a>
                 <a href="#research" class="hover:text-sky-600 transition-colors text-sm" data-lang="nav_research"></a>
@@ -121,6 +73,8 @@
             </button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden font-poppins bg-white/95">
+            <a href="#projects" class="block py-2 px-6 text-sm hover:bg-slate-100" data-lang="nav_projects_mobile"></a>
+            <a href="#about" class="block py-2 px-6 text-sm hover:bg-slate-100" data-lang="nav_about_mobile"></a>
             <a href="#technical-skills" class="block py-2 px-6 text-sm hover:bg-slate-100" data-lang="nav_skills_mobile"></a>
             <a href="#experience" class="block py-2 px-6 text-sm hover:bg-slate-100" data-lang="nav_experience_mobile"></a>
             <a href="#research" class="block py-2 px-6 text-sm hover:bg-slate-100" data-lang="nav_research_mobile"></a>
@@ -129,6 +83,14 @@
         </div>
     </header>
 
+    <section class="text-center py-16">
+        <div class="container mx-auto px-6">
+            <img src="images/parkxlab_logo.jpeg" alt="Park x Lab Logo" class="mx-auto h-40 w-auto">
+            <h2 class="mt-4 text-2xl font-semibold text-slate-800" data-lang="lab_title"></h2>
+            <h2 class="mt-0 text-1xl font-semibold text-slate-800" data-lang="lab_subtitle"></h2>
+        </div>
+    </section>
+
     <main class="container mx-auto px-6 relative">
         <div class="absolute top-6 right-6 z-10 flex items-center space-x-2">
             <button class="lang-btn active" data-lang-switch="en">EN</button>
@@ -136,41 +98,73 @@
             <button class="lang-btn" data-lang-switch="ko">KO</button>
         </div>
 
-            <section class="py-20 md:py-32 flex flex-col-reverse md:flex-row items-center">
-                <div class="md:w-2/3 text-center md:text-left">
-                    <h1 class="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-tight" data-lang="hero_name">
-                    </h1>
-                    <h2 class="font-poppins text-2xl sm:text-3xl md:text-4xl text-slate-700 mt-2" data-lang="hero_title">
-                    </h2>
-                    <div class="mt-8 mb-8">
-                        <a href="mailto:parkxlab@gmail.com" class="text-lg text-slate-800 text-center md:text-left block hover:underline">parkxlab@gmail.com</a>
-                    </div>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                        <a href="https://www.linkedin.com/in/parkxlab/" target="_blank" rel="noopener noreferrer" class="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center">
-                            <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-                                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
-                            </svg>
-                            Linkedin
+        <section id="projects" class="py-20 bg-slate-50 rounded-2xl">
+            <div class="container mx-auto px-6">
+                <div class="mb-16">
+                    <h2 class="section-title mb-12" data-lang="projects_in_progress"></h2>
+                    <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                        <a href="https://www.finitup.com/" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-lg shadow-md p-6 hover:scale-105 transition-transform">
+                            <img src="images/finitup.jpg" alt="Finitup Project" class="rounded-md w-full h-48 object-cover mb-4">
+                            <h3 class="text-xl font-bold text-slate-900">Finitup</h3>
+                            <p class="text-slate-600 mt-2" data-lang="finitup_desc"></p>
                         </a>
-                        <a href="https://github.com/parkxlab" target="_blank" rel="noopener noreferrer" class="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center">
-                            <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
-                                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 85.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
-                            </svg>
-                            GitHub
-                        </a>
-                        <!-- <a href="https://www.youtube.com/@parkxlab" target="_blank" rel="noopener noreferrer" class="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center">
-                            <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
-                                <path d="M549.655 124.083c-6.281-23.65-24.787-42.1-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.497-41.998 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.286 23.65 24.787 42.1 48.284 48.597C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.497 41.998-24.947 48.284-48.597 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zM232.615 358.71V153.284l153.286 102.713-153.286 102.713z"/>
-                            </svg>
-                            YouTube
-                        </a> -->
-                        <a href="https://drive.google.com/file/d/1HBWcC8TvF7DF-acNuN-bxJhyv1HpFG_X/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center" data-lang="resume_download_btn">
-                            <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
+                        <a href="https://sites.google.com/view/utrgvai" target="_blank" rel="noopener noreferrer" class="block bg-white rounded-lg shadow-md p-6 hover:scale-105 transition-transform">
+                            <img src="images/aiclub.jpg" alt="AI Club Project" class="rounded-md w-full h-48 object-cover mb-4">
+                            <h3 class="text-xl font-bold text-slate-900">AI Club at UTRGV</h3>
+                            <p class="text-slate-600 mt-2" data-lang="aiclub_desc"></p>
                         </a>
                     </div>
                 </div>
+
+                <div>
+                    <h2 class="section-title mb-12" data-lang="completed_projects"></h2>
+                    <div class="max-w-2xl mx-auto">
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:scale-105 transition-transform">
+                            <img src="images/intellibeehive.gif" alt="IntelliBeeHive System in action" class="rounded-md w-full h-56 object-cover mb-4">
+                            <h3 class="text-xl font-bold text-slate-900">AI Vision (IntelliBeeHive)</h3>
+                            <p class="text-slate-600 mt-2" data-lang="intellibeehive_desc"></p>
+                            <div class="mt-6 flex flex-wrap gap-4">
+                                <a href="https://bee.utrgv.edu" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-100 hover:bg-sky-200 text-sky-800 font-semibold text-sm px-4 py-2 rounded-full transition-colors" data-lang="view_project_website_btn">
+                                </a>
+                                <a href="https://doi.org/10.1109/ICMLA61862.2024.00122" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold text-sm px-4 py-2 rounded-full transition-colors" data-lang="read_paper_btn">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-32 flex flex-col-reverse md:flex-row items-center">
+            <div class="md:w-2/3 text-center md:text-left">
+                <h1 class="font-poppins text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 leading-tight" data-lang="hero_name">
+                </h1>
+                <h2 class="font-poppins text-2xl sm:text-3xl md:text-4xl text-slate-700 mt-2" data-lang="hero_title">
+                <h2 class="font-poppins text-1xl sm:text-1xl md:text-4xl text-slate-700 mt-2" data-lang="hero_subtitle">
+                </h2>
+                <div class="mt-8 mb-8">
+                    <a href="mailto:parkxlab@gmail.com" class="text-lg text-slate-800 text-center md:text-left block hover:underline">parkxlab@gmail.com</a>
+                </div>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="https://www.linkedin.com/in/parkxlab/" target="_blank" rel="noopener noreferrer" class="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center">
+                        <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
+                            <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
+                        </svg>
+                        <span data-lang="linkedin_btn"></span>
+                    </a>
+                    <a href="https://github.com/parkxlab" target="_blank" rel="noopener noreferrer" class="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center">
+                        <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" fill="currentColor">
+                            <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 85.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>
+                        </svg>
+                        <span data-lang="github_btn"></span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1HBWcC8TvF7DF-acNuN-bxJhyv1HpFG_X/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold px-6 py-3 rounded-lg transition-colors inline-flex items-center" data-lang="resume_download_btn">
+                        <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
             <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
                 <img src="images/JunPhoto.jpg" alt="Junseong Park Profile Picture" class="rounded-full w-80 h-80 md:w-96 md:h-96 object-cover border-4 border-slate-200 shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/384x384/e2e8f0/334155?text=Junseong+Park';">
             </div>
@@ -427,19 +421,40 @@
         // --- Language Switcher Logic ---
         const translations = {
             en: {
+                // Header
+                nav_projects: "Projects",
+                nav_about: "About Me",
                 nav_skills: "Technical Skills",
                 nav_experience: "Experience",
                 nav_research: "Research",
                 nav_my_path: "My Path",
                 nav_contact: "Contact",
+                nav_projects_mobile: "Projects",
+                nav_about_mobile: "About Me",
                 nav_skills_mobile: "Technical Skills",
                 nav_experience_mobile: "Experience",
                 nav_research_mobile: "Research",
                 nav_my_path_mobile: "My Path",
                 nav_contact_mobile: "Contact",
+                // Intro
+                lab_title: "Park's Lab for Learning by building.",
+                lab_subtitle: "An engineer and researcher connecting the worlds of mechanical systems, artificial intelligence, and business strategy. I explore how technology creates real value, from the factory floor to the final line of code.",
+                // Projects
+                projects_in_progress: "Projects in progress",
+                finitup_desc: "An AI-powered system to automate financial analysis and valuation.",
+                aiclub_desc: "A community to make AI accessible for all students through hands-on projects.",
+                completed_projects: "Completed projects",
+                intellibeehive_desc: "An AI/IoT monitoring system for honey bees, funded by the USDA.",
+                view_project_website_btn: "View Project Website",
+                read_paper_btn: "Read the Paper (DOI)",
+                // About
                 hero_name: "Junseong Park",
                 hero_title: "AI Engineer & Educator",
+                hero_subtitle: "My journey into technology began not with code, but with hardware, maintaining complex systems in the military and on the factory floor. This hands on experience gave me a unique perspective that I now apply to building AI solutions that solve real world business problems, bridging the gap between physical machinery and intelligent software.",
+                linkedin_btn: "Linkedin",
+                github_btn: "GitHub",
                 resume_download_btn: "Download CV",
+                // Skills, Edu, Statement
                 skills_title: "Technical Skills",
                 skills_content: `<div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">Information Systems & AI</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>Decision Support Systems (DSS)</strong></span><span class="skill-tag">Data Analytics</span><span class="skill-tag">AI in Business</span><span class="skill-tag">FinTech</span><span class="skill-tag">Machine Learning</span><span class="skill-tag">Deep Learning</span><span class="skill-tag"><strong>Generative AI (LLMs)</strong></span><span class="skill-tag">Computer Vision</span></div></div><div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">Programming & Data Tools</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>Python</strong></span><span class="skill-tag">Java</span><span class="skill-tag">C++</span><span class="skill-tag">SQL</span><span class="skill-tag">TensorFlow</span><span class="skill-tag"><strong>PyTorch</strong></span><span class="skill-tag">Pandas</span><span class="skill-tag">Scikit-learn</span></div></div><div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">Hardware & Embedded Systems</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>IoT</strong></span><span class="skill-tag"><strong>Embedded Systems (NVIDIA Jetson)</strong></span><span class="skill-tag">Linux</span><span class="skill-tag">Robotics</span><span class="skill-tag">CAD (SolidWorks)</span><span class="skill-tag">3D Printing</span><span class="skill-tag"><strong>Complex Systems Maintenance</strong></span></div></div><div class="flex flex-col md:flex-row md:items-start"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">Languages</h3><div class="w-full md:w-2/3"><span class="skill-tag">Korean (Native)</span><span class="skill-tag">English (Fluent)</span><span class="skill-tag">Spanish (Basic Proficiency)</span></div></div>`,
                 education_title: "Education",
@@ -447,22 +462,24 @@
                 education_sch: `<li><strong>Bachelor of Engineering in Mechanical Engineering</strong>, Feb 2021</li>`,
                 statement_title: "Teaching Statement",
                 statement_desc: `My teaching Statement, "<strong>Learning by Building, Teaching by Doing,</strong>" is centered on empowering students to master complex Information Systems concepts through hands-on projects and real-world problem-solving. I am dedicated to creating an inclusive and interactive learning environment where students bridge the gap between academic theory and industry practice, preparing them to become <strong>confident and capable technology leaders</strong>.`,
+                // Experience
                 teaching_exp_title: "Teaching & Mentoring Experience",
                 teaching_exp_content: `<div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900"><strong>Founder & President</strong> <span class="text-sky-700">@ AI Club at UTRGV</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Aug 2025 – Present</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>Founded and established</strong> the official AI Club at UTRGV with a mission to make AI <strong>accessible to students of all backgrounds</strong> and skill levels.</li><li><strong>Authored the club's founding charter</strong>, which establishes a dual-track curriculum ('General' and 'Researcher') and a sustainable leadership succession plan.</li><li><strong>Designed & Teach the initial hands-on workshops</strong> focusing on practical, no-code AI tools to lower the barrier to entry for new members.</li><li>AI Club Website: <a href="https://sites.google.com/view/utrgvai" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline">utrgvai</a>, AI Club Workshop Video Library (YouTube): <a href="https://www.youtube.com/@UTRGVAI" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline">@UTRGVAI</a></li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Korean Language Teacher (Part-time) <span class="text-sky-700">@ Language Success School</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Jul 2025 – Present</time><p class="text-slate-600 text-sm mt-2"><strong>Designing and delivering a comprehensive curriculum</strong> for students learning Korean, focusing on accelerated language acquisition and cultural understanding.</p></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Teaching Assistant <span class="text-sky-700">@ The University of Texas Rio Grande Valley</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Aug 2021 – May 2023</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>Mentored over 300 undergraduate students</strong> in foundational and advanced computer science courses, including CSCI 1370 (Computer Science I), CSCI 1380 (Intro to Python), CSCI 3326 (Object-Oriented Programming in JAVA), and CSCI 4352/6352 (Machine Learning).</li><li>Designed and led supplementary tutorials and special review sessions, <strong>resulting in improved student comprehension and higher project success rates</strong>.</li><li>Graded assignments, projects, and exams, providing constructive feedback to foster student growth.</li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">University Lab Instructor & Technician <span class="text-sky-700">@ Soonchunhyang University</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Sep 2018 – Dec2018, Mar2019 – Feb 2021</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>Instructed over 10 hands-on engineering workshops</strong> for undergraduate students, covering topics from CAD design to the operation of advanced manufacturing equipment.</li><li><strong>Led a 3-student capstone project team</strong> in the successful development of a <strong>fully functional robotic arm</strong>, from initial SolidWorks design to final fabrication using 3D printing.</li><li>Represented the Industrial Inside Factory Center at the <strong>8th International 3D Printing Korea Expo 2020</strong>, managing the exhibition booth and presenting the robotic arm project to industry professionals over the four-day event.</li><li><strong>Created a comprehensive library of over 20 video training modules</strong> to facilitate knowledge transfer and standardize training for future lab users.</li><li><strong>Managed a laboratory equipped with over 50 advanced manufacturing machines</strong>.</li></ul></div><div class="ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Program Support & Teaching Assistant <span class="text-sky-700">@ Global Education Center at Soonchunhyang University</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Jan 2019 – Mar 2019</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>Facilitated the onboarding and cultural integration for a diverse cohort of international students.</li><li>Co-developed and assisted in an elementary-level English winter camp, reinforcing a commitment to education across different age groups and cultural contexts.</li></ul></div>`,
                 industry_exp_title: "Industry Experience",
                 industry_exp_content: `<div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900"><strong>Software Engineer – LLM AI Trainer</strong> <span class="text-sky-700">@ <strong>Outlier (a Scale AI Company)</strong></span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Dec 2024 – Present</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>Design and write production-level Python and C++ solutions used as high-accuracy training data for <strong>industry-leading clients such as OpenAI and Meta</strong>.</li><li>Directly improve LLM accuracy, reasoning, and safety by <strong>fine-tuning models using Reinforcement Learning with Human Feedback (RLHF)</strong>.</li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Maintenance Project Coordinator, Field Systems <span class="text-sky-700">@ Republic of Korea Army</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Jun 2016 – Mar 2018</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>Managed the entire maintenance lifecycle</strong> for a fleet of over 10 mission-critical armored vehicles, <strong>achieving 100% operational readiness</strong> through optimized scheduling and resource allocation.</li><li>Ensured the integrity of a portfolio of three interconnected electronic control systems, including fire control and ammunition handling systems.</li><li><strong>Led and mentored a 3-person technical team</strong>, managing stakeholder relationships with over 50 users and senior commanders.</li><li>Demonstrated <strong>crisis management and problem-solving under pressure</strong> by successfully executing immediate combat readiness drills.</li></ul></div><div class="ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Automotive Prototyping Technician <span class="text-sky-700">@ Creative Design Center</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">May 2015 – May 2016</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>Produced high-fidelity automotive prototypes (headlights, dashboards) for a <strong>primary Hyundai/Kia supplier</strong> using SLA 3D printing and precision post-processing.</li></ul></div>`,
+                // Research
                 research_exp_title: "Research Experience",
                 research_exp_content: `<div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200">
                 <h3 class="text-xl font-bold text-slate-900">AI Vision Researcher | IntelliBeeHive: Bee Monitoring System, UTRGV</h3><time class="block my-2 text-sm font-normal leading-none text-slate-500">Aug 2021 – Aug 2022</time><ul class="mt-2 text-slate-600 list-disc list-inside space-y-1 text-sm"><li>Served as a <strong>key researcher on a USDA-funded project</strong>, contributing to the foundational design and implementation of the 'IntelliBeeHive' AI/IoT monitoring system.</li><li><strong>Engineered the end-to-end data pipeline</strong> by deploying collection scripts on embedded systems (NVIDIA Jetson Nano) and automating data transmission through recurring jobs in a Linux environment.</li><li>Independently designed and <strong>built the Power over Ethernet (PoE) network infrastructure</strong> to ensure stable field operation in challenging, real-world conditions.</li><li><strong>Established and managed a collaborative research platform</strong> by deploying JupyterServer on a <strong>4-GPU server</strong>, enabling seamless computational resource sharing for the entire team.</li></ul><div class="mt-4"><a href="https://bee.utrgv.edu/" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_bee_link">Research Website</a></div></div>`, 
-                research_finitup_link: "Project Site",
-                research_finitup_github: "GitHub",
                 research_bee_link: "Research Website",
                 publications_title: "Publications",
                 publications_content: `<div class="bg-slate-50 p-6 rounded-xl shadow-lg border border-slate-200"><p class="text-slate-700">Narcia-Macias, C. I., Guardado, J., Rodriguez, J., Park, J., Rampersad-Ammons, J., & Enriquez, E. (2024). "<strong>IntelliBeeHive: An Automated Honey Bee, Pollen, and Varroa Destructor Monitoring System</strong>". <em class="text-slate-900">Proceedings of the 2024 International Conference on Machine Learning and Applications (ICMLA).</em></p><a href="https://ieeexplore.ieee.org/document/10903284" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline text-sm font-semibold mt-2 inline-block">DOI: 10.1109/ICMLA61862.2024.00122</a></div>`,
+                // Other
                 awards_title: "Honors and Awards",
                 awards_content: `<p class="text-slate-800 font-semibold">Excellence Award (Graduated 2nd in Class)</p><p class="text-slate-600 text-sm">Professional Maintenance Program, R.O.K. Army Artillery School, 2016</p>`,
                 additional_exp_title: "Additional Experience",
                 additional_exp_content: `<div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200"><h3 class="text-lg font-semibold text-slate-900">Retail Store Launch & Operations (Part-Time) <span class="text-sky-700">@ Burlington Stores, Inc.</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Dec 2023 – Aug 2025</time><p class="text-slate-600 text-sm">Contributed to building the initial operational system for a new store launch, <strong>gaining practical experience in logistics, warehouse setup, and the on-the-ground execution of business processes</strong>.</p></div><div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200"><h3 class="text-lg font-semibold text-slate-900">Property Asset Modernization & Management</h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">May 2024 – Present</time><p class="text-slate-600 text-sm">Managed a small-scale property modernization project, <strong>applying principles of asset lifecycle management and systems optimization</strong> to real-world physical assets.</p></div>`,
+                // My Path
                 casestudies_title: "My Path: From Engineer to Educator",
                 casestudies_subtitle: "My interest in education grew naturally from my experiences as an engineer and leader. Each step of my journey revealed a new piece of the puzzle.",
                 case1_title: "Chapter 1: The Foundation in Precision",
@@ -494,24 +511,46 @@
                 case7_desc: `<p>I founded the AI Club not just to make technology accessible, but also to <strong class="text-sky-600">bridge the information gap between academic theory and industry practice that I experienced as an undergraduate.</strong> It's a community built on the belief that anyone can innovate with the right guidance and a hands-on approach a principle I discovered through my own path from engineer to educator.</p>`,
                 case7_link: "Visit AI Club Website",
                 case7_youtube_link: "Visit AI Club Youtube",
+                // Footer
                 footer_title: "Let's Connect",
                 footer_subtitle: "I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.",
                 footer_copy: "2025 Junseong Park. All Rights Reserved."
             },
             es: {
+                // Header
+                nav_projects: "Proyectos",
+                nav_about: "Sobre Mí",
                 nav_skills: "Habilidades Técnicas",
                 nav_experience: "Experiencia",
                 nav_research: "Investigación",
                 nav_my_path: "Mi Camino",
                 nav_contact: "Contacto",
+                nav_projects_mobile: "Proyectos",
+                nav_about_mobile: "Sobre Mí",
                 nav_skills_mobile: "Habilidades Técnicas",
                 nav_experience_mobile: "Experiencia",
                 nav_research_mobile: "Investigación",
                 nav_my_path_mobile: "Mi Camino",
                 nav_contact_mobile: "Contacto",
+                // Intro
+                lab_title: "El Laboratorio de Park para Aprender Construyendo.",
+                lab_subtitle: "Un ingeniero e investigador que conecta los mundos de los sistemas mecánicos, la inteligencia artificial y la estrategia empresarial. Exploro cómo la tecnología crea valor real, desde la planta de producción hasta la última línea de código.",
+                // Projects
+                projects_in_progress: "Proyectos en progreso",
+                finitup_desc: "Un sistema impulsado por IA para automatizar el análisis y la valoración financiera.",
+                aiclub_desc: "Una comunidad para hacer la IA accesible a todos los estudiantes a través de proyectos prácticos.",
+                completed_projects: "Proyectos completados",
+                intellibeehive_desc: "Un sistema de monitoreo AI/IoT para abejas, financiado por el USDA.",
+                view_project_website_btn: "Ver Sitio del Proyecto",
+                read_paper_btn: "Leer el Artículo (DOI)",
+                // About
                 hero_name: "Junseong Park",
                 hero_title: "Ingeniero y educador de IA",
+                hero_subtitle: "Mi viaje hacia la tecnología comenzó no con el código, sino con el hardware, manteniendo sistemas complejos en el ejército y en el piso de la fábrica. Esta experiencia práctica me dio una perspectiva única que ahora aplico a la construcción de soluciones de IA que resuelvan problemas comerciales del mundo real, cerrando la brecha entre la maquinaria física y el software inteligente.",
+                linkedin_btn: "Linkedin",
+                github_btn: "GitHub",
                 resume_download_btn: "Descargar CV",
+                // Skills, Edu, Statement
                 skills_title: "Habilidades Técnicas",
                 skills_content: `<div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">Sistemas de Información e IA</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>Sistemas de Soporte a la Decisión (DSS)</strong></span><span class="skill-tag">Analítica de Datos</span><span class="skill-tag">IA en Negocios</span><span class="skill-tag">FinTech</span><span class="skill-tag">Aprendizaje Automático</span><span class="skill-tag">Aprendizaje Profundo</span><span class="skill-tag"><strong>IA Generativa (LLM)</strong></span><span class="skill-tag">Visión por Computadora</span></div></div><div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">Programación y Herramientas de Datos</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>Python</strong></span><span class="skill-tag">Java</span><span class="skill-tag">C++</span><span class="skill-tag">SQL</span><span class="skill-tag">TensorFlow</span><span class="skill-tag"><strong>PyTorch</strong></span><span class="skill-tag">Pandas</span><span class="skill-tag">Scikit-learn</span></div></div><div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">Hardware y Sistemas Embebidos</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>IoT</strong></span><span class="skill-tag"><strong>Sistemas Embebidos (NVIDIA Jetson)</strong></span><span class="skill-tag">Linux</span><span class="skill-tag">Robótica</span><span class="skill-tag">CAD (SolidWorks)</span><span class="skill-tag">Impresión 3D</span><span class="skill-tag"><strong>Mantenimiento de Sistemas Complejos</strong></span></div></div><div class="flex flex-col md:flex-row md:items-start"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">Idiomas</h3><div class="w-full md:w-2/3"><span class="skill-tag">Coreano (Nativo)</span><span class="skill-tag">Inglés (Fluido)</span><span class="skill-tag">Español (Básico)</span></div></div>`,
                 education_title: "Educación",
@@ -519,21 +558,23 @@
                 education_sch: `<li><strong>Licenciatura en Ingeniería Mecánica</strong>, Febrero 2021</li>`,
                 statement_title: "Declaración de Enseñanza",
                 statement_desc: `Mi filosofía de enseñanza, "<strong>Aprender Construyendo, Enseñar Haciendo</strong>", se centra en empoderar a los estudiantes para que dominen conceptos complejos de Sistemas de Información a través de proyectos prácticos y resolución de problemas del mundo real. Me dedico a crear un entorno de aprendizaje inclusivo e interactivo donde los estudiantes puedan cerrar la brecha entre la teoría académica y la práctica industrial, preparándolos para convertirse en <strong>líderes tecnológicos seguros y capaces</strong>.`,
+                // Experience
                 teaching_exp_title: "Experiencia en Enseñanza y Mentoría",
                 teaching_exp_content: `<div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900"><strong>Fundador y Presidente</strong> <span class="text-sky-700">@ AI Club en UTRGV</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Agosto 2025 – Presente</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>Fundé y establecí</strong> el club oficial de IA en UTRGV con la misión de hacer la IA <strong>accesible a estudiantes de todos los orígenes</strong> y niveles de habilidad.</li><li><strong>Redacté el estatuto fundador del club</strong>, que establece un currículo de doble vía ('General' y 'Investigador') y un plan de sucesión de liderazgo sostenible.</li><li><strong>Diseñé y enseñé los talleres prácticos iniciales</strong> centrados en herramientas de IA sin código para reducir la barrera de entrada a nuevos miembros.</li><li>Sitio Web del Club de IA: <a href="https://sites.google.com/view/utrgvai" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline">utrgvai</a>, Biblioteca de Videos de Talleres (YouTube): <a href="https://www.youtube.com/@UTRGVAI" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline">@UTRGVAI</a></li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Profesor de Coreano (a tiempo parcial) <span class="text-sky-700">@ Language Success School</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Julio 2025 – Presente</time><p class="text-slate-600 text-sm mt-2"><strong>Diseñando e impartiendo un currículo integral</strong> para estudiantes de coreano, enfocado en la adquisición acelerada del idioma y la comprensión cultural.</p></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Asistente de Cátedra <span class="text-sky-700">@ The University of Texas Rio Grande Valley</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Agosto 2021 – Mayo 2023</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>Guié a más de 300 estudiantes de pregrado</strong> en cursos fundamentales y avanzados de ciencias de la computación, incluyendo CSCI 1370, CSCI 1380, CSCI 3326 y CSCI 4352/6352.</li><li>Diseñé y dirigí tutorías suplementarias y sesiones de repaso especiales, lo que resultó en <strong>una mejor comprensión por parte de los estudiantes y mayores tasas de éxito en los proyectos</strong>.</li><li>Califiqué tareas, proyectos y exámenes, proporcionando retroalimentación constructiva para fomentar el crecimiento de los estudiantes.</li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Instructor de Laboratorio Universitario y Técnico <span class="text-sky-700">@ Soonchunhyang University</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Septiembre 2018 - Diciembre 2018, Mar 2019 - Febrero 2021</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>Impartí más de 10 talleres prácticos de ingeniería</strong> para estudiantes de pregrado, cubriendo temas desde diseño CAD hasta la operación de equipos de manufactura avanzada.</li><li><strong>Lideré un equipo de 3 estudiantes en un proyecto final</strong> de carrera, desarrollando con éxito un <strong>brazo robótico funcional</strong>.</li><li>Representé al centro en la <strong>8ª Exposición Internacional de Impresión 3D de Corea 2020</strong>.</li><li><strong>Creé una biblioteca completa de más de 20 módulos de capacitación en video</strong> para estandarizar la formación.</li><li><strong>Gestioné un laboratorio equipado con más de 50 máquinas de fabricación avanzadas</strong>.</li></ul></div><div class="ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Asistente de Programas y Enseñanza <span class="text-sky-700">@ Global Education Center at Soonchunhyang University</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Enero 2019 – Marzo 2019</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>Facilité la incorporación e integración cultural de una cohorte diversa de estudiantes internacionales.</li><li>Co-desarrollé y asistí en un campamento de invierno de inglés de nivel primario, reforzando un compromiso con la educación en diferentes grupos de edad y contextos culturales.</li></ul></div>`,
                 industry_exp_title: "Experiencia Profesional",
                 industry_exp_content: `<div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900"><strong>Ingeniero de Software – Entrenador de IA LLM</strong> <span class="text-sky-700">@ <strong>Outlier (a Scale AI Company)</strong></span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Diciembre 2024 – Presente</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>Diseño y escribo soluciones de nivel de producción en Python y C++ utilizadas como datos de entrenamiento de alta precisión para <strong>clientes líderes como OpenAI y Meta</strong>.</li><li>Mejoro directamente la precisión y seguridad de los LLM mediante el ajuste fino de modelos utilizando <strong>RLHF</strong>.</li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Coordinador de Proyectos de Mantenimiento <span class="text-sky-700">@ Ejército de la República de Corea</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Junio 2016 – Marzo 2018</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>Gestioné el ciclo de vida completo del mantenimiento</strong> para una flota de más de 10 vehículos blindados, logrando una <strong>preparación operativa del 100%</strong> mediante la optimización de la programación y la asignación de recursos.</li><li>Aseguré la integridad de una cartera de tres sistemas de control electrónico interconectados, incluidos los sistemas de control de fuego y manejo de municiones.</li><li><strong>Lideré y mentoricé a un equipo técnico de 3 personas</strong>, gestionando las relaciones con más de 50 usuarios y comandantes.</li><li>Demostré <strong>gestión de crisis y resolución de problemas bajo presión</strong> ejecutando con éxito simulacros de preparación para el combate inmediato.</li></ul></div><div class="ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">Técnico de Prototipado Automotriz <span class="text-sky-700">@ Creative Design Center</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Mayo 2015 – Mayo 2016</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>Produje prototipos automotrices de alta fidelidad (faros, tableros) para un <strong>proveedor principal de Hyundai/Kia</strong> utilizando impresión 3D SLA.</li></ul></div>`,
+                // Research
                 research_exp_title: "Experiencia de Investigación",
-                research_exp_content: `<div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200"><h3 class="text-xl font-bold text-slate-900"><strong>Fundador y Desarrollador</strong> | Sistema Automatizado de Análisis Financiero con IA (LLM&RL)</h3><time class="block my-2 text-sm font-normal leading-none text-slate-500">2025 – Presente</time><ul class="mt-2 text-slate-600 list-disc list-inside space-y-1 text-sm"><li>Desarrollando un MVP para <strong>automatizar la valoración financiera</strong> implementando modelos de cursos de finanzas del MBA, con el objetivo de <strong>reducir el tiempo de análisis manual en un 90%</strong>.</li><li><strong>Diseñando un pipeline de análisis automatizado</strong> mediante la integración de las bibliotecas de código abierto FinRL (para predicción) y FinRobot (para informes).</li></ul><div class="mt-4"><a href="https://www.finitup.com" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_finitup_link"></a><a href="https://github.com/parkxlab/fin-dss" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_finitup_github"></a></div></div><div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200"><h3 class="text-xl font-bold text-slate-900">Investigador en Visión por IA | IntelliBeeHive: Sistema de Monitoreo de Abejas, UTRGV</h3><time class="block my-2 text-sm font-normal leading-none text-slate-500">Agosto 2021 – Agosto 2022</time><ul class="mt-2 text-slate-600 list-disc list-inside space-y-1 text-sm"><li>Participé como <strong>investigador clave en un proyecto financiado por el USDA</strong>, contribuyendo al diseño e implementación del sistema de monitoreo AI/IoT 'IntelliBeeHive'.</li><li><strong>Diseñé el pipeline de datos de extremo a extremo</strong> desplegando scripts de recolección en sistemas embebidos y automatizando la transmisión de datos a través de trabajos recurrentes en un entorno Linux.</li><li>Diseñé y <strong>construí de forma independiente la infraestructura de red Power over Ethernet (PoE)</strong> para garantizar una operación estable en condiciones de campo desafiantes.</li><li><strong>Establecí y gestioné una plataforma de investigación colaborativa</strong> mediante la implementación de JupyterServer en un servidor de <strong>4 GPU</strong>, permitiendo el intercambio de recursos computacionales para todo el equipo.</li></ul><div class="mt-4"><a href="https://bee.utrgv.edu" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_bee_link"></a></div></div>`,
-                research_finitup_link: "Sitio del proyecto",
-                research_finitup_github: "GitHub",
+                research_exp_content: `<div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200"><h3 class="text-xl font-bold text-slate-900">Investigador en Visión por IA | IntelliBeeHive: Sistema de Monitoreo de Abejas, UTRGV</h3><time class="block my-2 text-sm font-normal leading-none text-slate-500">Agosto 2021 – Agosto 2022</time><ul class="mt-2 text-slate-600 list-disc list-inside space-y-1 text-sm"><li>Participé como <strong>investigador clave en un proyecto financiado por el USDA</strong>, contribuyendo al diseño e implementación del sistema de monitoreo AI/IoT 'IntelliBeeHive'.</li><li><strong>Diseñé el pipeline de datos de extremo a extremo</strong> desplegando scripts de recolección en sistemas embebidos y automatizando la transmisión de datos a través de trabajos recurrentes en un entorno Linux.</li><li>Diseñé y <strong>construí de forma independiente la infraestructura de red Power over Ethernet (PoE)</strong> para garantizar una operación estable en condiciones de campo desafiantes.</li><li><strong>Establecí y gestioné una plataforma de investigación colaborativa</strong> mediante la implementación de JupyterServer en un servidor de <strong>4 GPU</strong>, permitiendo el intercambio de recursos computacionales para todo el equipo.</li></ul><div class="mt-4"><a href="https://bee.utrgv.edu" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_bee_link"></a></div></div>`,
                 research_bee_link: "Sitio web de la investigación",
                 publications_title: "Publicaciones",
                 publications_content: `<div class="bg-slate-50 p-6 rounded-xl shadow-lg border border-slate-200"><p class="text-slate-700">Narcia-Macias, C. I., Guardado, J., Rodriguez, J., Park, J., Rampersad-Ammons, J., & Enriquez, E. (2024). "<strong>IntelliBeeHive: An Automated Honey Bee, Pollen, and Varroa Destructor Monitoring System</strong>". <em class="text-slate-900">Proceedings of the 2024 International Conference on Machine Learning and Applications (ICMLA).</em></p><a href="https://ieeexplore.ieee.org/document/10903284" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline text-sm font-semibold mt-2 inline-block">DOI: 10.1109/ICMLA61862.2024.00122</a></div>`,
+                // Other
                 awards_title: "Honores y Premios",
                 awards_content: `<p class="text-slate-800 font-semibold">Premio a la Excelencia (2º Puesto de la Promoción)</p><p class="text-slate-600 text-sm">Programa de Mantenimiento Profesional, Escuela de Artillería del Ejército de la R. de Corea, 2016</p>`,
                 additional_exp_title: "Experiencia Adicional",
                 additional_exp_content: `<div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200"><h3 class="text-lg font-semibold text-slate-900">Equipo de Lanzamiento de Tienda Minorista (a tiempo parcial) <span class="text-sky-700">@ Burlington Stores, Inc.</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Diciembre 2023 – Agosto 2025</time><p class="text-slate-600 text-sm">Contribuí a la construcción del sistema operativo inicial para el lanzamiento de una nueva tienda, <strong>adquiriendo experiencia práctica en logística y la ejecución de procesos de negocio en el terreno</strong>.</p></div><div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200"><h3 class="text-lg font-semibold text-slate-900">Modernización y Gestión de Activos Inmobiliarios</h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">Mayo 2024 – Presente</time><p class="text-slate-600 text-sm">Gestioné un proyecto de modernización de propiedades a pequeña escala, <strong>aplicando principios de gestión del ciclo de vida de los activos y optimización de sistemas</strong>.</p></div>`,
+                // My Path
                 casestudies_title: "Mi Camino: De Ingeniero a Educador",
                 casestudies_subtitle: "Mi interés por la educación creció de forma natural a partir de mis experiencias como ingeniero y líder. Cada paso de mi viaje reveló una nueva pieza del rompecabezas.",
                 case1_title: "Capítulo 1: La Base en la Precisión",
@@ -554,7 +595,7 @@
                 case5_title: "Capítulo 5: La Lección en Operaciones de Base",
                 case5_role: "Equipo de Lanzamiento de Tienda Minorista",
                 case5_desc: `<p>Más allá de la ingeniería y el código, quería entender cómo opera un negocio a gran escala desde cero. Participar en el lanzamiento de una nueva tienda Burlington fue una lección de MBA en el mundo real. Desde organizar el almacén hasta preparar el piso de ventas y finalmente atender a los primeros clientes, vi de primera mano cómo cada detalle, desde la logística hasta el trabajo en equipo bajo presión, impacta directamente en el resultado final y la satisfacción del cliente. <strong class="text-lg text-sky-600">Fue un poderoso recordatorio de que los sistemas exitosos, ya sea en tecnología o en retail, se construyen sobre fundamentos bien ejecutados.</strong></p>`,
-                case5_link_burlington: "Watch the news",
+                case5_link_burlington: "Ver las noticias",
                 case6_title: "Capítulo 6: La Síntesis",
                 case6_role: "Fundador y Desarrollador de FinitUp",
                 case6_desc: `<p>FinitUp es mi proyecto en curso para traducir la teoría empresarial en un producto tangible. El objetivo es <strong class="text-sky-600">automatizar los modelos de valoración que aprendí en mis clases de finanzas de MBA usando IA, con el fin de reducir el tiempo de análisis en un 90% en comparación con los métodos manuales.</strong> Esta es mi filosofía de 'Aprender Construyendo' en acción, fusionando todo mi conjunto de habilidades para crear valor.</p><p class="mt-2">Estoy construyendo sobre el trabajo de código abierto de la AI4Finance Foundation (FinRL, FinRobot) para implementar análisis automatizado, recomendaciones y trading virtual.</p>`,
@@ -565,24 +606,46 @@
                 case7_desc: `<p>Fundé el Club de IA no solo para hacer la tecnología accesible, sino también para <strong class="text-sky-600">cerrar la brecha de información entre la teoría académica y la práctica de la industria que experimenté como estudiante de pregrado.</strong> Es una comunidad construida sobre la creencia de que cualquiera puede innovar con la guía adecuada y un enfoque práctico, un principio que descubrí a través de mi propio camino de ingeniero a educador.</p>`,
                 case7_link: "Visitar el Sitio Web del Club de IA",
                 case7_youtube_link: "Visitar el Youtube del Club de IA",
+                // Footer
                 footer_title: "Conectemos",
                 footer_subtitle: "Siempre estoy abierto a discutir nuevos proyectos, ideas creativas u oportunidades. No dudes en contactarme.",
                 footer_copy: "2025 Junseong Park. Todos los derechos reservados."
             },
             ko: {
+                // Header
+                nav_projects: "프로젝트",
+                nav_about: "소개",
                 nav_skills: "기술 역량",
                 nav_experience: "경력",
                 nav_research: "연구",
                 nav_my_path: "나의 길",
                 nav_contact: "연락처",
+                nav_projects_mobile: "프로젝트",
+                nav_about_mobile: "소개",
                 nav_skills_mobile: "기술 역량",
                 nav_experience_mobile: "경력",
                 nav_research_mobile: "연구",
                 nav_my_path_mobile: "나의 길",
                 nav_contact_mobile: "연락처",
+                // Intro
+                lab_title: "만들면서 배우는 박's 랩.",
+                lab_subtitle: "기계 시스템, 인공지능, 비즈니스 전략의 세계를 연결하는 엔지니어이자 연구원입니다. 저는 공장 현장에서부터 코드의 마지막 줄에 이르기까지, 기술이 어떻게 실질적인 가치를 창출하는지 탐구합니다.",
+                // Projects
+                projects_in_progress: "진행 중인 프로젝트",
+                finitup_desc: "AI를 활용해 재무 분석 및 가치 평가를 자동화하는 시스템입니다.",
+                aiclub_desc: "실습 프로젝트를 통해 모든 학생이 AI에 쉽게 접근할 수 있도록 돕는 커뮤니티입니다.",
+                completed_projects: "완료된 프로젝트",
+                intellibeehive_desc: "미국 농무부(USDA)의 지원을 받은 꿀벌을 위한 AI/IoT 모니터링 시스템입니다.",
+                view_project_website_btn: "프로젝트 웹사이트 보기",
+                read_paper_btn: "논문 읽기 (DOI)",
+                // About
                 hero_name: "박준성",
                 hero_title: "AI 엔지니어 및 교육자",
+                hero_subtitle: "기계 시스템, 인공 지능 및 비즈니스 전략의 세계를 연결하는 엔지니어 및 연구원. 나는 현장에서부터 코드의 마지막 줄에 이르기까지 기술이 어떻게 진정한 가치를 창출하는지 탐구합니다.",
+                linkedin_btn: "링크드인",
+                github_btn: "깃허브",
                 resume_download_btn: "이력서 다운로드",
+                // Skills, Edu, Statement
                 skills_title: "기술 역량",
                 skills_content: `<div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">정보 시스템 및 AI</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>의사결정지원시스템(DSS)</strong></span><span class="skill-tag">데이터 분석</span><span class="skill-tag">비즈니스 AI</span><span class="skill-tag">핀테크</span><span class="skill-tag">머신러닝</span><span class="skill-tag">딥러닝</span><span class="skill-tag"><strong>생성형 AI(LLM)</strong></span><span class="skill-tag">컴퓨터 비전</span></div></div><div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">프로그래밍 및 데이터 도구</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>Python</strong></span><span class="skill-tag">Java</span><span class="skill-tag">C++</span><span class="skill-tag">SQL</span><span class="skill-tag">TensorFlow</span><span class="skill-tag"><strong>PyTorch</strong></span><span class="skill-tag">Pandas</span><span class="skill-tag">Scikit-learn</span></div></div><div class="flex flex-col md:flex-row md:items-start border-b border-slate-200 pb-8"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">하드웨어 및 임베디드 시스템</h3><div class="w-full md:w-2/3"><span class="skill-tag"><strong>IoT</strong></span><span class="skill-tag"><strong>임베디드 시스템(NVIDIA Jetson)</strong></span><span class="skill-tag">Linux</span><span class="skill-tag">로보틱스</span><span class="skill-tag">CAD(SolidWorks)</span><span class="skill-tag">3D 프린팅</span><span class="skill-tag"><strong>복합 시스템 유지보수</strong></span></div></div><div class="flex flex-col md:flex-row md:items-start"><h3 class="w-full md:w-1/3 flex-shrink-0 mb-4 md:mb-0 text-lg font-poppins font-bold text-slate-800">언어</h3><div class="w-full md:w-2/3"><span class="skill-tag">한국어(원어민)</span><span class="skill-tag">영어(유창함)</span><span class="skill-tag">스페인어(기초 회화)</span></div></div>`,
                 education_title: "학력",
@@ -590,21 +653,23 @@
                 education_sch: `<li><strong>기계 공학 공학사</strong>, 2021년 2월</li>`,
                 statement_title: "교육 철학",
                 statement_desc: `저의 교육 철학인 "<strong>만들면서 배우고, 가르치면서 실행한다</strong>"는 학생들이 직접 프로젝트를 수행하고 실제 문제를 해결하며 복잡한 정보 시스템 개념을 익히도록 역량을 키우는 데 중점을 둡니다. 학생들이 이론과 산업 현장의 간극을 좁히고, <strong>자신감 있는 기술 리더로 성장할 수 있도록</strong> 포용적이고 상호작용적인 학습 환경을 조성하는 데 헌신합니다.`,
+                // Experience
                 teaching_exp_title: "교육 및 멘토링 경력",
                 teaching_exp_content: `<div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900"><strong>설립자 및 회장</strong> <span class="text-sky-700">@ UTRGV 인공지능 클럽</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2025년 8월 – 현재</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>모든 배경의 학생들이 AI에 접근할 수 있도록</strong> UTRGV 공식 AI 클럽을 <strong>설립</strong>.</li><li>'일반' 및 '연구자' 트랙의 이원화 커리큘럼과 지속 가능한 리더십 승계 계획을 담은 클럽 <strong>창립 헌장을 작성</strong>.</li><li>신입 회원들의 진입 장벽을 낮추기 위해 실용적인 No-code AI 도구에 초점을 맞춘 <strong>초기 실습 워크숍을 설계하고 지도</strong>.</li><li>AI 클럽 웹사이트: <a href="https://sites.google.com/view/utrgvai" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline">utrgvai</a>, AI 클럽 워크숍 영상 라이브러리 (YouTube): <a href="https://www.youtube.com/@UTRGVAI" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline">@UTRGVAI</a></li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">한국어 교사 (파트타임) <span class="text-sky-700">@ Language Success School</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2025년 7월 – 현재</time><p class="text-slate-600 text-sm mt-2">학생들의 한국어 습득 가속화 및 문화 이해에 초점을 맞춘 <strong>포괄적인 커리큘럼을 설계하고 제공</strong>.</p></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">조교 <span class="text-sky-700">@ 텍사스 대학교 리오그란데밸리</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2021년 8월 – 2023년 5월</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li><strong>300명 이상의 학부생을 대상으로</strong> CSCI 1370, CSCI 1380, CSCI 3326, CSCI 4352/6352 등 기초 및 심화 컴퓨터 과학 과목 멘토링.</li><li>보충 튜토리얼과 특별 복습 세션을 설계하고 주도하여 <strong>학생들의 이해도와 프로젝트 성공률을 향상</strong>.</li><li>과제, 프로젝트, 시험을 채점하고 건설적인 피드백을 제공하여 학생의 성장을 촉진.</li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">대학 연구실 강사 및 기술자 <span class="text-sky-700">@ 순천향대학교</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2018년 9월 – 2018년 12월, 2019년 3월 – 2021년 2월</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>학부생을 대상으로 CAD 설계부터 첨단 제조 장비 운영까지 <strong>10회 이상의 실습 중심 공학 워크숍 지도</strong>.</li><li><strong>3인 학생 캡스톤 프로젝트 팀을 이끌어</strong> <strong>실제 작동하는 로봇 팔을 성공적으로 개발</strong>.</li><li><strong>제8회 국제 3D 프린팅 코리아 엑스포 2020</strong>에서 센터를 대표하여 부스 운영 및 프로젝트 발표.</li><li>후임 인력을 위한 지식 전수 및 교육 표준화를 위해 <strong>20편 이상의 비디오 교육 모듈 라이브러리 제작</strong>.</li><li><strong>50대 이상의 첨단 제조 장비를 갖춘 실험실 관리</strong>.</li></ul></div><div class="ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">프로그램 지원 및 조교 <span class="text-sky-700">@ 국제교류처 순천향대학교</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2019년 1월 – 2019년 3월</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>다양한 국적의 국제 학생들이 한국 환경에 통합될 수 있도록 초기 정착 과정을 지원.</li><li>초등학생 대상 영어 동계 캠프를 공동 개발 및 지원하며, 다양한 연령대와 문화적 배경에 대한 교육 헌신을 강화.</li></ul></div>`,
                 industry_exp_title: "산업 경력",
                 industry_exp_content: `<div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900"><strong>소프트웨어 엔지니어 – LLM AI 트레이너</strong> <span class="text-sky-700">@ <strong>Outlier (a Scale AI Company)</strong></span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2024년 12월 – 현재</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>OpenAI, Meta와 같은 업계 선도 고객사를 위해 높은 정확도의 훈련 데이터로 사용될 프로덕션 수준의 Python 및 C++ 솔루션을 설계 및 작성.</li><li><strong>RLHF를 통해 모델을 미세 조정하여</strong> LLM의 정확성, 추론 능력, 안전성을 직접적으로 개선.</li></ul></div><div class="mb-10 ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">정비 프로젝트 담당관 <span class="text-sky-700">@ 대한민국 육군</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2016년 6월 – 2018년 3월</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>최적화된 일정 및 자원 분배를 통해 10대 이상의 핵심 기동 장갑차에 대한 <strong>전체 정비 수명주기를 관리</strong>하고, <strong>100%의 장비 가동률을 달성</strong>.</li><li>사격 통제 및 탄약 처리 시스템을 포함한 3개의 상호 연결된 전자 제어 시스템 포트폴리오의 무결성을 보장.</li><li><strong>3인 기술팀을 이끌고 멘토링하며</strong>, 50명 이상의 사용자와 상급 지휘관을 포함한 이해관계자 관계를 관리.</li><li>즉각적인 전투 준비 태세 훈련을 성공적으로 수행하여 <strong>위기 관리 및 문제 해결 능력을 입증</strong>.</li></ul></div><div class="ml-8"><span class="absolute flex items-center justify-center w-4 h-4 bg-sky-600 rounded-full -left-2 ring-4 ring-white"></span><h3 class="text-lg font-semibold text-slate-900">자동차 프로토타이핑 기술자 <span class="text-sky-700">@ Creative Design Center</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2015년 5월 – 2016년 5월</time><ul class="list-disc list-inside text-slate-600 text-sm space-y-1 mt-2"><li>SLA 3D 프린팅 기술을 활용하여 <strong>현대/기아 1차 협력사</strong>를 위한 고정밀 자동차 프로토타입(헤드라이트, 대시보드 등)을 제작.</li></ul></div>`,
+                // Research
                 research_exp_title: "연구 경력",
-                research_exp_content: `<div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200"><h3 class="text-xl font-bold text-slate-900"><strong>설립자 및 개발자</strong> | AI(LLM&RL) 기반 금융 분석 자동화 시스템</h3><time class="block my-2 text-sm font-normal leading-none text-slate-500">2025년 – 현재</time><ul class="mt-2 text-slate-600 list-disc list-inside space-y-1 text-sm"><li>MBA 재무 과정 모델을 구현하여 <strong>수동 분석 시간을 90% 단축</strong>하는 것을 목표로 <strong>금융 가치평가 자동화</strong> MVP를 개발 중.</li><li>FinRL(예측)과 FinRobot(리포팅) 오픈소스 라이브러리를 통합하여 <strong>자동화된 분석 파이프라인을 설계</strong>.</li></ul><div class="mt-4"><a href="https://www.finitup.com" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_finitup_link"></a><a href="https://github.com/parkxlab/fin-dss" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_finitup_github"></a></div></div><div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200"><h3 class="text-xl font-bold text-slate-900">AI 비전 연구원 | IntelliBeeHive: 꿀벌 모니터링 시스템, UTRGV</h3><time class="block my-2 text-sm font-normal leading-none text-slate-500">2021년 8월 – 2022년 8월</time><ul class="mt-2 text-slate-600 list-disc list-inside space-y-1 text-sm"><li>미국 농무부(USDA) 지원 프로젝트의 <strong>핵심 연구원으로 참여하여</strong>, 'IntelliBeeHive' AI/IoT 모니터링 시스템의 기초 설계 및 구현에 기여.</li><li>Linux 환경에서 반복 작업을 통해 데이터 전송을 자동화하고 임베디드 시스템에 수집 스크립트를 배포하여 <strong>엔드투엔드 데이터 파이프라인을 설계</strong>.</li><li>까다로운 실제 현장 조건에서 안정적인 작동을 보장하기 위해 <strong>PoE 네트워크 인프라를 독립적으로 설계 및 구축</strong>.</li><li><strong>4-GPU 서버</strong>에 JupyterServer를 배포하여 <strong>공동 연구 플랫폼을 구축 및 관리</strong>하고, 전체 팀의 원활한 컴퓨팅 자원 공유를 가능하게 함.</li></ul><div class="mt-4"><a href="https://bee.utrgv.edu" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_bee_link"></a></div></div>`,
-                research_finitup_link: "프로젝트 사이트",
-                research_finitup_github: "GitHub",
+                research_exp_content: `<div class="bg-slate-50 p-8 rounded-xl shadow-lg border border-slate-200"><h3 class="text-xl font-bold text-slate-900">AI 비전 연구원 | IntelliBeeHive: 꿀벌 모니터링 시스템, UTRGV</h3><time class="block my-2 text-sm font-normal leading-none text-slate-500">2021년 8월 – 2022년 8월</time><ul class="mt-2 text-slate-600 list-disc list-inside space-y-1 text-sm"><li>미국 농무부(USDA) 지원 프로젝트의 <strong>핵심 연구원으로 참여하여</strong>, 'IntelliBeeHive' AI/IoT 모니터링 시스템의 기초 설계 및 구현에 기여.</li><li>Linux 환경에서 반복 작업을 통해 데이터 전송을 자동화하고 임베디드 시스템에 수집 스크립트를 배포하여 <strong>엔드투엔드 데이터 파이프라인을 설계</strong>.</li><li>까다로운 실제 현장 조건에서 안정적인 작동을 보장하기 위해 <strong>PoE 네트워크 인프라를 독립적으로 설계 및 구축</strong>.</li><li><strong>4-GPU 서버</strong>에 JupyterServer를 배포하여 <strong>공동 연구 플랫폼을 구축 및 관리</strong>하고, 전체 팀의 원활한 컴퓨팅 자원 공유를 가능하게 함.</li></ul><div class="mt-4"><a href="https://bee.utrgv.edu" target="_blank" rel="noopener noreferrer" class="tech-tag hover:bg-sky-200" data-lang="research_bee_link"></a></div></div>`,
                 research_bee_link: "연구 웹사이트",
                 publications_title: "논문 실적",
                 publications_content: `<div class="bg-slate-50 p-6 rounded-xl shadow-lg border border-slate-200"><p class="text-slate-700">Narcia-Macias, C. I., Guardado, J., Rodriguez, J., Park, J., Rampersad-Ammons, J., & Enriquez, E. (2024). "<strong>IntelliBeeHive: An Automated Honey Bee, Pollen, and Varroa Destructor Monitoring System</strong>". <em class="text-slate-900">Proceedings of the 2024 International Conference on Machine Learning and Applications (ICMLA).</em></p><a href="https://ieeexplore.ieee.org/document/10903284" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:underline text-sm font-semibold mt-2 inline-block">DOI: 10.1109/ICMLA61862.2024.00122</a></div>`,
+                // Other
                 awards_title: "수상 경력",
                 awards_content: `<p class="text-slate-800 font-semibold">우수상 (2등 졸업)</p><p class="text-slate-600 text-sm">육군 포병학교 전문 정비 과정, 2016년</p>`,
                 additional_exp_title: "기타 경력",
                 additional_exp_content: `<div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200"><h3 class="text-lg font-semibold text-slate-900">리테일 스토어 론칭 및 운영 (파트타임) <span class="text-sky-700">@ Burlington Stores, Inc.</span></h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2023년 12월 – 2025년 8월</time><p class="text-slate-600 text-sm">신규 매장 론칭을 위한 초기 운영 시스템 구축에 기여하며, <strong>물류, 창고 관리 및 비즈니스 프로세스의 현장 실행에 대한 실무 경험 습득</strong>.</p></div><div class="bg-white p-6 rounded-xl shadow-lg border border-slate-200"><h3 class="text-lg font-semibold text-slate-900">부동산 자산 현대화 및 관리</h3><time class="block mb-2 text-sm font-normal leading-none text-slate-500">2024년 5월 – 현재</time><p class="text-slate-600 text-sm">소규모 부동산 현대화 프로젝트를 관리하며, <strong>자산 수명주기 관리 및 시스템 최적화 원칙을 실제 물리적 자산에 적용</strong>.</p></div>`,
+                // My Path
                 casestudies_title: "나의 길: 엔지니어에서 교육자로",
                 casestudies_subtitle: "교육에 대한 저의 관심은 엔지니어이자 리더로서의 경험에서 자연스럽게 생겨났습니다. 제 여정의 각 단계는 퍼즐의 새로운 조각을 보여주었습니다.",
                 case1_title: "1장: 정밀함의 기초",
@@ -625,7 +690,7 @@
                 case5_title: "5장: 현장 운영의 교훈",
                 case5_role: "리테일 스토어 런칭팀",
                 case5_desc: `<p>엔지니어링과 코드를 넘어, 저는 대규모 비즈니스가 어떻게 가장 기본적인 단계부터 운영되는지 이해하고 싶었습니다. 벌링턴 신규 매장 오픈에 참여한 것은 실제 MBA 수업과도 같았습니다. 창고 정리부터 매장 진열, 그리고 마침내 첫 고객을 응대하기까지, 물류와 팀워크 같은 모든 세부사항이 어떻게 수익 및 고객 만족에 직접적인 영향을 미치는지 직접 목격했습니다. <strong class="text-lg text-sky-600">기술이든 유통이든, 성공적인 시스템은 잘 실행된 기본기 위에 세워진다는 강력한 교훈을 얻었습니다.</strong></p>`,
-                case5_link_burlington: "뉴스보기",
+                case5_link_burlington: "뉴스 보기",
                 case6_title: "6장: 종합",
                 case6_role: "FinitUp 설립자 및 개발자",
                 case6_desc: `<p>FinitUp은 비즈니스 이론을 실제 제품으로 구현하는 저의 현재 진행형 프로젝트입니다. 목표는 <strong class="text-sky-600">MBA 재무관리 수업에서 배운 가치평가모델을 AI로 자동화하여, 분석에 걸리는 시간을 수작업 대비 90% 단축하는 것</strong>입니다. 이것이야말로 저의 모든 기술을 통합하여 가치를 만드는 '만들면서 배우기' 철학의 실천입니다.</p><p class="mt-2">AI4Finance Foundation의 오픈소스(FinRL, FinRobot)를 기반으로 자동화 분석, 주식 추천 및 가상 매매 기능을 구현하고 있습니다.</p>`,
@@ -636,6 +701,7 @@
                 case7_desc: `<p>AI 클럽을 설립한 이유는 단순히 기술을 전파하기 위함만이 아닙니다. 제가 학부 시절 겪었던 <strong class="text-sky-600">이론과 산업 현장 간의 정보 격차를 해소하고, 후배들이 더 많은 기회를 잡을 수 있도록 돕고 싶었습니다.</strong> 올바른 지도와 실습 접근만 있다면 누구나 혁신할 수 있다는 믿음, 엔지니어에서 교육자로 이어진 저의 길을 통해 발견한 원칙으로 커뮤니티를 만들고 있습니다.</p>`,
                 case7_link: "AI 클럽 웹사이트 방문하기",
                 case7_youtube_link: "AI 클럽 유튜브 방문하기",
+                // Footer
                 footer_title: "연락주세요",
                 footer_subtitle: "새로운 프로젝트, 창의적인 아이디어, 또는 기회에 대해 언제나 논의할 준비가 되어 있습니다. 편하게 연락주세요.",
                 footer_copy: "2025 박준성. 모든 권리 보유."
@@ -651,15 +717,54 @@
             document.querySelectorAll('[data-lang]').forEach(el => {
                 const key = el.getAttribute('data-lang');
                 if (langData[key]) {
+                    // Check if the key indicates content that should be treated as HTML
                     if (key.includes('_content') || key.includes('_desc') || key.includes('_utrgv') || key.includes('_sch')) {
                         el.innerHTML = langData[key];
                     } else {
+                        // For simple text nodes, check for and preserve child elements like SVG
                         const svg = el.querySelector('svg');
-                        el.textContent = langData[key];
-                        if(svg) el.prepend(svg);
+                        if (svg) {
+                            // If there's an SVG, we need to handle the text part specifically
+                            const textNode = Array.from(el.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+                            if (textNode) {
+                                textNode.textContent = ' ' + langData[key]; // Add space for separation
+                            } else {
+                                // If no text node exists yet, create one
+                                el.appendChild(document.createTextNode(' ' + langData[key]));
+                            }
+                        } else if (el.tagName === 'SPAN') { // Handle span elements for buttons
+                             el.textContent = langData[key];
+                        }
+                        else {
+                            el.textContent = langData[key];
+                            if(svg) el.prepend(svg); // Re-prepend SVG if it was wiped by textContent
+                        }
                     }
                 }
             });
+            // Specific logic for buttons with complex content
+            document.querySelectorAll('a[data-lang="resume_download_btn"], a[data-lang="linkedin_btn"], a[data-lang="github_btn"]').forEach(btn => {
+                const key = btn.getAttribute('data-lang');
+                const svg = btn.querySelector('svg');
+                let textSpan = btn.querySelector('span');
+                
+                if (langData[key]) {
+                    if (!textSpan) { // Create span if it doesn't exist
+                        textSpan = document.createElement('span');
+                        btn.appendChild(textSpan);
+                    }
+                    if (key === 'resume_download_btn') {
+                        // For the download button, we might just want to set the text content directly after the SVG
+                        btn.textContent = '';
+                        btn.appendChild(svg);
+                        btn.appendChild(document.createTextNode(' ' + langData[key]));
+                    } else {
+                        textSpan.textContent = langData[key];
+                    }
+                }
+            });
+
+
             langButtons.forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.getAttribute('data-lang-switch') === lang) {
@@ -676,6 +781,7 @@
             });
         });
 
+        // Auto-detect and set language on initial load
         const userLang = navigator.language || navigator.userLanguage;
         
         if (userLang.startsWith('ko')) {
